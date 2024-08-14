@@ -1,26 +1,27 @@
 // src/routes/Routes.js
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
-import Home from '../pages/Home';
-import Login from '../pages/Login';
-import Signup from '../pages/Signup';
-import RecruiterDashboard from '../pages/RecruiterDashboard';
-import StudentDashboard from '../pages/StudentDashboard';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import PrivateRoute from './PrivateRoute';
+import Home from '../Pages/Home/Home';
+// import Login from '../Pages/Login/Login';
+// import Signup from '../Pages/Signup/Signup';
+// import RecruiterDashboard from '../pages/RecruiterDashboard';
+// import StudentDashboard from '../pages/StudentDashboard';
+import React from 'react';
 
 function Routes() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/" Component={Home} />
+        {/* <Route path="/login" Component={Login} />
+        <Route path="/signup" Component={Signup} /> */}
         
         {/* Private Routes */}
-        <PrivateRoute path="/recruiter/dashboard" component={RecruiterDashboard} role="recruiter" />
-        <PrivateRoute path="/student/dashboard" component={StudentDashboard} role="student" />
+        {/* <PrivateRoute path="/recruiter/dashboard" component={RecruiterDashboard} role="recruiter" />
+        <PrivateRoute path="/student/dashboard" component={StudentDashboard} role="student" /> */}
         
         {/* Add more routes as needed */}
-      </Switch>
     </Router>
   );
 }
+
+export default Routes;
