@@ -1,85 +1,69 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using DTO.Recruiter;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using server.Data;
-using server.Models;
+using WebApplication1.Data;
+using WebApplication1.Models;
 
-namespace server.Controllers
+namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class RecruiterController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public RecruiterController(ApplicationDbContext context)
+        public RecruiterController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        // GET: api/Recruiter
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Recruiter>>> GetRecruiters()
-        {
-            return await _context.Recruiters.Include(r => r.Band).ToListAsync();
-        }
-
-        // GET: api/Recruiter/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Recruiter>> GetRecruiter(int id)
+        public async Task<IActionResult> GetRecruiter(int id)
         {
-            var recruiter = await _context.Recruiters
-                                          .Include(r => r.Band)
-                                          .FirstOrDefaultAsync(r => r.RecruiterId == id);
-
+            var recruiter = await _context.Recruiters.FindAsync(id);
             if (recruiter == null)
             {
                 return NotFound();
             }
 
-            return recruiter;
+            return Ok(_mapper.Map<RecruiterDTO>(recruiter));
         }
 
-        // POST: api/Recruiter
         [HttpPost]
-        public async Task<ActionResult<Recruiter>> CreateRecruiter(Recruiter recruiter)
+        public async Task<IActionResult> CreateRecruiter([FromBody] RecruiterDTO recruiterDto)
         {
+            var recruiter = _mapper.Map<Recruiter>(recruiterDto);
+            recruiter.CreatedAt = DateTime.UtcNow;
+
             _context.Recruiters.Add(recruiter);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetRecruiter), new { id = recruiter.RecruiterId }, recruiter);
+            return CreatedAtAction(nameof(GetRecruiter), new { id = recruiter.RecruiterId }, _mapper.Map<RecruiterDTO>(recruiter));
         }
 
-        // PUT: api/Recruiter/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRecruiter(int id, Recruiter recruiter)
+        public async Task<IActionResult> UpdateRecruiter(int id, [FromBody] RecruiterDTO recruiterDto)
         {
-            if (id != recruiter.RecruiterId)
+            if (id != recruiterDto.RecruiterId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(recruiter).State = EntityState.Modified;
+            var recruiter = await _context.Recruiters.FindAsync(id);
+            if (recruiter == null)
+            {
+                return NotFound();
+            }
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!RecruiterExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _mapper.Map(recruiterDto, recruiter);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        // DELETE: api/Recruiter/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRecruiter(int id)
         {
@@ -93,12 +77,6 @@ namespace server.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        // Helper method to check if recruiter exists
-        private bool RecruiterExists(int id)
-        {
-            return _context.Recruiters.Any(e => e.RecruiterId == id);
         }
     }
 }

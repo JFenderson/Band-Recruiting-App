@@ -1,85 +1,72 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using DTO.Video;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using server.Data;
-using server.Models;
+using System.IdentityModel.Tokens.Jwt;
+using WebApplication1.Data;
+using WebApplication1.Models;
 
-namespace server.Controllers
+namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize] // Ensure only authenticated users can access these actions
     public class VideoController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public VideoController(ApplicationDbContext context)
+        public VideoController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        // GET: api/Video
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Video>>> GetVideos()
-        {
-            return await _context.Videos.Include(v => v.Student).ToListAsync();
-        }
-
-        // GET: api/Video/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Video>> GetVideo(int id)
+        public async Task<IActionResult> GetVideo(int id)
         {
-            var video = await _context.Videos
-                                      .Include(v => v.Student)
-                                      .FirstOrDefaultAsync(v => v.VideoId == id);
-
+            var video = await _context.Videos.FindAsync(id);
             if (video == null)
             {
                 return NotFound();
             }
 
-            return video;
+            return Ok(_mapper.Map<VideoDTO>(video));
         }
 
-        // POST: api/Video
         [HttpPost]
-        public async Task<ActionResult<Video>> CreateVideo(Video video)
+        public async Task<IActionResult> UploadVideo([FromBody] VideoDTO videoDto)
         {
+            var video = _mapper.Map<Video>(videoDto);
+            video.CreatedAt = DateTime.UtcNow;
+
             _context.Videos.Add(video);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetVideo), new { id = video.VideoId }, video);
+            return CreatedAtAction(nameof(GetVideo), new { id = video.VideoId }, _mapper.Map<VideoDTO>(video));
         }
 
-        // PUT: api/Video/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateVideo(int id, Video video)
+        public async Task<IActionResult> UpdateVideo(int id, [FromBody] VideoDTO videoDto)
         {
-            if (id != video.VideoId)
+            if (id != videoDto.VideoId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(video).State = EntityState.Modified;
+            var video = await _context.Videos.FindAsync(id);
+            if (video == null)
+            {
+                return NotFound();
+            }
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!VideoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _mapper.Map(videoDto, video);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        // DELETE: api/Video/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteVideo(int id)
         {
@@ -93,12 +80,6 @@ namespace server.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        // Helper method to check if video exists
-        private bool VideoExists(int id)
-        {
-            return _context.Videos.Any(e => e.VideoId == id);
         }
     }
 }

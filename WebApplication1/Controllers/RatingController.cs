@@ -1,53 +1,69 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using server.Data;
-using server.Models;
+using WebApplication1.Data;
+using WebApplication1.Models;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using DTO.Rating;
 
-namespace server.Controllers
+namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class RatingController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public RatingController(ApplicationDbContext context)
+        public RatingController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        // GET: api/Rating/Student/5
-        [HttpGet("Student/{studentId}")]
-        public async Task<ActionResult<IEnumerable<Rating>>> GetRatingsByStudent(int studentId)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetRating(int id)
         {
-            return await _context.Ratings.Where(r => r.StudentId == studentId).ToListAsync();
+            var rating = await _context.Ratings.FindAsync(id);
+            if (rating == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(_mapper.Map<RatingDTO>(rating));
         }
 
-        // GET: api/Rating/Band/5
-        [HttpGet("Band/{bandId}")]
-        public async Task<ActionResult<IEnumerable<Rating>>> GetRatingsByBand(int bandId)
-        {
-            return await _context.Ratings.Where(r => r.BandId == bandId).ToListAsync();
-        }
-
-        // GET: api/Rating/Video/5
-        [HttpGet("Video/{videoId}")]
-        public async Task<ActionResult<IEnumerable<Rating>>> GetRatingsByVideo(int videoId)
-        {
-            return await _context.Ratings.Where(r => r.VideoId == videoId).ToListAsync();
-        }
-
-        // POST: api/Rating
         [HttpPost]
-        public async Task<ActionResult<Rating>> AddRating(Rating rating)
+        public async Task<IActionResult> AddRating([FromBody] RatingDTO ratingDto)
         {
+            var rating = _mapper.Map<Rating>(ratingDto);
+            rating.CreatedAt = DateTime.UtcNow;
+
             _context.Ratings.Add(rating);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetRatingsByStudent), new { studentId = rating.StudentId }, rating);
+            return CreatedAtAction(nameof(GetRating), new { id = rating.RatingId }, _mapper.Map<RatingDTO>(rating));
         }
 
-        // DELETE: api/Rating/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateRating(int id, [FromBody] RatingDTO ratingDto)
+        {
+            if (id != ratingDto.RatingId)
+            {
+                return BadRequest();
+            }
+
+            var rating = await _context.Ratings.FindAsync(id);
+            if (rating == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(ratingDto, rating);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRating(int id)
         {

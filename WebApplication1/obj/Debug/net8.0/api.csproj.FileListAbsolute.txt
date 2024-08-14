@@ -135,3 +135,5 @@ C:\Users\josep\Desktop\TBR\WebApplication1\obj\Debug\net8.0\refint\api.dll
 C:\Users\josep\Desktop\TBR\WebApplication1\obj\Debug\net8.0\api.pdb
 C:\Users\josep\Desktop\TBR\WebApplication1\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\josep\Desktop\TBR\WebApplication1\obj\Debug\net8.0\ref\api.dll
+C:\Users\josep\Desktop\TBR\WebApplication1\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\josep\Desktop\TBR\WebApplication1\bin\Debug\net8.0\BCrypt.Net-Next.dll

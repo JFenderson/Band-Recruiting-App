@@ -1,26 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using DTO.Band;
+using DTO.Student;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using server.Data;
-using server.Models;
+using WebApplication1.Data;
+using WebApplication1.Models;
 
-namespace server.Controllers
+namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class BandController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public BandController(ApplicationDbContext context)
+        public BandController(ApplicationDbContext context,  IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Band
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Band>>> GetBands()
         {
-            return await _context.Bands.Include(b => b.Recruiters).ToListAsync();
+            return await _context.Bands.ToListAsync();
         }
 
         // GET: api/Band/5
@@ -28,7 +33,6 @@ namespace server.Controllers
         public async Task<ActionResult<Band>> GetBand(int id)
         {
             var band = await _context.Bands
-                                     .Include(b => b.Recruiters)
                                      .FirstOrDefaultAsync(b => b.BandId == id);
 
             if (band == null)
@@ -41,10 +45,18 @@ namespace server.Controllers
 
         // POST: api/Band
         [HttpPost]
-        public async Task<ActionResult<Band>> CreateBand(Band band)
+        public async Task<IActionResult> CreateBand(BandDTO bandDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var band = _mapper.Map<Band>(bandDto);
             _context.Bands.Add(band);
             await _context.SaveChangesAsync();
+
+            var bandResponseDto = _mapper.Map<BandDTO>(band);
 
             return CreatedAtAction(nameof(GetBand), new { id = band.BandId }, band);
         }

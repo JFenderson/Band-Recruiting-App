@@ -1,23 +1,17 @@
 ﻿using System;
 
-namespace server.Models
+namespace WebApplication1.Models
 {
     public class Comment
     {
         public int CommentId { get; set; }
-        public string CommentType { get; set; } = string.Empty;
-        public int EntityId { get; set; }
-        public string CommentText { get; set; } = string.Empty ;
+        public int VideoId { get; set; }  // Foreign Key
+        public int RecruiterId { get; set; }  // Foreign Key
+        public string Text { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // Navigation properties
-        public int? StudentId { get; set; }
-        public Student? Student { get; set; }
-
-        public int? BandId { get; set; }
-        public Band? Band { get; set; }
-
-        public int? VideoId { get; set; }
-        public Video? Video { get; set; }
+        // Navigation Properties
+        public Video Video { get; set; }
+        public Recruiter Recruiter { get; set; }
     }
 }

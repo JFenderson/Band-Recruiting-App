@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using server.Data;
+using WebApplication1.Data;
 
 #nullable disable
 
-namespace server.Migrations
+namespace Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,74 @@ namespace server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("server.Models.Band", b =>
+            modelBuilder.Entity("Models.InterestedStudent", b =>
+                {
+                    b.Property<int>("InterestedStudentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InterestedStudentId"));
+
+                    b.Property<int>("BandId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsInterested")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("InterestedStudentId");
+
+                    b.HasIndex("BandId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("InterestedStudents");
+                });
+
+            modelBuilder.Entity("Models.Offer", b =>
+                {
+                    b.Property<int>("OfferId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OfferId"));
+
+                    b.Property<int>("BandId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("RecruiterId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ScholarshipAmount")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OfferId");
+
+                    b.HasIndex("BandId");
+
+                    b.HasIndex("RecruiterId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Offers");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Band", b =>
                 {
                     b.Property<int>("BandId")
                         .ValueGeneratedOnAdd()
@@ -30,62 +97,89 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BandId"));
 
-                    b.Property<int>("MembersNumber")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RecruiterId")
+                    b.Property<int>("NumberOfMembers")
                         .HasColumnType("int");
 
-                    b.Property<string>("School")
+                    b.Property<string>("SchoolName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BandId");
 
-                    b.HasIndex("RecruiterId");
-
-                    b.ToTable("Band");
+                    b.ToTable("Bands");
                 });
 
-            modelBuilder.Entity("server.Models.Comment", b =>
+            modelBuilder.Entity("WebApplication1.Models.Comment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CommentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"));
 
-                    b.Property<int?>("BandId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedOn")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("StudentId")
+                    b.Property<int>("RecruiterId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<int>("VideoId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("BandId");
+                    b.HasKey("CommentId");
 
-                    b.HasIndex("StudentId");
+                    b.HasIndex("RecruiterId");
 
-                    b.ToTable("Comment");
+                    b.HasIndex("VideoId");
+
+                    b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("server.Models.Recruiter", b =>
+            modelBuilder.Entity("WebApplication1.Models.Rating", b =>
+                {
+                    b.Property<int>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("RecruiterId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VideoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RatingId");
+
+                    b.HasIndex("RecruiterId");
+
+                    b.HasIndex("VideoId");
+
+                    b.ToTable("Ratings");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Recruiter", b =>
                 {
                     b.Property<int>("RecruiterId")
                         .ValueGeneratedOnAdd()
@@ -93,20 +187,52 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RecruiterId"));
 
-                    b.Property<string>("Name")
+                    b.Property<int>("BandId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("School")
+                    b.Property<string>("ProfilePicture")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("RecruiterId");
+
+                    b.HasIndex("BandId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Recruiters");
                 });
 
-            modelBuilder.Entity("server.Models.Student", b =>
+            modelBuilder.Entity("WebApplication1.Models.Student", b =>
                 {
                     b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
@@ -114,37 +240,79 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("HighSchool")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instrument")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePicture")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("StudentId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PrimaryInstrument")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("RecruiterId")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<string>("School")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("UserId");
 
-                    b.Property<string>("SecondaryInstrument")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("StudentId");
-
-                    b.HasIndex("RecruiterId");
-
-                    b.ToTable("BandStudents");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("server.Models.Video", b =>
+            modelBuilder.Entity("WebApplication1.Models.Video", b =>
                 {
                     b.Property<int>("VideoId")
                         .ValueGeneratedOnAdd()
@@ -152,10 +320,21 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VideoId"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -166,42 +345,123 @@ namespace server.Migrations
                     b.ToTable("Videos");
                 });
 
-            modelBuilder.Entity("server.Models.Band", b =>
+            modelBuilder.Entity("Models.InterestedStudent", b =>
                 {
-                    b.HasOne("server.Models.Recruiter", "Recruiter")
-                        .WithMany()
-                        .HasForeignKey("RecruiterId")
+                    b.HasOne("WebApplication1.Models.Band", "Band")
+                        .WithMany("InterestedStudents")
+                        .HasForeignKey("BandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Recruiter");
-                });
-
-            modelBuilder.Entity("server.Models.Comment", b =>
-                {
-                    b.HasOne("server.Models.Band", "Band")
-                        .WithMany("Comments")
-                        .HasForeignKey("BandId");
-
-                    b.HasOne("server.Models.Student", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentId");
+                    b.HasOne("WebApplication1.Models.Student", "Student")
+                        .WithMany("InterestedStudents")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Band");
 
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("server.Models.Student", b =>
+            modelBuilder.Entity("Models.Offer", b =>
                 {
-                    b.HasOne("server.Models.Recruiter", null)
-                        .WithMany("Students")
-                        .HasForeignKey("RecruiterId");
+                    b.HasOne("WebApplication1.Models.Band", "Band")
+                        .WithMany("Offers")
+                        .HasForeignKey("BandId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Models.Recruiter", "Recruiter")
+                        .WithMany("Offers")
+                        .HasForeignKey("RecruiterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Models.Student", "Student")
+                        .WithMany("Offers")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Band");
+
+                    b.Navigation("Recruiter");
+
+                    b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("server.Models.Video", b =>
+            modelBuilder.Entity("WebApplication1.Models.Comment", b =>
                 {
-                    b.HasOne("server.Models.Student", "Student")
+                    b.HasOne("WebApplication1.Models.Recruiter", "Recruiter")
+                        .WithMany("Comments")
+                        .HasForeignKey("RecruiterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Models.Video", "Video")
+                        .WithMany("Comments")
+                        .HasForeignKey("VideoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Recruiter");
+
+                    b.Navigation("Video");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Rating", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Recruiter", "Recruiter")
+                        .WithMany("Ratings")
+                        .HasForeignKey("RecruiterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Models.Video", "Video")
+                        .WithMany("Ratings")
+                        .HasForeignKey("VideoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Recruiter");
+
+                    b.Navigation("Video");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Recruiter", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Band", "Band")
+                        .WithMany("Recruiters")
+                        .HasForeignKey("BandId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Models.User", "User")
+                        .WithOne("Recruiter")
+                        .HasForeignKey("WebApplication1.Models.Recruiter", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Band");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Student", b =>
+                {
+                    b.HasOne("WebApplication1.Models.User", "User")
+                        .WithOne("Student")
+                        .HasForeignKey("WebApplication1.Models.Student", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Video", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Student", "Student")
                         .WithMany("Videos")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -210,19 +470,47 @@ namespace server.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("server.Models.Band", b =>
+            modelBuilder.Entity("WebApplication1.Models.Band", b =>
+                {
+                    b.Navigation("InterestedStudents");
+
+                    b.Navigation("Offers");
+
+                    b.Navigation("Recruiters");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Recruiter", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Offers");
+
+                    b.Navigation("Ratings");
                 });
 
-            modelBuilder.Entity("server.Models.Recruiter", b =>
+            modelBuilder.Entity("WebApplication1.Models.Student", b =>
                 {
-                    b.Navigation("Students");
-                });
+                    b.Navigation("InterestedStudents");
 
-            modelBuilder.Entity("server.Models.Student", b =>
-                {
+                    b.Navigation("Offers");
+
                     b.Navigation("Videos");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.User", b =>
+                {
+                    b.Navigation("Recruiter")
+                        .IsRequired();
+
+                    b.Navigation("Student")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Video", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }
