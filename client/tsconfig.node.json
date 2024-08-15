@@ -23,5 +23,5 @@
   "include": [
     "vite.config.ts",
     "src/**/*"
-, "src/deps_temp_1752c126"  ]
+, "deps_temp_1752c126"  ]
 }
