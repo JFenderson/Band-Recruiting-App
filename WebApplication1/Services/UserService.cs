@@ -1,24 +1,28 @@
-﻿using WebApplication1.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using WebApplication1.Models;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Threading.Tasks;
 
 namespace Services
 {
-    public class UserService
+    public static class RoleSeeder
     {
-        public string HashPassword(string password)
+        public static async Task SeedRolesAsync(IServiceProvider serviceProvider)
         {
-            return BCrypt.Net.BCrypt.HashPassword(password);
-        }
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            string[] roleNames = { "Admin", "Student", "Recruiter" };
+            IdentityResult roleResult;
 
-        public User CreateUser(string plainTextPassword, string email, UserRole role)
-        {
-            return new User
+            foreach (var roleName in roleNames)
             {
-                
-                PasswordHash = HashPassword(plainTextPassword),
-                Email = email,
-                Role = role,
-                CreatedAt = DateTime.UtcNow
-            };
+                var roleExist = await roleManager.RoleExistsAsync(roleName);
+                if (!roleExist)
+                {
+                    // Create the roles and seed them to the database
+                    roleResult = await roleManager.CreateAsync(new IdentityRole(roleName));
+                }
+            }
         }
     }
 }

@@ -1,4 +1,8 @@
+//dotnet ef migrations add InitialIdentityMigration --context IdentityAppDbContext
+//dotnet ef database update --context IdentityAppDbContext
 
+//dotnet ef migrations add InitialAppMigration --context ApplicationDbContext
+//dotnet ef database update --context ApplicationDbContext
 
 //CREATE TABLE Students (
 //    StudentID INT PRIMARY KEY IDENTITY(1,1),

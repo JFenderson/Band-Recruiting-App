@@ -18,7 +18,6 @@ public class MappingProfile : Profile
         CreateMap<InterestedStudentDTO, InterestedStudent>().ReverseMap();
         // User mappings
         CreateMap<User, UserDTO>().ReverseMap();
-        CreateMap<LoginDTO, User>();
 
         CreateMap<BandDTO, Band>()
             .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))

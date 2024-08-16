@@ -3,120 +3,164 @@
   "WorkspaceRootPath": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\interestedstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\interestedstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\scripts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:scripts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\bandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\bandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\videocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\videocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\interestedstudentdto\\interestedstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\interestedstudentdto\\interestedstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\interestedstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\interestedstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\band\\banddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\band\\banddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\mappers\\studentmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:mappers\\studentmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\recruiterentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\recruiterentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\recruiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\recruiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\studententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\studententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\student\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\student\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\data\\identityappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:data\\identityappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\recruiter\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\recruiter\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\scripts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:scripts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\videoentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\videoentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\ratingentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\ratingentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\commententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\commententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\interestedstudententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\interestedstudententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\entities\\offerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:entities\\offerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\interestedstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\interestedstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\bandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\bandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\band\\banddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\band\\banddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\interestedstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\interestedstudentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\recruitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\recruitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\mappers\\studentmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:mappers\\studentmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\offer\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\offer\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\student\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\student\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\recruiter\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\recruiter\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\videocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\videocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\interestedstudentdto\\interestedstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\interestedstudentdto\\interestedstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\offer\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\offer\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\rating\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -135,14 +179,6 @@
       "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\controllers\\recruitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:controllers\\recruitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|c:\\users\\josep\\desktop\\tbr\\webapplication1\\dto\\comment\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{466BBFA7-332E-43B4-AD0B-0FD90F2C610A}|api.csproj|solutionrelative:dto\\comment\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -158,180 +194,310 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InterestedStudentController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\InterestedStudentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\InterestedStudentController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\InterestedStudentController.cs",
-              "RelativeToolTip": "Controllers\\InterestedStudentController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T02:56:29.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "InterestedStudent.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\InterestedStudent.cs",
-              "RelativeDocumentMoniker": "Models\\InterestedStudent.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\InterestedStudent.cs",
-              "RelativeToolTip": "Models\\InterestedStudent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAuAAAA",
+              "Title": "VideoEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\VideoEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\VideoEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\VideoEntity.cs",
+              "RelativeToolTip": "Entities\\VideoEntity.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T02:53:24.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BandController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\BandController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BandController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\BandController.cs",
-              "RelativeToolTip": "Controllers\\BandController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAgwCMAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:13:17.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Mappers\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Mappers\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Mappers\\MappingProfile.cs",
-              "RelativeToolTip": "Mappers\\MappingProfile.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:34:23.369Z",
+              "WhenOpened": "2024-08-16T03:53:04.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "Models\\Student.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Student.cs",
-              "RelativeToolTip": "Models\\Student.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAYwCEAAAAuAAAA",
+              "Title": "RatingEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\RatingEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\RatingEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\RatingEntity.cs",
+              "RelativeToolTip": "Entities\\RatingEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:26:33.294Z",
+              "WhenOpened": "2024-08-16T03:51:42.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Video.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Video.cs",
-              "RelativeDocumentMoniker": "Models\\Video.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Video.cs",
-              "RelativeToolTip": "Models\\Video.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:17:04.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAA0wBwAAAA0AAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAswCIAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-12T14:39:49.476Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Scripts.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Scripts.cs",
               "RelativeDocumentMoniker": "Scripts.cs",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Scripts.cs",
               "RelativeToolTip": "Scripts.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-12T22:09:49.515Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAwAAAA",
+              "DocumentIndex": 5,
+              "Title": "IdentityAppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Data\\IdentityAppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\IdentityAppDbContext.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Data\\IdentityAppDbContext.cs",
+              "RelativeToolTip": "Data\\IdentityAppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T21:55:40.138Z",
+              "WhenOpened": "2024-08-15T19:02:41.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RecruiterEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\RecruiterEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\RecruiterEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\RecruiterEntity.cs",
+              "RelativeToolTip": "Entities\\RecruiterEntity.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T02:20:37.56Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\UserEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\UserEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\UserEntity.cs",
+              "RelativeToolTip": "Entities\\UserEntity.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T00:27:39.826Z",
+              "WhenOpened": "2024-08-16T03:51:21.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "InterestedStudentDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
-              "RelativeToolTip": "DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "DocumentIndex": 4,
+              "Title": "StudentEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\StudentEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\StudentEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\StudentEntity.cs",
+              "RelativeToolTip": "Entities\\StudentEntity.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwBUAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T02:55:44.244Z",
+              "WhenOpened": "2024-08-16T02:22:43.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T21:11:32.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Recruiter.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Recruiter.cs",
+              "RelativeDocumentMoniker": "Models\\Recruiter.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Recruiter.cs",
+              "RelativeToolTip": "Models\\Recruiter.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T22:10:20.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA5wAkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T21:26:33.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CommentEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\CommentEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\CommentEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\CommentEntity.cs",
+              "RelativeToolTip": "Entities\\CommentEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T03:52:05.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InterestedStudentEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\InterestedStudentEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\InterestedStudentEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\InterestedStudentEntity.cs",
+              "RelativeToolTip": "Entities\\InterestedStudentEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T03:52:59.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Video.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Video.cs",
+              "RelativeDocumentMoniker": "Models\\Video.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Video.cs",
+              "RelativeToolTip": "Models\\Video.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T15:17:04.95Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAwwBsAAAAwAAAA",
+              "Title": "OfferEntity.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\OfferEntity.cs",
+              "RelativeDocumentMoniker": "Entities\\OfferEntity.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Entities\\OfferEntity.cs",
+              "RelativeToolTip": "Entities\\OfferEntity.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:13:00.447Z",
+              "WhenOpened": "2024-08-16T03:52:37.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABMAAAA",
+              "DocumentIndex": 19,
+              "Title": "BandController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\BandController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BandController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\BandController.cs",
+              "RelativeToolTip": "Controllers\\BandController.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAcwHYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:15:18.374Z",
+              "WhenOpened": "2024-08-11T21:13:17.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Band.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Band.cs",
+              "RelativeDocumentMoniker": "Models\\Band.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Band.cs",
+              "RelativeToolTip": "Models\\Band.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T22:09:18.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Mappers\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Mappers\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Mappers\\MappingProfile.cs",
+              "RelativeToolTip": "Mappers\\MappingProfile.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAqwBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T18:48:30.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BandDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Band\\BandDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\Band\\BandDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Band\\BandDTO.cs",
+              "RelativeToolTip": "DTO\\Band\\BandDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T21:22:01.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Rating.cs",
+              "RelativeDocumentMoniker": "Models\\Rating.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Rating.cs",
+              "RelativeToolTip": "Models\\Rating.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T22:00:31.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "InterestedStudent.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\InterestedStudent.cs",
+              "RelativeDocumentMoniker": "Models\\InterestedStudent.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\InterestedStudent.cs",
+              "RelativeToolTip": "Models\\InterestedStudent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T02:53:24.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "InterestedStudentController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\InterestedStudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InterestedStudentController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\InterestedStudentController.cs",
+              "RelativeToolTip": "Controllers\\InterestedStudentController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAqwB8AAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T02:56:29.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RecruiterController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\RecruiterController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecruiterController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\RecruiterController.cs",
+              "RelativeToolTip": "Controllers\\RecruiterController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAIwDEAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T22:05:34.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "StudentMappers.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Mappers\\StudentMappers.cs",
               "RelativeDocumentMoniker": "Mappers\\StudentMappers.cs",
@@ -344,72 +510,162 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VideoController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\VideoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VideoController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\VideoController.cs",
-              "RelativeToolTip": "Controllers\\VideoController.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAUwFMAAAAFAAAA",
+              "DocumentIndex": 24,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\User\\UserDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\User\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\User\\UserDTO.cs",
+              "RelativeToolTip": "DTO\\User\\UserDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:23:41.934Z",
+              "WhenOpened": "2024-08-12T22:00:55.328Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
+              "Title": "RegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\RegisterDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\RegisterDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\RegisterDTO.cs",
+              "RelativeToolTip": "DTO\\RegisterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T04:12:31.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T22:04:20.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "StudentController.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\StudentController.cs",
               "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\StudentController.cs",
               "RelativeToolTip": "Controllers\\StudentController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAwwC8AAABVAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAuwBcAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-11T21:22:32.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Band.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Band.cs",
-              "RelativeDocumentMoniker": "Models\\Band.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Band.cs",
-              "RelativeToolTip": "Models\\Band.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABvAAAA",
+              "DocumentIndex": 28,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T22:09:18.398Z",
+              "WhenOpened": "2024-08-15T04:10:51.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BandDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Band\\BandDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\Band\\BandDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Band\\BandDTO.cs",
-              "RelativeToolTip": "DTO\\Band\\BandDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "DocumentIndex": 29,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAHIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:22:01.646Z",
+              "WhenOpened": "2024-08-11T21:13:00.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Recruiter.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Recruiter.cs",
-              "RelativeDocumentMoniker": "Models\\Recruiter.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Recruiter.cs",
-              "RelativeToolTip": "Models\\Recruiter.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAzwBYAAAANAAAA",
+              "DocumentIndex": 30,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T22:10:20.623Z",
+              "WhenOpened": "2024-08-13T03:15:18.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 31,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "Controllers\\CommentController.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwBAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T22:07:26.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAADeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-14T17:57:09.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "StudentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Student\\StudentDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\Student\\StudentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Student\\StudentDTO.cs",
+              "RelativeToolTip": "DTO\\Student\\StudentDTO.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T21:21:26.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T04:14:01.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\LoginDTO.cs",
+              "RelativeToolTip": "DTO\\LoginDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T22:14:23.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
               "Title": "RecruiterDTO.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Recruiter\\RecruiterDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Recruiter\\RecruiterDTO.cs",
@@ -417,12 +673,35 @@
               "RelativeToolTip": "DTO\\Recruiter\\RecruiterDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:21:13.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-11T21:21:13.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 38,
+              "Title": "InterestedStudentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
+              "RelativeToolTip": "DTO\\InterestedStudentDTO\\InterestedStudentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T02:55:44.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "VideoController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\VideoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VideoController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\VideoController.cs",
+              "RelativeToolTip": "Controllers\\VideoController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAUwFMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T15:23:41.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "OfferDTO.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Offer\\OfferDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Offer\\OfferDTO.cs",
@@ -430,129 +709,23 @@
               "RelativeToolTip": "DTO\\Offer\\OfferDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:01:59.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T22:01:59.312Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:04:20.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "StudentDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Student\\StudentDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\Student\\StudentDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Student\\StudentDTO.cs",
-              "RelativeToolTip": "DTO\\Student\\StudentDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:21:26.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Comment.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Comment.cs",
-              "RelativeDocumentMoniker": "Models\\Comment.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Comment.cs",
-              "RelativeToolTip": "Models\\Comment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:00:16.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\User\\UserDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\User\\UserDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\User\\UserDTO.cs",
-              "RelativeToolTip": "DTO\\User\\UserDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:00:55.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Rating.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Rating.cs",
-              "RelativeDocumentMoniker": "Models\\Rating.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Rating.cs",
-              "RelativeToolTip": "Models\\Rating.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:00:31.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\LoginDTO.cs",
-              "RelativeToolTip": "DTO\\LoginDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:14:23.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 41,
               "Title": "VideoDTO.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Video\\VideoDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Video\\VideoDTO.cs",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Video\\VideoDTO.cs",
               "RelativeToolTip": "DTO\\Video\\VideoDTO.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:20:55.715Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-11T21:20:55.715Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "api",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\api.csproj",
-              "RelativeDocumentMoniker": "api.csproj",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\api.csproj",
-              "RelativeToolTip": "api.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-13T03:14:51.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Offer.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Offer.cs",
-              "RelativeDocumentMoniker": "Models\\Offer.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Models\\Offer.cs",
-              "RelativeToolTip": "Models\\Offer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:00:01.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 40,
               "Title": "RatingDTO.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Rating\\RatingDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Rating\\RatingDTO.cs",
@@ -560,25 +733,23 @@
               "RelativeToolTip": "DTO\\Rating\\RatingDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:20:27.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-11T21:20:27.566Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 42,
               "Title": "OfferController.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\OfferController.cs",
               "RelativeDocumentMoniker": "Controllers\\OfferController.cs",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\OfferController.cs",
               "RelativeToolTip": "Controllers\\OfferController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAvwB0AAAAAAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAIA+wB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:06:35.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T22:06:35.269Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 43,
               "Title": "RatingController.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\RatingController.cs",
               "RelativeDocumentMoniker": "Controllers\\RatingController.cs",
@@ -586,38 +757,11 @@
               "RelativeToolTip": "Controllers\\RatingController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:07:43.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T22:07:43.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "CommentController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\CommentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\CommentController.cs",
-              "RelativeToolTip": "Controllers\\CommentController.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAUwFAAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:07:26.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "RecruiterController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\RecruiterController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RecruiterController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\Controllers\\RecruiterController.cs",
-              "RelativeToolTip": "Controllers\\RecruiterController.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAUwFAAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T22:05:34.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 44,
               "Title": "CommentDTO.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\DTO\\Comment\\CommentDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Comment\\CommentDTO.cs",
@@ -625,20 +769,18 @@
               "RelativeToolTip": "DTO\\Comment\\CommentDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-11T21:19:52.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-11T21:19:52.242Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 45,
               "Title": "api",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\api.csproj",
               "RelativeDocumentMoniker": "api.csproj",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR\\WebApplication1\\api.csproj",
               "RelativeToolTip": "api.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-11T21:10:35.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-11T21:10:35.673Z"
             }
           ]
         }
