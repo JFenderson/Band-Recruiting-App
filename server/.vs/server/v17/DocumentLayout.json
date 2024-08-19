@@ -1,0 +1,1091 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\josep\\source\\repos\\server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\commentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\commentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\videoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\videoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\recruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\recruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\recruiterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\recruiterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\studentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\studentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\recruiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\recruiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\bandconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\bandconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\interest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\interest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\filename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\filename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\banddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\banddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\updaterecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\updaterecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\offerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\offerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\ratingconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\ratingconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\controllers\\recruiterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\recruiterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\ratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\ratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\offerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\offerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\iratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\iratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\createofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\controllers\\offerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\offerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\irecruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\irecruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\iservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\iservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\bandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\bandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\ibandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\ibandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\controllers\\bandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\bandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\createcommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createcommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\createinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\createvideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createvideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\createrecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createrecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\createratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\data\\interestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\interestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\interestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\interestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\videodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\videodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\updatecommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\updatecommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\updateofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\updateofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\updatevideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\updatevideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\updatestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\updatestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\dtos\\updatebanddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\updatebanddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\source\\repos\\server\\services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwB0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:43:38.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RecruiterConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\RecruiterConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\RecruiterConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\RecruiterConfiguration.cs",
+              "RelativeToolTip": "Data\\RecruiterConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:54:56.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecruiterService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\RecruiterService.cs",
+              "RelativeDocumentMoniker": "Services\\RecruiterService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\RecruiterService.cs",
+              "RelativeToolTip": "Services\\RecruiterService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:23:50.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "Services\\StudentService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\StudentService.cs",
+              "RelativeToolTip": "Services\\StudentService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:22:20.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\UserConfiguration.cs",
+              "RelativeToolTip": "Data\\UserConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:54:02.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Comment.cs",
+              "RelativeToolTip": "Models\\Comment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:41:07.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CommentConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\CommentConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\CommentConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\CommentConfiguration.cs",
+              "RelativeToolTip": "Data\\CommentConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:58:19.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VideoConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\VideoConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\VideoConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\VideoConfiguration.cs",
+              "RelativeToolTip": "Data\\VideoConfiguration.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAiwBYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:56:25.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StudentConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\StudentConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\StudentConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\StudentConfiguration.cs",
+              "RelativeToolTip": "Data\\StudentConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:38:37.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Interest.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Interest.cs",
+              "RelativeDocumentMoniker": "Models\\Interest.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Interest.cs",
+              "RelativeToolTip": "Models\\Interest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:42:00.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:39:30.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BandConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\BandConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\BandConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\BandConfiguration.cs",
+              "RelativeToolTip": "Data\\BandConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:55:45.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BandDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\BandDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\BandDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\BandDTO.cs",
+              "RelativeToolTip": "DTOs\\BandDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:22:52.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RecruiterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\RecruiterDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\RecruiterDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\RecruiterDTO.cs",
+              "RelativeToolTip": "DTOs\\RecruiterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:43:25.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Band.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Band.cs",
+              "RelativeDocumentMoniker": "Models\\Band.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Band.cs",
+              "RelativeToolTip": "Models\\Band.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T17:06:00.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Recruiter.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Recruiter.cs",
+              "RelativeDocumentMoniker": "Models\\Recruiter.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Recruiter.cs",
+              "RelativeToolTip": "Models\\Recruiter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:38:10.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FileName.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\FileName.cs",
+              "RelativeDocumentMoniker": "Models\\FileName.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\FileName.cs",
+              "RelativeToolTip": "Models\\FileName.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAiwHgAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T20:39:14.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Rating.cs",
+              "RelativeDocumentMoniker": "Models\\Rating.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Rating.cs",
+              "RelativeToolTip": "Models\\Rating.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:57:57.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UpdateRecruiterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateRecruiterDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateRecruiterDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateRecruiterDTO.cs",
+              "RelativeToolTip": "DTOs\\UpdateRecruiterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:36:45.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Video.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Video.cs",
+              "RelativeDocumentMoniker": "Models\\Video.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Video.cs",
+              "RelativeToolTip": "Models\\Video.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:17:13.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:39:44.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Offer.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Offer.cs",
+              "RelativeDocumentMoniker": "Models\\Offer.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Offer.cs",
+              "RelativeToolTip": "Models\\Offer.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:41:31.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OfferConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\OfferConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\OfferConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\OfferConfiguration.cs",
+              "RelativeToolTip": "Data\\OfferConfiguration.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAiwBsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:58:42.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RatingConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\RatingConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\RatingConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\RatingConfiguration.cs",
+              "RelativeToolTip": "Data\\RatingConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:57:32.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentsController.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "Controllers\\StudentsController.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAiwHIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:50:42.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RecruitersController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\RecruitersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecruitersController.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\RecruitersController.cs",
+              "RelativeToolTip": "Controllers\\RecruitersController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAADwvygAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:51:10.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RatingService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\RatingService.cs",
+              "RelativeDocumentMoniker": "Services\\RatingService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\RatingService.cs",
+              "RelativeToolTip": "Services\\RatingService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:44:24.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IOfferService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\IOfferService.cs",
+              "RelativeDocumentMoniker": "Services\\IOfferService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\IOfferService.cs",
+              "RelativeToolTip": "Services\\IOfferService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:23:22.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "OfferService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\OfferService.cs",
+              "RelativeDocumentMoniker": "Services\\OfferService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\OfferService.cs",
+              "RelativeToolTip": "Services\\OfferService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:23:16.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IRatingService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\IRatingService.cs",
+              "RelativeDocumentMoniker": "Services\\IRatingService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\IRatingService.cs",
+              "RelativeToolTip": "Services\\IRatingService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:45:27.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\IStudentService.cs",
+              "RelativeDocumentMoniker": "Services\\IStudentService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\IStudentService.cs",
+              "RelativeToolTip": "Services\\IStudentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:49:57.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CreateOfferDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateOfferDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateOfferDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateOfferDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateOfferDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T18:15:51.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "OffersController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\OffersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OffersController.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\OffersController.cs",
+              "RelativeToolTip": "Controllers\\OffersController.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAmwCwAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T16:27:02.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IRecruiterService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\IRecruiterService.cs",
+              "RelativeDocumentMoniker": "Services\\IRecruiterService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\IRecruiterService.cs",
+              "RelativeToolTip": "Services\\IRecruiterService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:15:33.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ICommentService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\ICommentService.cs",
+              "RelativeDocumentMoniker": "Services\\ICommentService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\ICommentService.cs",
+              "RelativeToolTip": "Services\\ICommentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T18:16:13.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "OfferDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\OfferDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\OfferDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\OfferDTO.cs",
+              "RelativeToolTip": "DTOs\\OfferDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:24:47.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CommentService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\CommentService.cs",
+              "RelativeDocumentMoniker": "Services\\CommentService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\CommentService.cs",
+              "RelativeToolTip": "Services\\CommentService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAcwAYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:48:26.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "VideosController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\VideosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VideosController.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\VideosController.cs",
+              "RelativeToolTip": "Controllers\\VideosController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAEwDwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T16:25:36.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "VideoService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\VideoService.cs",
+              "RelativeDocumentMoniker": "Services\\VideoService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\VideoService.cs",
+              "RelativeToolTip": "Services\\VideoService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:28:41.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IServices.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\IServices.cs",
+              "RelativeDocumentMoniker": "Services\\IServices.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\IServices.cs",
+              "RelativeToolTip": "Services\\IServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:49:38.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\Service.cs",
+              "RelativeDocumentMoniker": "Services\\Service.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\Service.cs",
+              "RelativeToolTip": "Services\\Service.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:21:28.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "StudentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\StudentDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\StudentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\StudentDTO.cs",
+              "RelativeToolTip": "DTOs\\StudentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:27:45.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "BandService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\BandService.cs",
+              "RelativeDocumentMoniker": "Services\\BandService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\BandService.cs",
+              "RelativeToolTip": "Services\\BandService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:25:29.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "IBandService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\IBandService.cs",
+              "RelativeDocumentMoniker": "Services\\IBandService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\IBandService.cs",
+              "RelativeToolTip": "Services\\IBandService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:18:20.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "BandsController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\BandsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BandsController.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Controllers\\BandsController.cs",
+              "RelativeToolTip": "Controllers\\BandsController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAIwCgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T16:20:29.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "CreateCommentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateCommentDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateCommentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateCommentDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateCommentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:46:50.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CreateInterestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateInterestDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateInterestDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateInterestDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateInterestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:49:30.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "RatingDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\RatingDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\RatingDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\RatingDTO.cs",
+              "RelativeToolTip": "DTOs\\RatingDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:43:10.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "CreateVideoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateVideoDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateVideoDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateVideoDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateVideoDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:44:19.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "CreateStudentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateStudentDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateStudentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateStudentDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateStudentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:35:54.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "CreateRecruiterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateRecruiterDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateRecruiterDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateRecruiterDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateRecruiterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:36:37.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "CreateRatingDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateRatingDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateRatingDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\CreateRatingDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateRatingDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:46:09.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "InterestConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Data\\InterestConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\InterestConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Data\\InterestConfiguration.cs",
+              "RelativeToolTip": "Data\\InterestConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:48:24.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "InterestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\InterestDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\InterestDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\InterestDTO.cs",
+              "RelativeToolTip": "DTOs\\InterestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:42:59.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "VideoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\VideoDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\VideoDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\VideoDTO.cs",
+              "RelativeToolTip": "DTOs\\VideoDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:16:46.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Models\\Admin.cs",
+              "RelativeToolTip": "Models\\Admin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T15:37:20.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:31:17.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "UpdateCommentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateCommentDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateCommentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateCommentDTO.cs",
+              "RelativeToolTip": "DTOs\\UpdateCommentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:47:05.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "UpdateOfferDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateOfferDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateOfferDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateOfferDTO.cs",
+              "RelativeToolTip": "DTOs\\UpdateOfferDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:48:30.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "UpdateVideoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateVideoDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateVideoDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateVideoDTO.cs",
+              "RelativeToolTip": "DTOs\\UpdateVideoDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:44:38.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "UpdateStudentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateStudentDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateStudentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateStudentDTO.cs",
+              "RelativeToolTip": "DTOs\\UpdateStudentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:36:00.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "UpdateBandDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateBandDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateBandDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\DTOs\\UpdateBandDTO.cs",
+              "RelativeToolTip": "DTOs\\UpdateBandDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:38:44.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "IVideoService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\source\\repos\\server\\Services\\IVideoService.cs",
+              "RelativeDocumentMoniker": "Services\\IVideoService.cs",
+              "ToolTip": "C:\\Users\\josep\\source\\repos\\server\\Services\\IVideoService.cs",
+              "RelativeToolTip": "Services\\IVideoService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T05:19:42.303Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

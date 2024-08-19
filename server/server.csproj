@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DTOs\BandDTO\**" />
+    <Content Remove="DTOs\BandDTO\**" />
+    <EmbeddedResource Remove="DTOs\BandDTO\**" />
+    <None Remove="DTOs\BandDTO\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="BandsJson.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="misc\BandsJson.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\Band\" />
+    <Folder Include="DTOs\Comment\" />
+    <Folder Include="DTOs\Interest\" />
+    <Folder Include="DTOs\Offer\" />
+    <Folder Include="DTOs\Rating\" />
+    <Folder Include="DTOs\Recruiter\" />
+    <Folder Include="DTOs\Student\" />
+    <Folder Include="DTOs\Video\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>
