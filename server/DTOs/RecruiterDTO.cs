@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace server.DTOs
 {
     [ModelBinder(BinderType = typeof(JsonModelBinder))]
-    public class RecruiterDTO(Recruiter recruiter)
+    public class RecruiterDTO
     {
         //public int RecruiterBandId { get; set; }
         //public int RecruiterId { get; set; }

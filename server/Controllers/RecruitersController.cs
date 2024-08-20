@@ -38,7 +38,7 @@ namespace server.Controllers
         public async Task<ActionResult<IEnumerable<RecruiterDTO>>> GetRecruiters()
         {
             var recruiters = await _recruiterService.GetRecruitersAsync();
-            return Ok(recruiters.Select(r => new RecruiterDTO(r)));
+            return Ok(recruiters);
         }
 
         // GET: api/recruiter/{id}
@@ -50,7 +50,7 @@ namespace server.Controllers
             {
                 return NotFound();
             }
-            return Ok(new RecruiterDTO(recruiter));
+            return Ok(new RecruiterDTO());
         }
 
         // POST: api/recruiter
