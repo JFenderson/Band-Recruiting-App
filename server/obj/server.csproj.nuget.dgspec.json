@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josep\\source\\repos\\server\\server.csproj": {}
+    "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josep\\source\\repos\\server\\server.csproj": {
+    "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josep\\source\\repos\\server\\server.csproj",
+        "projectUniqueName": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\server.csproj",
         "projectName": "server",
-        "projectPath": "C:\\Users\\josep\\source\\repos\\server\\server.csproj",
+        "projectPath": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\server.csproj",
         "packagesPath": "C:\\Users\\josep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josep\\source\\repos\\server\\obj\\",
+        "outputPath": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -74,13 +78,21 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.7.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             }
           },
           "imports": [

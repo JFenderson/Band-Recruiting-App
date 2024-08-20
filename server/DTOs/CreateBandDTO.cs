@@ -4,6 +4,8 @@
     {
         public string Name { get; set; }
         public string SchoolName { get; set; }
-        public string Description { get; set; }
+        public string Location { get; set; }
+        public int NumberOfMembers { get; set; }
+        
     }
 }

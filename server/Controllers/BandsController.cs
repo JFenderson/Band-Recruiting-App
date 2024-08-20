@@ -10,11 +10,12 @@ using server.Data;
 using Models;
 using server.DTOs;
 using server.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace server.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class BandsController : ControllerBase
     {
         private readonly IBandService _bandService;
@@ -24,68 +25,62 @@ namespace server.Controllers
             _bandService = bandService;
         }
 
-        // GET: api/Bands
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BandDTO>>> GetAllBands()
+        public async Task<ActionResult<IEnumerable<Band>>> GetBands()
         {
-            var bands = await _bandService.GetAllAsync();
-            return Ok(bands.Select(b => new Band()));
+            var bands = await _bandService.GetBandsAsync();
+            return Ok(bands);
         }
 
-        // GET: api/Bands/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BandDTO>> GetBand(int id)
+        public async Task<ActionResult<Band>> GetBand(int id)
         {
-            var band = await _bandService.GetByIdAsync(id);
+            var band = await _bandService.GetBandByIdAsync(id);
             if (band == null)
+            {
                 return NotFound();
+            }
 
-            return Ok(new BandDTO(band));
+            return Ok(band);
         }
 
-        // PUT: api/Bands/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBand(int id, UpdateBandDTO updateBandDto)
+        [Authorize(Policy = "RequireAdminRole")]
+        [HttpPost]
+        public async Task<ActionResult<Band>> CreateBand(Band band)
         {
-            var band = await _bandService.GetByIdAsync(id);
-            if (band == null)
+            var createdBand = await _bandService.CreateBandAsync(band);
+            return CreatedAtAction(nameof(GetBand), new { id = createdBand.BandId }, createdBand);
+        }
+
+        [Authorize(Policy = "RequireRecruiterRole")]
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateBand(int id, Band band)
+        {
+            if (id != band.BandId)
+            {
+                return BadRequest();
+            }
+
+            var success = await _bandService.UpdateBandAsync(band);
+            if (!success)
+            {
                 return NotFound();
-
-            // Update band properties from updateBandDto
-
-            await _bandService.UpdateAsync(band);
+            }
 
             return NoContent();
         }
 
-        // POST: api/Bands
-        [HttpPost]
-        public async Task<ActionResult<BandDTO>> CreateBand(CreateBandDTO createBandDto)
-        {
-            var band = new Band
-            {
-                // Map properties from createBandDto to Band
-            };
-
-            await _bandService.AddAsync(band);
-
-            return CreatedAtAction(nameof(GetBand), new { id = band.BandId }, new BandDTO(band));
-        }
-
-        // DELETE: api/Bands/5
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBand(int id)
         {
-            var band = await _bandService.GetByIdAsync(id);
-            if (band == null)
+            var success = await _bandService.DeleteBandAsync(id);
+            if (!success)
+            {
                 return NotFound();
-
-            await _bandService.DeleteAsync(band);
+            }
 
             return NoContent();
         }
-
-     
     }
 }

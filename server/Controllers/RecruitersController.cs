@@ -29,6 +29,7 @@ namespace server.Controllers
             _commentService = commentService;
         }
 
+
         // GET: api/recruiter
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RecruiterDTO>>> GetRecruiters()
