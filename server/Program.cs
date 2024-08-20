@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using server.Data;
 using server.Helpers;
+using server.Middleware;
 using server.Models;
 using server.Services;
 using System.Text;
@@ -13,7 +14,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.IncludeFields = true;
+    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -54,6 +59,7 @@ builder.Services.AddScoped<IBandService, BandService>();
 builder.Services.AddScoped<IVideoService, VideoService>();
 builder.Services.AddScoped<IOfferService, OfferService>();
 builder.Services.AddScoped<IRatingService, RatingService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -115,6 +121,8 @@ app.UseCors(x => x
       .SetIsOriginAllowed(origin => true));
 
 app.UseStaticFiles();
+
+app.UseMiddleware<JsonExceptionMiddleware>();
 
 app.UseRouting();
 

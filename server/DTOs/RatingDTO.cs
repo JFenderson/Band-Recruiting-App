@@ -6,6 +6,7 @@ namespace server.DTOs
     {
         public int RatingId { get; set; }
         public int VideoId { get; set; }
+        public int StudentId { get; set; }
         public int RecruiterId { get; set; }
         public string RecruiterName { get; set; }
         public int Score { get; set; }

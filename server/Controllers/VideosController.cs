@@ -80,16 +80,16 @@ namespace server.Controllers
         }
 
         [HttpGet("{id}/ratings")]
-        public async Task<ActionResult<IEnumerable<RatingDTO>>> GetVideoRatings(int id)
+        public async Task<ActionResult<IEnumerable<RatingDTO>>> GetVideoRatings(string videoId)
         {
-            var ratings = await _videoService.GetVideoRatingsAsync(id);
+            var ratings = await _videoService.GetVideoRatingsAsync(videoId);
             return Ok(ratings.Select(r => new RatingDTO(r)));
         }
 
         [HttpGet("{id}/comments")]
-        public async Task<ActionResult<IEnumerable<CommentDTO>>> GetVideoComments(int id)
+        public async Task<ActionResult<IEnumerable<CommentDTO>>> GetVideoComments(string videoId)
         {
-            var comments = await _videoService.GetVideoCommentsAsync(id);
+            var comments = await _videoService.GetVideoCommentsAsync(videoId);
             return Ok(comments.Select(c => new CommentDTO(c)));
         }
     }

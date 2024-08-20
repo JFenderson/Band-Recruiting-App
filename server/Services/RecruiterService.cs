@@ -1,15 +1,22 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using server.Data;
 using server.DTOs;
+using server.Models;
 
 namespace server.Services
 {
     public class RecruiterService : Service<Recruiter>, IRecruiterService
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public RecruiterService(ApplicationDbContext context) : base(context) { }
+        public RecruiterService(ApplicationDbContext context, UserManager<User> userManager) : base(context) 
+        {
+            _context = context;
+            _userManager = userManager;
+        }
 
         public async Task<IEnumerable<Recruiter>> GetRecruitersByBandAsync(int bandId)
         {
@@ -64,20 +71,28 @@ namespace server.Services
             };
         }
 
-        public async Task<Recruiter> CreateRecruiterAsync(Recruiter recruiterDTO)
+        public async Task<Recruiter> CreateRecruiterAsync(RecruiterDTO recruiterDTO)
         {
             var recruiter = new Recruiter
             {
+                UserName = recruiterDTO.UserName,
+                Email = recruiterDTO.Email, // Ensure this is set
                 FirstName = recruiterDTO.FirstName,
                 LastName = recruiterDTO.LastName,
-                Email = recruiterDTO.Email,
-                Id = recruiterDTO.Id
+                Phone = recruiterDTO.Phone,
+                ProfilePicture = recruiterDTO.ProfilePicture,
+                BandId = recruiterDTO.BandId,
+                CreatedAt = DateTime.UtcNow
             };
 
-            _context.Users.Add(recruiter);
-            await _context.SaveChangesAsync();
+            var result = await _userManager.CreateAsync(recruiter, recruiterDTO.Password);
 
-            return recruiterDTO;
+            if (!result.Succeeded)
+            {
+                throw new Exception(string.Join(", ", result.Errors.Select(e => e.Description)));
+            }
+
+            return recruiter;
         }
 
         public async Task<bool> UpdateRecruiterAsync(string recruiterId, Recruiter recruiterDTO)

@@ -5,7 +5,7 @@ namespace server.DTOs
     public class VideoDTO(Video video)
     {
         public int VideoId { get; set; }
-        public int StudentId { get; set; }
+        public string StudentId { get; set; }
         public string StudentName { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

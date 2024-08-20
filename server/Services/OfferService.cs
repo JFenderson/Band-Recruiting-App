@@ -9,7 +9,10 @@ namespace server.Services
     {
         private readonly ApplicationDbContext _context;
 
-        public OfferService(ApplicationDbContext context) : base(context) { }
+        public OfferService(ApplicationDbContext context) : base(context) 
+        {
+            _context = context;
+        }
 
 
         public async Task<IEnumerable<Offer>> GetOffersByBandAsync(int bandId)
@@ -26,29 +29,32 @@ namespace server.Services
                 .ToListAsync();
         }
 
-        public async Task<OfferDTO> SendOfferAsync(int bandId, string studentId, string recruiterId, string amount, OfferDTO offerDTO)
+        public async Task<Offer> SendOfferAsync(string studentId, string recruiterId, int bandId, decimal amount)
         {
             var offer = new Offer
             {
-                OfferBandId = bandId,
                 StudentId = studentId,
                 RecruiterId = recruiterId,
-                Amount = offerDTO.Amount,
-                OfferDate = offerDTO.OfferDate,
+                OfferBandId = bandId,
+                Amount = amount,
+                Status = OfferStatus.Pending, // Initialize the status as Pending
+                OfferDate = DateTime.UtcNow
             };
 
             _context.Offers.Add(offer);
             await _context.SaveChangesAsync();
 
-            return new OfferDTO(offer)
-            {
-                OfferId = offer.OfferId,
-                BandId = offer.OfferBandId,
-                StudentId = offer.StudentId,
-                RecruiterId = offer.RecruiterId,
-                Amount = offer.Amount,
-                OfferDate = offer.OfferDate
-            };
+            return offer;
         }
+
+        public async Task<bool> UpdateOfferStatusAsync(int offerId, OfferStatus status)
+        {
+            var offer = await _context.Offers.FindAsync(offerId);
+            if (offer == null) return false;
+
+            offer.Status = status;
+            return await _context.SaveChangesAsync() > 0;
+        }
+
     }
 }

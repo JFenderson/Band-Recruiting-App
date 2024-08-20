@@ -16,20 +16,23 @@ namespace server.Controllers
         private readonly IStudentService _studentService;
         private readonly IRatingService _ratingService;
         private readonly ICommentService _commentService;
+        private readonly IOfferService _offerService;
 
         public RecruiterController(
             IRecruiterService recruiterService,
             IStudentService studentService,
+            IOfferService offerService,
             IRatingService ratingService,
             ICommentService commentService)
         {
             _recruiterService = recruiterService;
             _studentService = studentService;
             _ratingService = ratingService;
+            _offerService = offerService;
             _commentService = commentService;
         }
 
-
+        #region Recruiter
         // GET: api/recruiter
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RecruiterDTO>>> GetRecruiters()
@@ -52,27 +55,38 @@ namespace server.Controllers
 
         // POST: api/recruiter
         [HttpPost]
-        public async Task<ActionResult<RecruiterDTO>> CreateRecruiter(CreateRecruiterDTO createRecruiterDto)
+        public async Task<ActionResult<RecruiterDTO>> CreateRecruiter(RecruiterDTO createRecruiterDTO)
         {
-            var recruiter = new Recruiter
+            if (!ModelState.IsValid)
             {
-                // Map properties from createRecruiterDto to Recruiter
-            };
+                return BadRequest(ModelState);
+            }
 
-            await _recruiterService.AddAsync(recruiter);
+            try
+            {
+                var recruiter = await _recruiterService.CreateRecruiterAsync(createRecruiterDTO);
+                return Ok(recruiter);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Error = ex.Message });
+            }
 
-            return CreatedAtAction(nameof(GetRecruiters), new { id = recruiter.Id }, new RecruiterDTO(recruiter));
+
+            //await _recruiterService.AddAsync(recruiter);
+
+            //return CreatedAtAction(nameof(GetRecruiters), new { id = recruiter.Id }, new RecruiterDTO(recruiter));
         }
 
         // PUT: api/recruiter/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRecruiter(int id, UpdateRecruiterDTO updateRecruiterDto)
+        public async Task<IActionResult> UpdateRecruiter(int id, UpdateRecruiterDTO updateRecruiterDTO)
         {
             var recruiter = await _recruiterService.GetByIdAsync(id);
             if (recruiter == null)
                 return NotFound();
 
-            // Update recruiter properties from updateRecruiterDto
+            // Update recruiter properties from updateRecruiterDTO
 
             await _recruiterService.UpdateAsync(recruiter);
 
@@ -91,26 +105,9 @@ namespace server.Controllers
 
             return NoContent();
         }
+        #endregion
 
-        // POST: api/recruiter/{recruiterId}/rate/{studentId}
-        [HttpPost("{recruiterId}/rate/{studentId}")]
-        public async Task<IActionResult> RateStudent(string recruiterId, string studentId, [FromBody] RatingDTO ratingDTO)
-        {
-            //var student = await _studentService.GetStudentByIdAsync(studentId);
-            //if (student == null)
-            //{
-            //    return NotFound("Student not found.");
-            //}
-
-            var result = await _ratingService.RateStudentAsync(recruiterId, studentId, ratingDTO);
-            if (!result)
-            {
-                return BadRequest("Rating failed.");
-            }
-
-            return Ok("Rating submitted successfully.");
-        }
-
+        #region Comment
         // POST: api/recruiter/{recruiterId}/comment/{studentId}
         [HttpPost("{recruiterId}/comment/{studentId}")]
         public async Task<IActionResult> CommentOnStudent(string recruiterId, string studentId, [FromBody] CommentDTO commentDTO)
@@ -130,11 +127,12 @@ namespace server.Controllers
             return Ok("Comment submitted successfully.");
         }
 
-        [HttpGet("{id}/ratings")]
-        public async Task<ActionResult<IEnumerable<RatingDTO>>> GetRecruiterRatings(string id)
+        // POST: api/recruiter/comment
+        [HttpPost("comment")]
+        public async Task<ActionResult<Comment>> AddComment([FromBody] CommentDTO commentDTO)
         {
-            var ratings = await _recruiterService.GetRecruiterRatingsAsync(id);
-            return Ok(ratings.Select(r => new RatingDTO(r)));
+            var comment = await _commentService.CommentOnVideoAsync(commentDTO.VideoId, commentDTO.RecruiterId, commentDTO.Content);
+            return Ok(comment);
         }
 
         [HttpGet("{id}/comments")]
@@ -143,5 +141,77 @@ namespace server.Controllers
             var comments = await _recruiterService.GetRecruiterCommentsAsync(id);
             return Ok(comments.Select(c => new CommentDTO(c)));
         }
+        #endregion
+
+        #region Rating
+        // POST: api/recruiter/{recruiterId}/rate/{studentId}
+        [HttpPost("{recruiterId}/rate/{studentId}")]
+        public async Task<IActionResult> RateStudent(string recruiterId, string studentId, [FromBody] RatingDTO ratingDTO)
+        {
+            //var student = await _studentService.GetStudentByIdAsync(studentId);
+            //if (student == null)
+            //{
+            //    return NotFound("Student not found.");
+            //}
+
+            var result = await _ratingService.RateStudentAsync(recruiterId, studentId, ratingDTO);
+            if (!result)
+            {
+                return BadRequest("Rating failed.");
+            }
+
+            return Ok("Rating submitted successfully.");
+        }
+
+        [HttpGet("{id}/ratings")]
+        public async Task<ActionResult<IEnumerable<RatingDTO>>> GetRecruiterRatings(string id)
+        {
+            var ratings = await _recruiterService.GetRecruiterRatingsAsync(id);
+            return Ok(ratings.Select(r => new RatingDTO(r)));
+        }
+
+        // GET: api/recruiter/ratings/student/{studentId}
+        [HttpGet("ratings/student/{studentId}")]
+        public async Task<ActionResult<IEnumerable<Rating>>> GetRatings(string studentId)
+        {
+            var ratings = await _ratingService.GetRatingsByStudentIdAsync(studentId);
+            return Ok(ratings);
+        }
+
+        // GET: api/recruiter/ratings/student/{studentId}/average
+        [HttpGet("ratings/student/{studentId}/average")]
+        public async Task<ActionResult<double>> GetAverageRating(string studentId)
+        {
+            var averageRating = await _ratingService.GetAverageRatingForStudentAsync(studentId);
+            return Ok(averageRating);
+        }
+        #endregion
+
+        #region Offer
+        // POST: api/recruiter/offer
+        [HttpPost("offer")]
+        public async Task<ActionResult<Offer>> SendOffer([FromBody] OfferDTO offerDTO)
+        {
+            var offer = await _offerService.SendOfferAsync(offerDTO.StudentId, offerDTO.RecruiterId,offerDTO.OfferBandId, offerDTO.Amount);
+            return Ok(offer);
+        }
+
+        // PUT: api/recruiter/offer/{offerId}/status
+        [HttpPut("offer/{offerId}/status")]
+        public async Task<IActionResult> UpdateOfferStatus(int offerId, [FromBody] OfferStatusDTO statusDTO)
+        {
+            var success = await _offerService.UpdateOfferStatusAsync(offerId, statusDTO.Status);
+            if (!success)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
+        }
+
+
+        #endregion
+
+
     }
 }
