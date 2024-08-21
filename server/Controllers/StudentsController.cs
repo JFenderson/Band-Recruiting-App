@@ -21,101 +21,133 @@ namespace server.Controllers
         private readonly IVideoService _videoService;
 
 
-        public StudentController(IStudentService studentRepository, IVideoService videoService)
+        public StudentController(IStudentService studentService, IVideoService videoService)
         {
-            _studentService = studentRepository;
+            _studentService = studentService;
             _videoService = videoService;
         }
 
+        // GET: api/Student
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<StudentDTO>>> GetAllStudents()
+        public async Task<ActionResult<IEnumerable<Student>>> GetAllStudents()
         {
-            var students = await _studentService.GetAllAsync();
-            return Ok(students.Select(s => new StudentDTO(s)));
+            var students = await _studentService.GetAllStudentsAsync();
+            return Ok(students);
         }
 
+        // GET: api/Student/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<StudentDTO>> GetStudent(int id)
+        public async Task<ActionResult<StudentDTO>> GetStudentById(int id)
         {
-            var student = await _studentService.GetByIdAsync(id);
-            if (student == null)
-                return NotFound();
-
-            var studentDto = new StudentDTO(student)
+            try
             {
-                StudentId = student.Id,
-                //UserName = student.UserName,
-                Email = student.Email,
-                FirstName = student.FirstName,
-                LastName = student.LastName,
-                Instrument = student.Instrument,
-                HighSchool = student.HighSchool,
-                GraduationYear = student.GraduationYear
-            };
-
-            return Ok(new StudentDTO(student));
+                var student = await _studentService.GetStudentByIdAsync(id);
+                return Ok(student);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
 
+        // POST: api/Student
         [HttpPost]
-        public async Task<ActionResult<StudentDTO>> CreateStudent(CreateStudentDTO createStudentDTO)
+        public async Task<ActionResult<Student>> CreateStudent([FromBody] CreateStudentDTO createStudentDTO)
         {
-            var student = new Student
+            if (!ModelState.IsValid)
             {
-                // Map properties from createStudentDTO to Student
-            
-                UserName = createStudentDTO.UserName,
-                Email = createStudentDTO.Email,
-                FirstName = createStudentDTO.FirstName,
-                LastName = createStudentDTO.LastName,
-                Instrument = createStudentDTO.Instrument,
-                HighSchool = createStudentDTO.HighSchool,
-                GraduationYear = createStudentDTO.GraduationYear
-            
-            };
+                return BadRequest(ModelState);
+            }
 
-            await _studentService.AddAsync(student);
-
-            return CreatedAtAction(nameof(GetStudent), new { id = student.Id }, new StudentDTO(student));
+            try
+            {
+                var student = await _studentService.CreateStudentAsync(createStudentDTO);
+                return CreatedAtAction(nameof(GetStudentById), new { id = student.Id }, student);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Error = ex.Message });
+            }
         }
 
+        // PUT: api/Student/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateStudent(int id, UpdateStudentDTO updateStudentDTO)
+        public async Task<ActionResult<Student>> UpdateStudent(int id, [FromBody] UpdateStudentDTO updateStudentDTO)
         {
-            var student = await _studentService.GetByIdAsync(id);
-            if (student == null)
-                return NotFound();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            // Update student properties from updateStudentDTO
-
-            await _studentService.UpdateAsync(student);
-
-            return NoContent();
+            try
+            {
+                var updatedStudent = await _studentService.UpdateStudentAsync(id, updateStudentDTO);
+                return Ok(updatedStudent);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
 
+        // DELETE: api/Student/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStudent(int id)
+        public async Task<ActionResult> DeleteStudent(int id)
         {
-            var student = await _studentService.GetByIdAsync(id);
-            if (student == null)
-                return NotFound();
-
-            await _studentService.DeleteAsync(student);
-
+            var result = await _studentService.DeleteStudentAsync(id);
+            if (!result)
+            {
+                return NotFound(new { Message = "Student not found." });
+            }
             return NoContent();
         }
 
-        [HttpGet("{id}/videos")]
-        public async Task<ActionResult<IEnumerable<VideoDTO>>> GetStudentVideos(string id)
+        // GET: api/Student/gradYear/2024
+        [HttpGet("gradYear/{gradYear}")]
+        public async Task<ActionResult<IEnumerable<Student>>> GetStudentsByGradYear(int gradYear)
         {
-            var videos = await _studentService.GetStudentVideosAsync(id);
-            return Ok(videos.Select(v => new VideoDTO(v)));
+            var students = await _studentService.GetStudentsByGradYearAsync(gradYear);
+            return Ok(students);
         }
 
-        [HttpGet("{id}/scholarshipoffers")]
-        public async Task<ActionResult<IEnumerable<OfferDTO>>> GetStudentScholarshipOffers(string id)
+        // GET: api/Student/instrument/Trumpet
+        [HttpGet("instrument/{instrument}")]
+        public async Task<ActionResult<IEnumerable<Student>>> GetStudentsByInstrument(string instrument)
         {
-            var offers = await _studentService.GetStudentScholarshipOffersAsync(id);
-            return Ok(offers.Select(o => new OfferDTO(o)));
+            var students = await _studentService.GetStudentsByInstrumentAsync(instrument);
+            return Ok(students);
+        }
+
+        // GET: api/Student/5/videos
+        [HttpGet("{id}/videos")]
+        public async Task<ActionResult<IEnumerable<Video>>> GetStudentVideos(int id)
+        {
+            var videos = await _studentService.GetStudentVideosAsync(id.ToString());
+            return Ok(videos);
+        }
+
+        // GET: api/Student/5/ratings
+        [HttpGet("{id}/ratings")]
+        public async Task<ActionResult<IEnumerable<Rating>>> GetStudentRatings(int id)
+        {
+            var ratings = await _studentService.GetStudentRatingsAsync(id.ToString());
+            return Ok(ratings);
+        }
+
+        // GET: api/Student/5/comments
+        [HttpGet("{id}/comments")]
+        public async Task<ActionResult<IEnumerable<Comment>>> GetStudentComments(int id)
+        {
+            var comments = await _studentService.GetStudentCommentsAsync(id.ToString());
+            return Ok(comments);
+        }
+
+        // GET: api/Student/5/offers
+        [HttpGet("{id}/offers")]
+        public async Task<ActionResult<IEnumerable<Offer>>> GetStudentScholarshipOffers(int id)
+        {
+            var offers = await _studentService.GetStudentScholarshipOffersAsync(id.ToString());
+            return Ok(offers);
         }
     }
 }

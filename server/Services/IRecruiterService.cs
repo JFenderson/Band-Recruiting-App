@@ -10,8 +10,8 @@ namespace server.Services
         Task<IEnumerable<Rating>> GetRecruiterRatingsAsync(string recruiterId);
         Task<IEnumerable<Comment>> GetRecruiterCommentsAsync(string recruiterId);
         Task<Recruiter> GetRecruiterByIdAsync(string recruiterId);
-        Task<Recruiter> CreateRecruiterAsync(RecruiterDTO recruiterDTO);
-        Task<bool> UpdateRecruiterAsync(string recruiterId, Recruiter recruiterDTO);
+        Task<Recruiter> CreateRecruiterAsync(CreateRecruiterDTO recruiterDTO);
+        Task<bool> UpdateRecruiterAsync(string recruiterId, UpdateRecruiterDTO recruiterDTO);
         Task<bool> DeleteRecruiterAsync(string recruiterId);
     }
 }

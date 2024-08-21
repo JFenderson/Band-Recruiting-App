@@ -14,13 +14,13 @@ using System.Threading.Tasks;
 
 namespace TBRServerTests.Services
 {
-   public class RecruiterService_CreateRecruiterAsyncTests
+   public class RecruiterService_CreateRecruiterTests
 {
     private readonly RecruiterService _service;
     private readonly Mock<UserManager<User>> _userManagerMock;
-    private readonly Mock<ApplicationDbContext> _contextMock;
+        private readonly Mock<ApplicationDbContext> _contextMock;
 
-    public RecruiterService_CreateRecruiterAsyncTests()
+    public RecruiterService_CreateRecruiterTests()
     {
         // Setting up a mock UserManager
         var store = new Mock<IUserStore<User>>();
@@ -39,7 +39,7 @@ namespace TBRServerTests.Services
     public async Task CreateRecruiterAsync_ValidInput_ReturnsRecruiter()
     {
         // Arrange
-        var recruiterDto = new RecruiterDTO
+        var recruiterDto = new CreateRecruiterDTO
         {
             UserName = "recruiter1",
             Email = "recruiter1@example.com",
@@ -66,7 +66,7 @@ namespace TBRServerTests.Services
     public async Task CreateRecruiterAsync_InvalidUserCreation_ThrowsException()
     {
         // Arrange
-        var recruiterDto = new RecruiterDTO
+        var recruiterDto = new CreateRecruiterDTO
         {
             UserName = "recruiter1",
             Email = "recruiter1@example.com",

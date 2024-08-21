@@ -55,7 +55,7 @@ namespace server.Controllers
 
         // POST: api/recruiter
         [HttpPost]
-        public async Task<ActionResult<RecruiterDTO>> CreateRecruiter(RecruiterDTO createRecruiterDTO)
+        public async Task<ActionResult> CreateRecruiter([FromBody] CreateRecruiterDTO recruiterDto)
         {
             if (!ModelState.IsValid)
             {
@@ -64,25 +64,22 @@ namespace server.Controllers
 
             try
             {
-                var recruiter = await _recruiterService.CreateRecruiterAsync(createRecruiterDTO);
+                var recruiter = await _recruiterService.CreateRecruiterAsync(recruiterDto);
                 return Ok(recruiter);
             }
             catch (Exception ex)
             {
+                // Return the detailed error message to diagnose the issue
+                var innerException = ex.InnerException?.Message ?? ex.Message;
                 return BadRequest(new { Error = ex.Message });
             }
-
-
-            //await _recruiterService.AddAsync(recruiter);
-
-            //return CreatedAtAction(nameof(GetRecruiters), new { id = recruiter.Id }, new RecruiterDTO(recruiter));
         }
 
         // PUT: api/recruiter/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRecruiter(int id, UpdateRecruiterDTO updateRecruiterDTO)
+        public async Task<IActionResult> UpdateRecruiter(string id, UpdateRecruiterDTO updateRecruiterDTO)
         {
-            var recruiter = await _recruiterService.GetByIdAsync(id);
+            var recruiter = await _recruiterService.GetRecruiterByIdAsync(id);
             if (recruiter == null)
                 return NotFound();
 

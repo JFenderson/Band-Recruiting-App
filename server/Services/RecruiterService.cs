@@ -12,7 +12,7 @@ namespace server.Services
         private readonly ApplicationDbContext _context;
         private readonly UserManager<User> _userManager;
 
-        public RecruiterService(ApplicationDbContext context, UserManager<User> userManager) : base(context) 
+        public RecruiterService(ApplicationDbContext context, UserManager<User> userManager) : base(context)
         {
             _context = context;
             _userManager = userManager;
@@ -44,13 +44,6 @@ namespace server.Services
         {
             return await _context.Users
                 .OfType<Recruiter>()
-                .Select(r => new Recruiter
-                {
-                    FirstName = r.FirstName,
-                    LastName = r.LastName,  
-                    Email = r.Email,
-                    Id = r.Id
-                })
                 .ToListAsync();
         }
 
@@ -71,31 +64,57 @@ namespace server.Services
             };
         }
 
-        public async Task<Recruiter> CreateRecruiterAsync(RecruiterDTO recruiterDTO)
+        public async Task<Recruiter> CreateRecruiterAsync(CreateRecruiterDTO createRecruiterDTO)
         {
+            //{
+            //    "userName": "Juke1",
+            //      "email": "user@subr.com",
+            //      "password": "Password@123",
+            //      "firstName": "Human",
+            //      "lastName": "Jukebox",
+            //      "bandId": 2,
+            //      "phone": "222-222-2222"
+            //    }
+
+            // Check if the email already exists
+            var existingUserByEmail = await _userManager.FindByEmailAsync(createRecruiterDTO.Email);
+            if (existingUserByEmail != null)
+            {
+                throw new Exception("A user with this email already exists.");
+            }
+
+            // Check if the username already exists
+            var existingUserByUsername = await _userManager.FindByNameAsync(createRecruiterDTO.UserName);
+            if (existingUserByUsername != null)
+            {
+                throw new Exception("A user with this username already exists.");
+            }
+
             var recruiter = new Recruiter
             {
-                UserName = recruiterDTO.UserName,
-                Email = recruiterDTO.Email, // Ensure this is set
-                FirstName = recruiterDTO.FirstName,
-                LastName = recruiterDTO.LastName,
-                Phone = recruiterDTO.Phone,
-                ProfilePicture = recruiterDTO.ProfilePicture,
-                BandId = recruiterDTO.BandId,
+                UserName = createRecruiterDTO.UserName,
+                Email = createRecruiterDTO.Email,
+                FirstName = createRecruiterDTO.FirstName,
+                LastName = createRecruiterDTO.LastName,
+                BandId = createRecruiterDTO.BandId,
+                Phone = createRecruiterDTO.Phone,
+                ProfilePicture = createRecruiterDTO.Phone,
                 CreatedAt = DateTime.UtcNow
             };
 
-            var result = await _userManager.CreateAsync(recruiter, recruiterDTO.Password);
+            var result = await _userManager.CreateAsync(recruiter, createRecruiterDTO.Password);
 
             if (!result.Succeeded)
             {
                 throw new Exception(string.Join(", ", result.Errors.Select(e => e.Description)));
             }
 
+            // Optionally, assign a role to the recruiter
+            await _userManager.AddToRoleAsync(recruiter, "Recruiter");
             return recruiter;
         }
 
-        public async Task<bool> UpdateRecruiterAsync(string recruiterId, Recruiter recruiterDTO)
+        public async Task<bool> UpdateRecruiterAsync(string recruiterId, UpdateRecruiterDTO recruiterDTO)
         {
             var recruiter = await _context.Users.OfType<Recruiter>().FirstOrDefaultAsync(r => r.Id == recruiterId);
 
@@ -104,7 +123,7 @@ namespace server.Services
             recruiter.FirstName = recruiterDTO.FirstName;
             recruiter.LastName = recruiterDTO.LastName;
             recruiter.Email = recruiterDTO.Email;
-            recruiter.Id = recruiterDTO.Id;
+            
 
             _context.Users.Update(recruiter);
             await _context.SaveChangesAsync();

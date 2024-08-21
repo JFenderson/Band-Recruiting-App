@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class _InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -266,8 +266,7 @@ namespace server.Migrations
                 name: "Videos",
                 columns: table => new
                 {
-                    VideoId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    VideoId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     VideoUrl = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
@@ -294,7 +293,7 @@ namespace server.Migrations
                     Content = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     CommentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    VideoId = table.Column<int>(type: "int", nullable: false),
+                    VideoId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RecruiterId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -328,7 +327,7 @@ namespace server.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Score = table.Column<int>(type: "int", nullable: false),
                     RatingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    VideoId = table.Column<int>(type: "int", nullable: false),
+                    VideoId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RecruiterId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     StudentId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
