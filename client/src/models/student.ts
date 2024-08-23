@@ -1,20 +1,18 @@
-export type StudentGet = {
-    id: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    instrument: string;
-    highSchool: string;
-    profilePicture: string;
-}
+import { User } from './User';
+import { Video } from './Video';
+import { Offer } from './Offer';
+import { Interest } from './Interest';
 
-export type StudentPost = { 
+export interface Student extends User {
     firstName: string;
     lastName: string;
-    email: string;
     phone: string;
+    graduationYear: number;
     instrument: string;
     highSchool: string;
-    profilePicture: string;
+    profilePicture?: string; // Optional
+    createdAt: string;
+    videos?: Video[]; // List of videos uploaded by the student
+    scholarshipOffers?: Offer[]; // List of offers received by the student
+    interests?: Interest[]; // List of interests expressed by the student
 }

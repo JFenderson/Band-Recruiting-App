@@ -1,5 +1,5 @@
 import React from 'react';
-import { StudentTableComponent } from '../../Components/Student/studentTable';
+import { StudentTableComponent } from '../../components/Student/studentTable';
 
 const Home: React.FC = () => (
     <div>

@@ -1,34 +1,52 @@
 import axios from "axios";
-import { handleError } from "../helpers/errorHandler";
-import { UserProfileToken } from "../models/user";
 
-const api = "http://localhost:5173/api/";
-
-export const loginAPI = async (username: string, password: string) => {
-  try {
-    const data = await axios.post<UserProfileToken>(api + "account/login", {
-      username: username,
-      password: password,
-    });
-    return data;
-  } catch (error) {
-    handleError(error);
+const API_URL = 'https://localhost:7055/api';
+const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json'
   }
+});
+
+export interface RegisterCredentials {
+  userName: string;
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  bandId?: number; // Optional if you're registering as a recruiter
+}
+
+export interface LoginCredentials {
+  email: string;
+  password: string;
+}
+
+export interface AuthResponse {
+  token: string;
+}
+
+// Register function
+export const register = async (credentials: RegisterCredentials): Promise<void> => {
+  await api.post('/Admin/create-user', credentials);
 };
 
-export const registerAPI = async (
-  email: string,
-  username: string,
-  password: string
-) => {
+export const login = async (credentials: LoginCredentials): Promise<AuthResponse> => {
   try {
-    const data = await axios.post<UserProfileToken>(api + "account/register", {
-      email: email,
-      username: username,
-      password: password,
-    });
-    return data;
+    const response = await api.post<AuthResponse>('/Account/login', credentials);
+    console.log(response)
+    return response.data;
   } catch (error) {
-    handleError(error);
+    console.error('Failed to login', error);
+    throw error;
+  }
+
+};
+
+export const setAuthToken = (token: string | null) => {
+  if (token) {
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers.common['Authorization'];
   }
 };

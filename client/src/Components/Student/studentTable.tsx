@@ -1,33 +1,33 @@
-import * as React from "react";
-import { StudentEntity } from "../../models/student";
-import { getStudentsCollection } from "../../API/studentApi";
+// import * as React from "react";
+// import { StudentEntity } from "../../models/Student";
+// import { getStudentsCollection } from "../../API/studentApi";
 
-const useStudentCollection = () => {
-  const [studentCollection, setStudentCollection] = React.useState<
-    StudentEntity[]
-  >([]);
+// const useStudentCollection = () => {
+//   const [studentCollection, setStudentCollection] = React.useState<
+//     StudentEntity[]
+//   >([]);
 
-  const loadStudentCollection = () => {
-    getStudentsCollection().then(studentCollection =>
-      setStudentCollection(studentCollection)
-    );
-  };
+//   const loadStudentCollection = () => {
+//     getStudentsCollection().then(studentCollection =>
+//       setStudentCollection(studentCollection)
+//     );
+//   };
 
-  return { studentCollection, loadStudentCollection };
-};
+//   return { studentCollection, loadStudentCollection };
+// };
 
-export const StudentTableComponent = () => {
-  const { studentCollection, loadStudentCollection } = useStudentCollection();
+// export const StudentTableComponent = () => {
+//   const { studentCollection, loadStudentCollection } = useStudentCollection();
 
-  React.useEffect(() => {
-    loadStudentCollection();
-  }, []);
+//   React.useEffect(() => {
+//     loadStudentCollection();
+//   }, []);
 
-  return (
-    <>
-      {studentCollection.map(student => (
-        <h1 key={student.studentId}>{student.firstName}{student.lastName}{student.instrument}</h1>
-      ))}
-    </>
-  );
-};
+//   return (
+//     <>
+//       {studentCollection.map(student => (
+//         <h1 key={student.studentId}>{student.firstName}{student.lastName}{student.instrument}</h1>
+//       ))}
+//     </>
+//   );
+// };

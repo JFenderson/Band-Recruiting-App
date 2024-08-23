@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { UserProfile } from "../models/user";
+import { UserProfile } from "../models/User";
 import { useNavigate } from "react-router-dom";
 import { loginAPI, registerAPI } from "../services/authService";
 import { toast } from "react-toastify";

@@ -1,27 +1,31 @@
-// src/routes/Routes.js
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import PrivateRoute from './PrivateRoute';
-import Home from '../Pages/Home/Home';
-// import Login from '../Pages/Login/Login';
-// import Signup from '../Pages/Signup/Signup';
-// import RecruiterDashboard from '../pages/RecruiterDashboard';
-// import StudentDashboard from '../pages/StudentDashboard';
-import React from 'react';
+import React, { useContext } from "react";
+import { Routes as Router, Route, Navigate, Outlet } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import HomePage from "../components/Home/Home";
+import LoginPage from "../components/Login/Login";
+import RegisterPage from "../components/Register/Register";
+import DashboardPage from "../components/Dashboard";
 
-function Routes() {
+
+const PrivateRoutes = () => {
+  const { authenticated } = useContext(AuthContext);
+
+  if (!authenticated) return <Navigate to="/login" replace />;
+
+  return <Outlet />;
+};
+
+const Routes: React.FC = () => {
   return (
     <Router>
-        <Route path="/" Component={Home} />
-        {/* <Route path="/login" Component={Login} />
-        <Route path="/signup" Component={Signup} /> */}
-        
-        {/* Private Routes */}
-        {/* <PrivateRoute path="/recruiter/dashboard" component={RecruiterDashboard} role="recruiter" />
-        <PrivateRoute path="/student/dashboard" component={StudentDashboard} role="student" /> */}
-        
-        {/* Add more routes as needed */}
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      <Route element={<PrivateRoutes />}>
+      </Route>
     </Router>
   );
-}
+};
 
 export default Routes;
