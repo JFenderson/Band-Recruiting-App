@@ -40,7 +40,7 @@ namespace server.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, model.Role);
+                await _userManager.AddToRoleAsync(user, user.UserType);
                 return Ok(new { Message = "User created successfully" });
             }
 

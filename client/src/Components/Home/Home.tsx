@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
     return (
-        <div>
-            <h1>Welcome to the Home Page</h1>
-            <p>This is the landing page.</p>
+        <div className="homepage">
+            <h1>Welcome to the TBR</h1>
+            <div className="auth-links">
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+            </div>
         </div>
     );
 };

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 const Navbar: React.FC = () => {
-    const { user, logout } = useAuth();
+    const { role: user, logout } = useAuth();
 
     return (
         <nav className="navbar">

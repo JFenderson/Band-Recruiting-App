@@ -1,29 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import StudentDashboard from '../components/Student/StudentDashboard'
+import RecruiterDashboard from '../components/Recruiter/RecruiterDashboard'
+import { useLocation } from 'react-router-dom';
 
 const DashboardPage: React.FC = () => {
-    const { user, logout } = useAuth();
+    const { role } = useAuth();
+    const location = useLocation();
 
-    return (
-        <div style={{ padding: '20px' }}>
-            <h1>Welcome to the Dashboard</h1>
-            {user && <p>You are logged in as: {user}</p>}
-
-            <nav style={{ marginBottom: '20px' }}>
-                <ul>
-                    <li>
-                        <a href="/students">View Students</a>
-                    </li>
-                    <li>
-                        <a href="/recruiters">View Recruiters</a>
-                    </li>
-                    {/* Add other navigation links here */}
-                </ul>
-            </nav>
-
-            <button onClick={logout}>Logout</button>
-        </div>
-    );
+  useEffect(() => {
+    console.log('Navigated to:', location.pathname);
+  }, [location]);
+  return (
+    <div>
+      {role === 'Student' && <StudentDashboard />}
+      {role === 'Recruiter' && <RecruiterDashboard />}
+      {/* other role-specific content */}
+    </div>
+  );
 };
 
 // const DashboardPage: React.FC = () => {

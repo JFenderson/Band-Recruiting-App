@@ -18,12 +18,14 @@ export interface RegisterCredentials {
 }
 
 export interface LoginCredentials {
-  email: string;
+  userName: string;
   password: string;
+  
 }
 
 export interface AuthResponse {
   token: string;
+  userRole:string;
 }
 
 // Register function

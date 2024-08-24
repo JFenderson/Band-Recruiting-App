@@ -3,14 +3,13 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import api from '../../services/apiConfig';
-import { Link } from 'react-router-dom';
+import { Link, redirect } from 'react-router-dom';
 
 interface RegistrationValues {
   userName: string;
   email: string;
   password: string;
   confirmPassword: string;
-  role: string;
   userType: string;
 }
 
@@ -21,7 +20,6 @@ const RegistrationForm: React.FC = () => {
       email: '',
       password: '',
       confirmPassword: '',
-      role: 'Student', // Default role
       userType: 'Student', // Default user type
     },
     validationSchema: Yup.object({
@@ -47,12 +45,12 @@ const RegistrationForm: React.FC = () => {
           userName: values.userName,
           email: values.email,
           password: values.password,
-          role: values.role,
           userType: values.userType,
         });
         // Handle successful registration
         localStorage.setItem('token', response.data.token);
         setStatus({ success: true });
+        redirect('/login')
         // Redirect or update UI accordingly
       } catch (error: any) {
         if (error.response && error.response.data) {
@@ -128,23 +126,7 @@ const RegistrationForm: React.FC = () => {
         ) : null}
       </div>
 
-      <div>
-        <label htmlFor="role">Role</label>
-        <select
-          id="role"
-          name="role"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.role}
-        >
-          <option value="Student">Student</option>
-          <option value="Recruiter">Recruiter</option>
-          <option value="Admin">Admin</option>
-        </select>
-        {formik.touched.role && formik.errors.role ? (
-          <div>{formik.errors.role}</div>
-        ) : null}
-      </div>
+
 
       <div>
         <label htmlFor="userType">User Type</label>

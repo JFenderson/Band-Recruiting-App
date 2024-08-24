@@ -33,10 +33,56 @@ namespace server.Controllers
             {
                 // Generate JWT token
                 var token = GenerateJwtToken(user);
-                return Ok(new { Token = token });
+
+                // Get the user's role(s)
+                var roles = await _userManager.GetRolesAsync(user);
+
+                return Ok(new
+                {
+                    Token = token,
+                    Role = roles.FirstOrDefault() // Assuming the user has one role
+                });
             }
-            return Unauthorized();
+            return BadRequest("Invalid login attempt.");
         }
+
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] CreateUserDTO model)
+        {
+            var user = new User
+            {
+                UserName = model.UserName,
+                Email = model.Email,
+                UserType = model.UserType // Assuming UserType is a string that corresponds to a role
+            };
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, model.UserType); // Add the user to the role specified in the DTO
+
+                var token = GenerateJwtToken(user);
+
+                // Get the user's role(s)
+                var roles = await _userManager.GetRolesAsync(user);
+
+                return Ok(new
+                {
+                    Token = token,
+                    Role = roles.FirstOrDefault() // Assuming the user has one role
+                });
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return BadRequest(ModelState);
+        }
+
 
         private string GenerateJwtToken(User user)
         {

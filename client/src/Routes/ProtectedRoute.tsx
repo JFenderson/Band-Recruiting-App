@@ -1,23 +1,28 @@
-import React, { useContext } from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import { AuthContext} from "../context/AuthContext";
+import React, { useEffect } from 'react';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 interface ProtectedRouteProps {
-  redirectPath?: string;
+  allowedRoles: string[];
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ redirectPath = "/login" }) => {
-  const { authenticated } = useContext(AuthContext);
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ allowedRoles }) => {
+  const { authenticated, role } = useAuth();
+  const location = useLocation();
+  useEffect(() => {
+    console.log('Current route:', location.pathname);
+  }, [location]);
+  if (!authenticated) {
+    
+    return <Navigate to="/login" replace />;
+  }
 
-  return authenticated ? <Outlet /> : <Navigate to={redirectPath} />;
+  if (role && allowedRoles.includes(role)) {
+    return <Outlet />;
+  }
+
+  // Redirect if the user does not have the correct role
+  return <Navigate to="/" replace />;
 };
 
-const PrivateRoutes = () => {
-  const { authenticated } = useContext(AuthContext);
-
-  if (!authenticated) return <Navigate to="/login" replace />;
-
-  return <Outlet />;
-};
-
-export default {ProtectedRoute, PrivateRoutes};
+export default ProtectedRoute;
