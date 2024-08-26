@@ -25,7 +25,7 @@ export interface LoginCredentials {
 
 export interface AuthResponse {
   token: string;
-  userRole:string;
+  role:string;
 }
 
 // Register function

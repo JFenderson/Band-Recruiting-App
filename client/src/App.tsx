@@ -17,6 +17,8 @@ import Dashboard from "./components/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import StudentDashboard from "./components/Student/StudentDashboard";
 import RecruiterDashboard from "./components/Recruiter/RecruiterDashboard";
+import BandsList from "./components/Band/BandsList";
+import BandProfile from "./components/Band/BandProfile";
 
 // const PrivateRoutes = () => {
 //   const { authenticated } = useContext(AuthContext);
@@ -33,15 +35,19 @@ const App: React.FC = () => {
       <AuthProvider>
       <Routes>
                 <Route index element={<Home />} />
-                <Route path="login" element={<Login />} />
-                <Route path="register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
                 
                 {/* Protected Dashboard Routes */}
                 <Route element={<ProtectedRoute allowedRoles={['Student']} />}>
-                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/bands" element={<BandsList />} />
+                    <Route path="/bands/:id" element={<BandProfile />} />
                 </Route>
                 <Route element={<ProtectedRoute allowedRoles={['Recruiter']} />}>
-                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/bands" element={<BandsList />} />
+                    <Route path="/bands/:id" element={<BandProfile />} />
                 </Route>
             </Routes>
       </AuthProvider>

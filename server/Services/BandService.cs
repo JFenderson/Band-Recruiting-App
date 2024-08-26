@@ -20,7 +20,8 @@ namespace server.Services
                 .Include(b => b.Recruiters)
                 .Include(b => b.Offers)
                 .Include(b => b.InterestedStudents)
-                .ToListAsync();
+                .ToArrayAsync();
+                //.ToListAsync();
         }
 
         public async Task<Band> GetBandByIdAsync(int id)
