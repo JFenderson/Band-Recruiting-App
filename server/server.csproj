@@ -8,9 +8,41 @@
 
   <ItemGroup>
     <Compile Remove="DTOs\BandDTO\**" />
+    <Compile Remove="DTOs\Band\**" />
+    <Compile Remove="DTOs\Comment\**" />
+    <Compile Remove="DTOs\Interest\**" />
+    <Compile Remove="DTOs\Offer\**" />
+    <Compile Remove="DTOs\Rating\**" />
+    <Compile Remove="DTOs\Recruiter\**" />
+    <Compile Remove="DTOs\Student\**" />
+    <Compile Remove="DTOs\Video\**" />
     <Content Remove="DTOs\BandDTO\**" />
+    <Content Remove="DTOs\Band\**" />
+    <Content Remove="DTOs\Comment\**" />
+    <Content Remove="DTOs\Interest\**" />
+    <Content Remove="DTOs\Offer\**" />
+    <Content Remove="DTOs\Rating\**" />
+    <Content Remove="DTOs\Recruiter\**" />
+    <Content Remove="DTOs\Student\**" />
+    <Content Remove="DTOs\Video\**" />
     <EmbeddedResource Remove="DTOs\BandDTO\**" />
+    <EmbeddedResource Remove="DTOs\Band\**" />
+    <EmbeddedResource Remove="DTOs\Comment\**" />
+    <EmbeddedResource Remove="DTOs\Interest\**" />
+    <EmbeddedResource Remove="DTOs\Offer\**" />
+    <EmbeddedResource Remove="DTOs\Rating\**" />
+    <EmbeddedResource Remove="DTOs\Recruiter\**" />
+    <EmbeddedResource Remove="DTOs\Student\**" />
+    <EmbeddedResource Remove="DTOs\Video\**" />
     <None Remove="DTOs\BandDTO\**" />
+    <None Remove="DTOs\Band\**" />
+    <None Remove="DTOs\Comment\**" />
+    <None Remove="DTOs\Interest\**" />
+    <None Remove="DTOs\Offer\**" />
+    <None Remove="DTOs\Rating\**" />
+    <None Remove="DTOs\Recruiter\**" />
+    <None Remove="DTOs\Student\**" />
+    <None Remove="DTOs\Video\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,14 +73,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\Band\" />
-    <Folder Include="DTOs\Comment\" />
-    <Folder Include="DTOs\Interest\" />
-    <Folder Include="DTOs\Offer\" />
-    <Folder Include="DTOs\Rating\" />
-    <Folder Include="DTOs\Recruiter\" />
-    <Folder Include="DTOs\Student\" />
-    <Folder Include="DTOs\Video\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

@@ -62,7 +62,7 @@ namespace server.Services
             return student;
         }
 
-        public async Task<Student> UpdateStudentAsync(int id, UpdateStudentDTO updateStudentDTO)
+        public async Task<Student> UpdateStudentAsync(string id, UpdateStudentDTO updateStudentDTO)
         {
             var student = await _context.Users.OfType<Student>().FirstOrDefaultAsync(s => s.Id == id.ToString());
 
@@ -86,7 +86,7 @@ namespace server.Services
             return student;
         }
 
-        public async Task<StudentDTO> GetStudentByIdAsync(int id)
+        public async Task<StudentDTO> GetStudentByIdAsync(string id)
         {
             var student = await _context.Users.OfType<Student>()
                 .Include(s => s.Videos)
@@ -121,7 +121,7 @@ namespace server.Services
                 .OfType<Student>()
                 .Include(s => s.Videos)
                 .Include(s => s.ScholarshipOffers)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<bool> DeleteStudentAsync(int id)
@@ -145,50 +145,98 @@ namespace server.Services
             return await _context.Users
                 .OfType<Student>()
                 .Where(r => r.GraduationYear == gradYear)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<IEnumerable<Rating>> GetStudentRatingsAsync(string studentId)
         {
             return await _context.Ratings
                 .Where(r => r.StudentId == studentId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<IEnumerable<Comment>> GetStudentCommentsAsync(string studentId)
         {
             return await _context.Comments
                 .Where(c => c.StudentId == studentId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
-        public async Task<IEnumerable<Student>> GetStudentsByInstrumentAsync(string instrument)
+        public async Task<IEnumerable<Student>> GetStudentsByInstrumentAsync(string studentId, string instrument)
         {
             return await _context.Users
                 .OfType<Student>()
+                .Where(i => i.Id == studentId)
                 .Where(s => s.Instrument == instrument)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<IEnumerable<Video>> GetStudentVideosAsync(string studentId)
         {
             return await _context.Videos
                 .Where(v => v.StudentId == studentId)
-                .ToListAsync();
+                .ToArrayAsync();
+        }
+
+     
+
+        public async Task<InterestDTO> AddInterestAsync(string studentId, int bandId)
+        {
+            var student = await _context.Users.OfType<Student>()
+                                        .Include(s => s.Interests)
+                                        .FirstOrDefaultAsync(s => s.Id == studentId);
+            if (student == null)
+            {
+                throw new KeyNotFoundException("Student not found");
+            }
+
+            var interest = new Interest
+            {
+                StudentId = studentId,
+                BandId = bandId,
+                InterestDate = DateTime.UtcNow
+            };
+
+            student.Interests.Add(interest);
+            await _context.SaveChangesAsync();
+
+            return new InterestDTO
+            {
+                InterestId = interest.InterestId,
+                StudentId = interest.StudentId,
+                BandId = interest.BandId,
+                InterestDate = interest.InterestDate
+            };
+        }
+
+        public async Task<IEnumerable<InterestDTO>> GetStudentInterestsAsync(string studentId)
+        {
+            var interests = await _context.Interests
+                .Where(i => i.StudentId == studentId)
+                .Select(i => new InterestDTO
+                {
+                    InterestId = i.InterestId,
+                    StudentId = i.StudentId,
+                    BandId = i.BandId,
+                    InterestDate = i.InterestDate
+                })
+                .ToArrayAsync();
+
+            return interests;
         }
 
         public async Task<IEnumerable<Offer>> GetStudentScholarshipOffersAsync(string studentId)
         {
             return await _context.Offers
                 .Where(o => o.StudentId == studentId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<decimal?> GetStudentOverallRatingAsync(string studentId)
         {
             var ratings = await _context.Ratings
                 .Where(r => r.StudentId == studentId)
-                .ToListAsync();
+                .ToArrayAsync();
 
             if (ratings == null || !ratings.Any())
             {

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import StudentDashboard from '../components/Student/StudentDashboard'
-import RecruiterDashboard from '../components/Recruiter/RecruiterDashboard'
+import  StudentProfileManagement from '../components/Student/ProfileManagement'
+import RecruiterProfileManagement from '../components/Recruiter/ProfileManagement'
 import { useLocation } from 'react-router-dom';
 
-const DashboardPage: React.FC = () => {
+const ProfilePage: React.FC = () => {
     const { role } = useAuth();
     const location = useLocation();
 
@@ -15,11 +15,11 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div>
-      {role === 'Student' && <StudentDashboard />}
-      {role === 'Recruiter' && <RecruiterDashboard />}
+      {role === 'Student' && <StudentProfileManagement />}
+      {role === 'Recruiter' && <RecruiterProfileManagement />}
       {/* other role-specific content */}
     </div>
   );
 };
 
-export default DashboardPage;
+export default ProfilePage;

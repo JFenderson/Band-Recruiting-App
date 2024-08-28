@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useAuth } from "../../context/AuthContext";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
@@ -12,8 +12,9 @@ interface LoginValues {
 }
 
 const Login: React.FC = () => {
-// const navigate = useNavigate();
   const { login } = useAuth();
+  const navigate = useNavigate();
+
   const formik = useFormik<LoginValues>({
     initialValues: {
       username: "",
@@ -31,9 +32,7 @@ const Login: React.FC = () => {
       try {
         await login(values.username, values.password);
         setStatus({ success: true });
-        redirect("/dashboard");
-        console.log("logged in");
-        // Redirect or update UI accordingly
+        navigate("/dashboard"); // Redirect to the dashboard
       } catch (error: any) {
         setStatus({
           success: false,
@@ -44,7 +43,7 @@ const Login: React.FC = () => {
       }
     },
   });
-
+  
   return (
     <div className="login-container">
       <form onSubmit={formik.handleSubmit}>

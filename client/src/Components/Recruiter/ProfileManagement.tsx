@@ -3,10 +3,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import api from "../../services/apiConfig";
 import { useNavigate } from "react-router-dom";
-// import { updateStudent } from "../../services/studentService";
 
 
-const ProfileManagement: React.FC = () => {
+const RecruiterProfileManagement: React.FC = () => {
 const navigate = useNavigate();
 
   const formik = useFormik({
@@ -20,28 +19,24 @@ const navigate = useNavigate();
       profilePicture: ""
     },
     validationSchema: Yup.object({
-      firstName: Yup.string(),
-      lastName: Yup.string(),
-      email: Yup.string().email("Invalid email address"),
-      graduationYear: Yup.number(),
-      instrument: Yup.string(),
-      highSchool: Yup.string(),
-      profilePicture: Yup.string().url("Invalid URL")
+      firstName: Yup.string().required("First Name is required"),
+      lastName: Yup.string().required("Last Name is required"),
+      email: Yup.string().email("Invalid email address").required("Email is required"),
+      graduationYear: Yup.number().required("Graduation Year is required"),
+      instrument: Yup.string().required("Instrument is required"),
+      highSchool: Yup.string().required("High School is required"),
+      profilePicture: Yup.string().url("Invalid URL").required("Profile Picture URL is required")
     }),
     onSubmit: async (values) => {
-        try {
-          const userId = localStorage.getItem('userId');
-          const payload = {
-            ...values,
-            graduationYear: parseInt(values.graduationYear, 10), // Convert string to number
-          };
-          await api.put(`Student/${userId}/profile`, payload);
-          alert('Profile updated successfully');
-          navigate('/dashboard')
-        } catch (error) {
-          console.error('Failed to update profile', error);
-        }
+      try {
+        const userId = localStorage.getItem("userId");
+        await api.put(`Student/${userId}/profile`, values);
+        alert("Profile updated successfully");
+        navigate('/dashboard')
+      } catch (error) {
+        console.error("Failed to update profile", error);
       }
+    }
   });
 
   return (
@@ -156,4 +151,4 @@ const navigate = useNavigate();
   );
 };
 
-export default ProfileManagement;
+export default RecruiterProfileManagement;

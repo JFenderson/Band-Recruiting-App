@@ -1,7 +1,7 @@
 import { Band } from './Band';
-import { Student } from './Student';
+import Student  from './Student';
 
-export interface Interest {
+export default interface Interest {
     interestId: number;
     studentId: string; // Reference to the interested student
     bandId: number; // Reference to the band of interest

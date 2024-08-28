@@ -7,7 +7,7 @@
         public DateTime RatingDate { get; set; }
 
         // Navigation Properties
-        public string VideoId { get; set; }  // Foreign Key
+        public int VideoId { get; set; }  // Foreign Key
         public Video Video { get; set; }
         public string RecruiterId { get; set; }  // Foreign Key
         public Recruiter Recruiter { get; set; }

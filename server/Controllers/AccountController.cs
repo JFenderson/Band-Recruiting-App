@@ -6,6 +6,7 @@ using server.DTOs;
 using server.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace server.Controllers
@@ -33,14 +34,20 @@ namespace server.Controllers
             {
                 // Generate JWT token
                 var token = GenerateJwtToken(user);
+                var refreshToken = GenerateRefreshToken();
 
-                // Get the user's role(s)
+                user.RefreshToken = refreshToken;
+                user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7); // Set the expiry time for the refresh token
+                await _userManager.UpdateAsync(user);
+
                 var roles = await _userManager.GetRolesAsync(user);
 
                 return Ok(new
                 {
                     Token = token,
-                    Role = roles.FirstOrDefault() // Assuming the user has one role
+                    Role = roles.FirstOrDefault(),
+                    RefreshToken = refreshToken,
+                    UserId = user.Id,
                 });
             }
             return BadRequest("Invalid login attempt.");
@@ -54,24 +61,23 @@ namespace server.Controllers
             {
                 UserName = model.UserName,
                 Email = model.Email,
-                UserType = model.UserType // Assuming UserType is a string that corresponds to a role
+                UserType = model.UserType,
+                RefreshToken = GenerateRefreshToken(), // Generate and assign a refresh token
+                RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7) // Example expiration time, adjust as needed
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, model.UserType); // Add the user to the role specified in the DTO
-
+                await _userManager.AddToRoleAsync(user, model.UserType);
                 var token = GenerateJwtToken(user);
-
-                // Get the user's role(s)
                 var roles = await _userManager.GetRolesAsync(user);
 
                 return Ok(new
                 {
                     Token = token,
-                    Role = roles.FirstOrDefault() // Assuming the user has one role
+                    Role = roles.FirstOrDefault()
                 });
             }
 
@@ -83,6 +89,70 @@ namespace server.Controllers
             return BadRequest(ModelState);
         }
 
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] TokenRequestDTO tokenRequest)
+        {
+            if (tokenRequest is null)
+            {
+                return BadRequest("Invalid client request");
+            }
+
+            string accessToken = tokenRequest.AccessToken;
+            string refreshToken = tokenRequest.RefreshToken;
+
+            var principal = GetPrincipalFromExpiredToken(accessToken);
+            var user = await _userManager.FindByNameAsync(principal.Identity.Name);
+
+            if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
+            {
+                return BadRequest("Invalid client request");
+            }
+
+            var newAccessToken = GenerateJwtToken(user);
+            var newRefreshToken = GenerateRefreshToken();
+
+            user.RefreshToken = newRefreshToken;
+            await _userManager.UpdateAsync(user);
+
+            return Ok(new AuthResponseDTO
+            {
+                Token = newAccessToken,
+                RefreshToken = newRefreshToken
+            });
+        }
+
+
+        private ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
+        {
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateAudience = false,
+                ValidateIssuer = false,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])),
+                ValidateLifetime = false // here we are saying that we don't care about the token's expiration date
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+
+            var jwtSecurityToken = securityToken as JwtSecurityToken;
+            if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                throw new SecurityTokenException("Invalid token");
+
+            return principal;
+        }
+
+
+        private string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[32];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(randomNumber);
+                return Convert.ToBase64String(randomNumber);
+            }
+        }
 
         private string GenerateJwtToken(User user)
         {

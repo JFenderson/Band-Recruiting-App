@@ -1,7 +1,7 @@
 import { Video } from './Video';
 import { Recruiter } from './Recruiter';
 
-export interface Rating {
+export default interface Rating {
     ratingId: number;
     score: number; // Scale from 1 to 5
     ratingDate: string;

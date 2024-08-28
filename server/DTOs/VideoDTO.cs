@@ -2,7 +2,7 @@ using Models;
 
 namespace server.DTOs
 {
-    public class VideoDTO(Video video)
+    public class VideoDTO
     {
         public int VideoId { get; set; }
         public string StudentId { get; set; }
@@ -13,5 +13,13 @@ namespace server.DTOs
         public DateTime UploadDate { get; set; }
         public double AverageRating { get; set; }
         public int CommentCount { get; set; }
+
+        public VideoDTO(Video video)
+        {
+            VideoId = video.VideoId;
+            Title = video.Title;
+            Description = video.Description;
+            VideoUrl = video.VideoUrl;
+        }
     }
 }

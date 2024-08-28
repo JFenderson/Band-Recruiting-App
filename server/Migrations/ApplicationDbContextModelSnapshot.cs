@@ -212,9 +212,8 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("VideoId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("VideoId")
+                        .HasColumnType("int");
 
                     b.HasKey("CommentId");
 
@@ -318,9 +317,8 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("VideoId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("VideoId")
+                        .HasColumnType("int");
 
                     b.HasKey("RatingId");
 
@@ -333,8 +331,11 @@ namespace server.Migrations
 
             modelBuilder.Entity("Models.Video", b =>
                 {
-                    b.Property<string>("VideoId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("VideoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VideoId"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -407,6 +408,13 @@ namespace server.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("RefreshToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

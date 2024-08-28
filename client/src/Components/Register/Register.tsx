@@ -3,7 +3,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import api from '../../services/apiConfig';
-import { Link, redirect } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface RegistrationValues {
   userName: string;
@@ -14,6 +14,8 @@ interface RegistrationValues {
 }
 
 const RegistrationForm: React.FC = () => {
+  const navigate = useNavigate();
+
   const formik = useFormik<RegistrationValues>({
     initialValues: {
       userName: '',
@@ -36,10 +38,10 @@ const RegistrationForm: React.FC = () => {
       confirmPassword: Yup.string()
         .oneOf([Yup.ref('password')], 'Passwords must match')
         .required('Confirm password is required'),
-      role: Yup.string().oneOf(['Student', 'Recruiter', 'Admin'], 'Invalid role').required('Role is required'),
       userType: Yup.string().oneOf(['Student', 'Recruiter', 'Admin'], 'Invalid user type').required('User type is required'),
     }),
     onSubmit: async (values, { setSubmitting, setStatus }) => {
+      console.log('Form Submitted', values);
       try {
         const response = await api.post('/Account/register', {
           userName: values.userName,
@@ -47,12 +49,13 @@ const RegistrationForm: React.FC = () => {
           password: values.password,
           userType: values.userType,
         });
+        console.log('Registration successful:', response);
         // Handle successful registration
         localStorage.setItem('token', response.data.token);
         setStatus({ success: true });
-        redirect('/login')
-        // Redirect or update UI accordingly
+        navigate('/login');
       } catch (error: any) {
+        console.error('Registration failed:', error);
         if (error.response && error.response.data) {
           setStatus({ success: false, message: error.response.data });
         } else {
@@ -125,8 +128,6 @@ const RegistrationForm: React.FC = () => {
           <div>{formik.errors.confirmPassword}</div>
         ) : null}
       </div>
-
-
 
       <div>
         <label htmlFor="userType">User Type</label>

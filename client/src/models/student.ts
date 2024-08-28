@@ -1,9 +1,9 @@
 import { User } from './User';
 import { Video } from './Video';
 import { Offer } from './Offer';
-import { Interest } from './Interest';
+import Interest  from './Interest';
 
-export interface Student extends User {
+export default interface Student extends User {
     firstName: string;
     lastName: string;
     phone: string;

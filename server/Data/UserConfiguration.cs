@@ -14,6 +14,7 @@ namespace server.Data
                     .HasValue<Student>("Student")
                     .HasValue<Recruiter>("Recruiter")
                     .HasValue<Admin>("Admin");
+
         }
     }
 }

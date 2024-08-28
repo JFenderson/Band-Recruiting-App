@@ -14,7 +14,7 @@ namespace server.Services
             _context = context;
         }
 
-        public async Task<Comment> CommentOnVideoAsync(string videoId, string recruiterId, string content)
+        public async Task<Comment> CommentOnVideoAsync(int videoId, string recruiterId, string content)
         {
             var comment = new Comment
             {
@@ -30,7 +30,7 @@ namespace server.Services
             return comment;
         }
 
-        public async Task<IEnumerable<Comment>> GetCommentsByVideoIdAsync(string videoId)
+        public async Task<IEnumerable<Comment>> GetCommentsByVideoIdAsync(int videoId)
         {
             return await _context.Comments
                 .Where(c => c.VideoId == videoId)

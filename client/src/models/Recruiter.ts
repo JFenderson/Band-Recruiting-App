@@ -2,7 +2,7 @@ import { User } from './User';
 import { Band } from './Band';
 import { Offer } from './Offer';
 import { Comment } from './Comment';
-import { Rating } from './Rating';
+import Rating  from './Rating';
 
 export interface Recruiter extends User {
     bandId: number;

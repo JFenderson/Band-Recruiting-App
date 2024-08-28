@@ -1,4 +1,5 @@
 import axios from "axios";
+import {setAuthToken} from './apiConfig';
 
 const API_URL = 'https://localhost:7055/api';
 const api = axios.create({
@@ -25,7 +26,9 @@ export interface LoginCredentials {
 
 export interface AuthResponse {
   token: string;
+  refreshToken: string;
   role:string;
+  userId: string;
 }
 
 // Register function
@@ -36,7 +39,9 @@ export const register = async (credentials: RegisterCredentials): Promise<void> 
 export const login = async (credentials: LoginCredentials): Promise<AuthResponse> => {
   try {
     const response = await api.post<AuthResponse>('/Account/login', credentials);
-    console.log(response)
+    setAuthToken(response.data.token);
+    localStorage.setItem('refreshToken', response.data.refreshToken);
+    console.log('refreshToken', response.data.refreshToken);
     return response.data;
   } catch (error) {
     console.error('Failed to login', error);
@@ -45,10 +50,30 @@ export const login = async (credentials: LoginCredentials): Promise<AuthResponse
 
 };
 
-export const setAuthToken = (token: string | null) => {
-  if (token) {
-    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  } else {
-    delete api.defaults.headers.common['Authorization'];
+
+export const refreshToken = async (): Promise<string | null> => {
+  try {
+    const refreshToken = localStorage.getItem('refreshToken');
+    if (!refreshToken) {
+      throw new Error('No refresh token available');
+    }
+
+    const response = await api.post<AuthResponse>('/Account/refresh-token', { token: refreshToken });
+    const { token, refreshToken: newRefreshToken } = response.data;
+
+    setAuthToken(token);
+    localStorage.setItem('token', token);
+    localStorage.setItem('refreshToken', newRefreshToken);
+
+    return token;
+  } catch (error) {
+    console.error('Failed to refresh token', error);
+    return null;
   }
+};
+
+export const logout = () => {
+  setAuthToken(null);
+  localStorage.removeItem('token');
+  localStorage.removeItem('refreshToken');
 };

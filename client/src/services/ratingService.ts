@@ -1,8 +1,8 @@
-import { Rating } from '../models/Rating';
+import Rating from '../models/Rating';
 import api from './apiConfig';
 
 export const getStudentRatings = async (studentId: string): Promise<Rating[]> => {
-    const response = await api.get<Rating[]>(`/students/${studentId}/ratings`);
+    const response = await api.get<Rating[]>(`/Student/${studentId}/ratings`);
     return response.data;
 };
 

@@ -17,7 +17,7 @@ namespace server.DTOs
 
         public decimal? OverallRating { get; set; }
         public int OfferCount { get; set; }
-
+        public ICollection<InterestDTO> Interests { get; set; }
         public StudentDTO(Student student)
         {
             if (student == null)

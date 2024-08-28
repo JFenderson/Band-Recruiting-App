@@ -19,6 +19,8 @@ import StudentDashboard from "./components/Student/StudentDashboard";
 import RecruiterDashboard from "./components/Recruiter/RecruiterDashboard";
 import BandsList from "./components/Band/BandsList";
 import BandProfile from "./components/Band/BandProfile";
+import StudentProfilePage from "./components/Student/StudentDashboard";
+import ProfileManagement from "./components/Student/ProfileManagement";
 
 // const PrivateRoutes = () => {
 //   const { authenticated } = useContext(AuthContext);
@@ -41,11 +43,14 @@ const App: React.FC = () => {
                 {/* Protected Dashboard Routes */}
                 <Route element={<ProtectedRoute allowedRoles={['Student']} />}>
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/profile-update" element={<ProfileManagement />} />
                     <Route path="/bands" element={<BandsList />} />
                     <Route path="/bands/:id" element={<BandProfile />} />
+                    <Route path="/student-profile" element={<StudentProfilePage />} />
                 </Route>
                 <Route element={<ProtectedRoute allowedRoles={['Recruiter']} />}>
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/profile-update" element={<ProfileManagement />} />
                     <Route path="/bands" element={<BandsList />} />
                     <Route path="/bands/:id" element={<BandProfile />} />
                 </Route>
