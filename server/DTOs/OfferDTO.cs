@@ -2,7 +2,7 @@ using Models;
 
 namespace server.DTOs
 {
-    public class OfferDTO(Offer offer)
+    public class OfferDTO
     {
         public int OfferId { get; set; }
         public string StudentId { get; set; }
@@ -14,5 +14,8 @@ namespace server.DTOs
         public decimal Amount { get; set; }
         public DateTime OfferDate { get; set; }
         public string Status { get; set; }
+
     }
+
+
 }

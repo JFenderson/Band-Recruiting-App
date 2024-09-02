@@ -71,17 +71,40 @@ namespace server.Services
                 throw new Exception("Student not found.");
             }
 
-            student.Email = updateStudentDTO.Email;
-            student.FirstName = updateStudentDTO.FirstName;
-            student.LastName = updateStudentDTO.LastName;
-            student.Phone = updateStudentDTO.Phone;
-            student.GraduationYear = updateStudentDTO.GraduationYear;
-            student.Instrument = updateStudentDTO.Instrument;
-            student.HighSchool = updateStudentDTO.HighSchool;
-            student.ProfilePicture = updateStudentDTO.ProfilePicture;
+            if (!string.IsNullOrEmpty(updateStudentDTO.FirstName))
+            {
+                student.FirstName = updateStudentDTO.FirstName;
+            }
+            if (!string.IsNullOrEmpty(updateStudentDTO.LastName))
+            {
+                student.LastName = updateStudentDTO.LastName;
+            }
+            if (!string.IsNullOrEmpty(updateStudentDTO.Email))
+            {
+                student.Email = updateStudentDTO.Email;
+            }
+            if (updateStudentDTO.GraduationYear.HasValue)
+            {
+                student.GraduationYear = updateStudentDTO.GraduationYear.Value;
+            }
+            if (!string.IsNullOrEmpty(updateStudentDTO.Instrument))
+            {
+                student.Instrument = updateStudentDTO.Instrument;
+            }
+            if (!string.IsNullOrEmpty(updateStudentDTO.HighSchool))
+            {
+                student.HighSchool = updateStudentDTO.HighSchool;
+            }
+            if (!string.IsNullOrEmpty(updateStudentDTO.ProfilePicture))
+            {
+                student.ProfilePicture = updateStudentDTO.ProfilePicture;
+            }
 
             _context.Users.Update(student);
             await _context.SaveChangesAsync();
+
+            Console.WriteLine($"Updated student: {student.Id}, {student.FirstName} {student.LastName}");
+
 
             return student;
         }
@@ -124,7 +147,7 @@ namespace server.Services
                 .ToArrayAsync();
         }
 
-        public async Task<bool> DeleteStudentAsync(int id)
+        public async Task<bool> DeleteStudentAsync(string id)
         {
             var student = await _context.Users.OfType<Student>().FirstOrDefaultAsync(s => s.Id == id.ToString());
 
@@ -178,26 +201,19 @@ namespace server.Services
                 .ToArrayAsync();
         }
 
-     
 
-        public async Task<InterestDTO> AddInterestAsync(string studentId, int bandId)
+
+        public async Task<InterestDTO> AddInterestAsync(CreateInterestDTO createInterestDTO)
         {
-            var student = await _context.Users.OfType<Student>()
-                                        .Include(s => s.Interests)
-                                        .FirstOrDefaultAsync(s => s.Id == studentId);
-            if (student == null)
-            {
-                throw new KeyNotFoundException("Student not found");
-            }
-
             var interest = new Interest
             {
-                StudentId = studentId,
-                BandId = bandId,
+                StudentId = createInterestDTO.StudentId,
+                BandId = createInterestDTO.BandId,
                 InterestDate = DateTime.UtcNow
             };
 
-            student.Interests.Add(interest);
+            _context.ChangeTracker.Clear();
+            _context.Interests.Add(interest);
             await _context.SaveChangesAsync();
 
             return new InterestDTO
@@ -207,6 +223,7 @@ namespace server.Services
                 BandId = interest.BandId,
                 InterestDate = interest.InterestDate
             };
+
         }
 
         public async Task<IEnumerable<InterestDTO>> GetStudentInterestsAsync(string studentId)

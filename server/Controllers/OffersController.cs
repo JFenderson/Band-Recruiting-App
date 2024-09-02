@@ -41,34 +41,32 @@ namespace server.Controllers
             return Ok(new Offer());
         }
 
-        [HttpPost]
-        public async Task<ActionResult<OfferDTO>> CreateOffer(CreateOfferDTO createOfferDTO)
+        // Get all offers for a recruiter
+        [HttpGet("recruiter/{recruiterId}/offers")]
+        public async Task<ActionResult<IEnumerable<OfferDTO>>> GetOffersForRecruiter(string recruiterId)
         {
-            var offer = new Offer
-            {
-                // Map properties from createOfferDTO to Offer
-                Amount = createOfferDTO.Amount,
-                OfferDate = createOfferDTO.OfferDate,
-                RecruiterId = createOfferDTO.RecruiterId,
-                StudentId = createOfferDTO.StudentId,
-                OfferBandId = createOfferDTO.BandId
-            };
-
-            await _offerService.AddAsync(offer);
-
-            return CreatedAtAction(nameof(GetOffer), new { id = offer.OfferId }, new OfferDTO(offer));
+            var offers = await _offerService.GetOffersForRecruiter(recruiterId);
+            return Ok(offers);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOffer(int id, UpdateOfferDTO updateOfferDTO)
+        // Send an offer to a student
+        [HttpPost("recruiter/{recruiterId}/offers")]
+        public async Task<ActionResult<OfferDTO>> SendOffer(string recruiterId, [FromBody] CreateOfferDTO createOfferDTO)
         {
-            var offer = await _offerService.GetByIdAsync(id);
-            if (offer == null)
-                return NotFound();
+            var offer = await _offerService.SendOfferAsync(createOfferDTO.StudentId, recruiterId, createOfferDTO.BandId, createOfferDTO.Amount);
 
-            // Update offer properties from updateOfferDTO
+            return CreatedAtAction(nameof(GetOffersForRecruiter), new { recruiterId = recruiterId });
+        }
 
-            await _offerService.UpdateAsync(offer);
+        // Update the status of an offer
+        [HttpPut("offers/{offerId}/status")]
+        public async Task<IActionResult> UpdateOfferStatus(int offerId, [FromBody] UpdateOfferStatusDTO updateStatusDTO)
+        {
+            var success = await _offerService.UpdateOfferStatusAsync(offerId, updateStatusDTO.Status);
+            if (!success)
+            {
+                return NotFound(new { Message = "Offer not found." });
+            }
 
             return NoContent();
         }

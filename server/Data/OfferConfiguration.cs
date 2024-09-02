@@ -28,6 +28,9 @@ namespace server.Data
                    .WithMany(b => b.Offers)
                    .HasForeignKey(o => o.OfferBandId)
                    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Property(o => o.Status)
+            .HasConversion<string>();
         }
     }
 }

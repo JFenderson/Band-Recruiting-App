@@ -9,5 +9,6 @@ namespace server.Services
         Task<Offer> SendOfferAsync(string studentId, string recruiterId, int bandId, decimal amount);
         Task<IEnumerable<Offer>> GetOffersByBandAsync(int bandId);
         Task<IEnumerable<Offer>> GetOffersByStudentAsync(string studentId);
+        Task<IEnumerable<OfferDTO>> GetOffersForRecruiter(string recruiterId);
     }
 }

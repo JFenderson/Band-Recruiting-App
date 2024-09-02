@@ -208,7 +208,6 @@ namespace server.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     BandId = table.Column<int>(type: "int", nullable: false),
-                    IsInterested = table.Column<bool>(type: "bit", nullable: false),
                     InterestDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -235,11 +234,14 @@ namespace server.Migrations
                     OfferId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OfferDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     OfferBandId = table.Column<int>(type: "int", nullable: false),
                     StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    RecruiterId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    RecruiterId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    StudentName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RecruiterName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BandName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

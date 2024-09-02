@@ -1,9 +1,9 @@
-﻿namespace server.DTOs
+﻿using Models;
+
+namespace server.DTOs
 {
-    public class UpdateOfferDTO
+    public class UpdateOfferStatusDTO
     {
-        public decimal Amount { get; set; }
-        public string Details { get; set; }
-        public string Status { get; set; }
+        public OfferStatus Status { get; set; }
     }
 }

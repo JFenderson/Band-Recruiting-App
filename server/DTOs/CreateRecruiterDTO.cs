@@ -12,7 +12,7 @@ namespace server.DTOs
         public string LastName { get; set; }
         public int BandId { get; set; }
         // Optional properties
-        public string? Phone { get; set; }
+        public string Phone { get; set; }
         public string? ProfilePicture { get; set; }
     }
 }

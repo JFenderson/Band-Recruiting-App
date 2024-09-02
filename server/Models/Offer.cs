@@ -18,6 +18,9 @@ namespace Models
         public Student Student { get; set; }
         public string RecruiterId { get; set; }  // Foreign Key
         public Recruiter Recruiter { get; set; }
+        public string? StudentName { get; set; }
+        public string? RecruiterName { get;set; }
+        public string? BandName { get; set; }
     }
 
     public enum OfferStatus

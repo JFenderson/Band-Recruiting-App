@@ -240,9 +240,6 @@ namespace server.Migrations
                     b.Property<DateTime>("InterestDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsInterested")
-                        .HasColumnType("bit");
-
                     b.Property<string>("StudentId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -267,6 +264,9 @@ namespace server.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("BandName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("OfferBandId")
                         .HasColumnType("int");
 
@@ -277,12 +277,19 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("RecruiterName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StudentId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("StudentName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("OfferId");
 
@@ -473,7 +480,6 @@ namespace server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePicture")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("BandId");
@@ -534,7 +540,6 @@ namespace server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePicture")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable("AspNetUsers", t =>

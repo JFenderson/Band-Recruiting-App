@@ -72,7 +72,7 @@ namespace server.Controllers
         }
 
         // PUT: api/Student/5
-        [HttpPut("{id}/profile")]
+        [HttpPut("{id}")]
         public async Task<ActionResult<Student>> UpdateStudent(string id, [FromBody] UpdateStudentDTO updateStudentDTO)
         {
             if (!ModelState.IsValid)
@@ -93,7 +93,7 @@ namespace server.Controllers
 
         // DELETE: api/Student/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteStudent(int id)
+        public async Task<ActionResult> DeleteStudent(string id)
         {
             var result = await _studentService.DeleteStudentAsync(id);
             if (!result)
@@ -189,11 +189,11 @@ namespace server.Controllers
 
 
         [HttpPost("{studentId}/interests")]
-        public async Task<ActionResult<InterestDTO>> AddInterest(string studentId, [FromBody] int bandId)
+        public async Task<ActionResult<Interest>> AddInterest([FromBody] CreateInterestDTO createInterestDTO)
         {
             try
             {
-                var interest = await _studentService.AddInterestAsync(studentId, bandId);
+                var interest = await _studentService.AddInterestAsync(createInterestDTO);
                 return Ok(interest);
             }
             catch (KeyNotFoundException)

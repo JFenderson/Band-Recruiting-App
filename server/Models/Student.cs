@@ -8,12 +8,12 @@ namespace Models
     public class Student : User
     {
         public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string  LastName { get; set; }
         public string Phone { get; set; }
         public int GraduationYear { get; set; }
         public string Instrument { get; set; }
         public string HighSchool { get; set; }
-        public string ProfilePicture { get; set; }
+        public string? ProfilePicture { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
 

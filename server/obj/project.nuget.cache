@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "rkdJa0bGpJs=",
+  "dgSpecHash": "nnpOohKzb90=",
   "success": true,
   "projectFilePath": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\josep\\.nuget\\packages\\awssdk.core\\3.7.400.13\\awssdk.core.3.7.400.13.nupkg.sha512",
+    "C:\\Users\\josep\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.400.13\\awssdk.dynamodbv2.3.7.400.13.nupkg.sha512",
     "C:\\Users\\josep\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\josep\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\josep\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

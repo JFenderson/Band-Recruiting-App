@@ -28,8 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="IntegrationTests\" />
+    <Folder Include="Mocks\" />
+    <Folder Include="Fixtures\" />
+    <Folder Include="TestData\" />
+    <Folder Include="Utils\" />
+    <Folder Include="UnitTests\Models\" />
   </ItemGroup>
 
 </Project>

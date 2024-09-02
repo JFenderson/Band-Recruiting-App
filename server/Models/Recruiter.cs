@@ -13,7 +13,7 @@ namespace Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
-        public string ProfilePicture { get; set; }
+        public string? ProfilePicture { get; set; }
         public DateTime CreatedAt { get; set; }
 
         // Navigation Properties

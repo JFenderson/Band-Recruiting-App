@@ -9,7 +9,7 @@ namespace server.Services
         Task<Student> UpdateStudentAsync(string id, UpdateStudentDTO updateStudentDTO);
         Task<StudentDTO> GetStudentByIdAsync(string id);
         Task<IEnumerable<Student>> GetAllStudentsAsync();
-        Task<bool> DeleteStudentAsync(int id);
+        Task<bool> DeleteStudentAsync(string id);
 
         Task<IEnumerable<Student>> GetStudentsByGradYearAsync(int gradYear);
         // Other methods as needed for student-related logic
@@ -20,7 +20,7 @@ namespace server.Services
         Task<IEnumerable<Comment>> GetStudentCommentsAsync(string studentId);
         Task<int> GetStudentOfferCountAsync(string studentId);
 
-        Task<InterestDTO> AddInterestAsync(string studentId, int bandId);
+        Task<InterestDTO> AddInterestAsync(CreateInterestDTO createInterestDTO);
         Task<IEnumerable<InterestDTO>> GetStudentInterestsAsync(string studentId);
     }
 }

@@ -2,11 +2,10 @@
 {
     public class CreateOfferDTO
     {
-        public string StudentId { get; set; }
-        public string RecruiterId { get; set; }
-        public int BandId { get; set; }
         public decimal Amount { get; set; }
-        public DateTime OfferDate { get; set; }
-
+        public string StudentId { get; set; }
+        public int BandId { get; set; }
+        public int OfferBandId { get; set; }
+        public string RecruiterId { get; set; }
     }
 }

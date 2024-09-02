@@ -3,6 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0339D4F7-1553-48EC-B3AA-A62D6DD1344F}|..\\TBRServerTests\\TBRServerTests.csproj|c:\\users\\josep\\desktop\\tbr-app\\tbrservertests\\unittests\\services\\studentservice_should.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0339D4F7-1553-48EC-B3AA-A62D6DD1344F}|..\\TBRServerTests\\TBRServerTests.csproj|c:\\users\\josep\\desktop\\tbr-app\\tbrservertests\\unittests\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,152 +21,101 @@
       "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\helpers\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:helpers\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0339D4F7-1553-48EC-B3AA-A62D6DD1344F}|..\\TBRServerTests\\TBRServerTests.csproj|c:\\users\\josep\\desktop\\tbr-app\\tbrservertests\\unittests\\services\\recruiterservice_getrecruitersbybandtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0339D4F7-1553-48EC-B3AA-A62D6DD1344F}|..\\TBRServerTests\\TBRServerTests.csproj|c:\\users\\josep\\desktop\\tbr-app\\tbrservertests\\xunit.runner.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\bandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\bandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\interestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\interestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\ibandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\ibandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\interest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\interest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\band.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\videodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\videodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\recruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\data\\videoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\videoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\data\\studentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\studentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\createvideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createvideodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\tokenrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\tokenrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\createrecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createrecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0339D4F7-1553-48EC-B3AA-A62D6DD1344F}|..\\TBRServerTests\\TBRServerTests.csproj|c:\\users\\josep\\desktop\\tbr-app\\tbrservertests\\tbrservertests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\RecruiterService_CreateRecruiterTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\interestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\interestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\StudentService_CreateStudentTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\bandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\bandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\middleware\\jsonexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:middleware\\jsonexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\data\\interestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\interestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\data\\offerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\offerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\createinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\interest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\interest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\data\\bandconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:data\\bandconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\createofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\controllers\\offerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\offerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\createrecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createrecruiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\recruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\recruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\controllers\\recruiterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:controllers\\recruiterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\irecruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\irecruiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\recruiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\recruiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0339D4F7-1553-48EC-B3AA-A62D6DD1344F}|..\\TBRServerTests\\TBRServerTests.csproj|c:\\users\\josep\\desktop\\tbr-app\\tbrservertests\\tbrservertests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\updateofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\updateofferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\dtos\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:dtos\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\offerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\offerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|c:\\users\\josep\\desktop\\tbr-app\\server\\services\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF0956F9-F0DC-4628-AE4E-40E274D872A5}|server.csproj|solutionrelative:services\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -173,47 +128,60 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StudentsController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\StudentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StudentsController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\StudentsController.cs*",
-              "RelativeToolTip": "Controllers\\StudentsController.cs*",
-              "ViewState": "AQIAAEQAAAAAAAAAAAD4v0oAAAAeAAAA",
+              "DocumentIndex": 5,
+              "Title": "RecruiterService_GetRecruitersByBandTests.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\UnitTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
+              "RelativeDocumentMoniker": "..\\TBRServerTests\\UnitTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\UnitTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
+              "RelativeToolTip": "..\\TBRServerTests\\UnitTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:14:44.66Z",
+              "WhenOpened": "2024-09-02T06:03:11.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Helpers\\SeedData.cs",
-              "RelativeDocumentMoniker": "Helpers\\SeedData.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Helpers\\SeedData.cs",
-              "RelativeToolTip": "Helpers\\SeedData.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAmwGoAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "StudentService_Should.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\UnitTests\\Services\\StudentService_Should.cs",
+              "RelativeDocumentMoniker": "..\\TBRServerTests\\UnitTests\\Services\\StudentService_Should.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\UnitTests\\Services\\StudentService_Should.cs",
+              "RelativeToolTip": "..\\TBRServerTests\\UnitTests\\Services\\StudentService_Should.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAAwIYAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T05:34:55.418Z",
+              "WhenOpened": "2024-09-02T05:37:11.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\UnitTests\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "..\\TBRServerTests\\UnitTests\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\UnitTests\\Controllers\\StudentController.cs*",
+              "RelativeToolTip": "..\\TBRServerTests\\UnitTests\\Controllers\\StudentController.cs*",
+              "ViewState": "AQIAALMAAAAAAAAAAAAAwMAAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T05:36:28.599Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAmwBgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T01:05:33.298Z",
+              "Title": "xunit.runner.json",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\xunit.runner.json",
+              "RelativeDocumentMoniker": "..\\TBRServerTests\\xunit.runner.json",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\xunit.runner.json",
+              "RelativeToolTip": "..\\TBRServerTests\\xunit.runner.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-02T05:30:59.554Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -223,459 +191,335 @@
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAuwEkAAAAzAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T05:50:39.181Z",
+              "WhenOpened": "2024-08-29T21:09:01.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StudentService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\StudentService.cs",
-              "RelativeDocumentMoniker": "Services\\StudentService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\StudentService.cs*",
-              "RelativeToolTip": "Services\\StudentService.cs*",
-              "ViewState": "AQIAADwAAAAAAAAAAAD4v0MAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:20:58.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IStudentService.cs",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IStudentService.cs",
               "RelativeDocumentMoniker": "Services\\IStudentService.cs",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IStudentService.cs*",
               "RelativeToolTip": "Services\\IStudentService.cs*",
-              "ViewState": "AQIAAAUAAAAAAAAAAIA0wAoAAAA5AAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:21:38.462Z",
+              "WhenOpened": "2024-08-31T15:54:00.837Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAiwAcAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T21:42:23.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Interest.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Interest.cs",
-              "RelativeDocumentMoniker": "Models\\Interest.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Interest.cs",
-              "RelativeToolTip": "Models\\Interest.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T17:24:47.759Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAhwHcAAAAAAAAA",
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "Services\\StudentService.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\StudentService.cs*",
+              "RelativeToolTip": "Services\\StudentService.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T03:30:33.466Z",
+              "WhenOpened": "2024-08-29T18:09:06.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "InterestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\InterestDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\InterestDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\InterestDTO.cs",
-              "RelativeToolTip": "DTOs\\InterestDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAvAAAA",
+              "DocumentIndex": 2,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentsController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\StudentsController.cs*",
+              "RelativeToolTip": "Controllers\\StudentsController.cs*",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAwGQAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T17:24:09.103Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BandService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\BandService.cs",
-              "RelativeDocumentMoniker": "Services\\BandService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\BandService.cs",
-              "RelativeToolTip": "Services\\BandService.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAswEAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T19:19:26.606Z"
+              "WhenOpened": "2024-08-29T18:31:04.978Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "CommentDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CommentDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\CommentDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CommentDTO.cs",
-              "RelativeToolTip": "DTOs\\CommentDTO.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAuwAYAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:26:53.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IBandService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IBandService.cs",
-              "RelativeDocumentMoniker": "Services\\IBandService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IBandService.cs",
-              "RelativeToolTip": "Services\\IBandService.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAwAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T17:46:08.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Band.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Band.cs",
-              "RelativeDocumentMoniker": "Models\\Band.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Band.cs",
-              "RelativeToolTip": "Models\\Band.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T17:47:05.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Offer.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Offer.cs",
-              "RelativeDocumentMoniker": "Models\\Offer.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Offer.cs",
-              "RelativeToolTip": "Models\\Offer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T17:47:24.492Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "StudentDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\StudentDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\StudentDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\StudentDTO.cs",
-              "RelativeToolTip": "DTOs\\StudentDTO.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAcwBMAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:43:25.203Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "VideosController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\VideosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VideosController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\VideosController.cs",
-              "RelativeToolTip": "Controllers\\VideosController.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAYwFoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:25:54.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Video.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Video.cs",
-              "RelativeDocumentMoniker": "Models\\Video.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Video.cs",
-              "RelativeToolTip": "Models\\Video.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAzwAwAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:13:16.61Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ICommentService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\ICommentService.cs",
-              "RelativeDocumentMoniker": "Services\\ICommentService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\ICommentService.cs",
-              "RelativeToolTip": "Services\\ICommentService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAuwAkAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:27:31.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IVideoService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IVideoService.cs",
-              "RelativeDocumentMoniker": "Services\\IVideoService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IVideoService.cs",
-              "RelativeToolTip": "Services\\IVideoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:18:06.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "VideoService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\VideoService.cs",
-              "RelativeDocumentMoniker": "Services\\VideoService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\VideoService.cs",
-              "RelativeToolTip": "Services\\VideoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:18:24.794Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CommentService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\CommentService.cs",
-              "RelativeDocumentMoniker": "Services\\CommentService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\CommentService.cs",
-              "RelativeToolTip": "Services\\CommentService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:26:38.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Comment.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Comment.cs",
-              "RelativeDocumentMoniker": "Models\\Comment.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Comment.cs",
-              "RelativeToolTip": "Models\\Comment.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAYwAQAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:26:16.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Rating.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Rating.cs",
-              "RelativeDocumentMoniker": "Models\\Rating.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Rating.cs",
-              "RelativeToolTip": "Models\\Rating.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:24:16.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "VideoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\VideoDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\VideoDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\VideoDTO.cs",
-              "RelativeToolTip": "DTOs\\VideoDTO.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAcAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:11:35.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "RecruiterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\RecruiterDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\RecruiterDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\RecruiterDTO.cs",
-              "RelativeToolTip": "DTOs\\RecruiterDTO.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowAgAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:15:54.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "VideoConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\VideoConfiguration.cs",
-              "RelativeDocumentMoniker": "Data\\VideoConfiguration.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\VideoConfiguration.cs",
-              "RelativeToolTip": "Data\\VideoConfiguration.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBkAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:33:38.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "StudentConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\StudentConfiguration.cs",
-              "RelativeDocumentMoniker": "Data\\StudentConfiguration.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\StudentConfiguration.cs",
-              "RelativeToolTip": "Data\\StudentConfiguration.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAwwBYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:30:27.652Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CreateVideoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateVideoDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\CreateVideoDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateVideoDTO.cs",
-              "RelativeToolTip": "DTOs\\CreateVideoDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T03:10:45.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "TokenRequestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\TokenRequestDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\TokenRequestDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\TokenRequestDTO.cs",
-              "RelativeToolTip": "DTOs\\TokenRequestDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T21:46:10.672Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "AuthResponseDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\AuthResponseDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\AuthResponseDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\AuthResponseDTO.cs",
-              "RelativeToolTip": "DTOs\\AuthResponseDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T21:45:52.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "CreateUserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateUserDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\CreateUserDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateUserDTO.cs",
-              "RelativeToolTip": "DTOs\\CreateUserDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T18:25:04.762Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "JsonExceptionMiddleware.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Middleware\\JsonExceptionMiddleware.cs",
-              "RelativeDocumentMoniker": "Middleware\\JsonExceptionMiddleware.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Middleware\\JsonExceptionMiddleware.cs",
-              "RelativeToolTip": "Middleware\\JsonExceptionMiddleware.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T03:30:11.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "CreateRecruiterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateRecruiterDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\CreateRecruiterDTO.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateRecruiterDTO.cs",
-              "RelativeToolTip": "DTOs\\CreateRecruiterDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:58:06.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "RecruiterService_CreateRecruiterTests.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\RecruiterService_CreateRecruiterTests.cs",
-              "RelativeDocumentMoniker": "..\\TBRServerTests\\Services\\RecruiterService_CreateRecruiterTests.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\RecruiterService_CreateRecruiterTests.cs",
-              "RelativeToolTip": "..\\TBRServerTests\\Services\\RecruiterService_CreateRecruiterTests.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAMwCIAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:14:17.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "RecruiterService_GetRecruitersByBandTests.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
-              "RelativeDocumentMoniker": "..\\TBRServerTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
-              "RelativeToolTip": "..\\TBRServerTests\\Services\\RecruiterService_GetRecruitersByBandTests.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAD4vxkAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T22:24:15.058Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "RecruiterService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\RecruiterService.cs",
-              "RelativeDocumentMoniker": "Services\\RecruiterService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\RecruiterService.cs",
-              "RelativeToolTip": "Services\\RecruiterService.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAswFgAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:16:29.014Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "RecruitersController.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\RecruitersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RecruitersController.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\RecruitersController.cs",
-              "RelativeToolTip": "Controllers\\RecruitersController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAgwEIAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:21:14.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IRecruiterService.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IRecruiterService.cs",
-              "RelativeDocumentMoniker": "Services\\IRecruiterService.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IRecruiterService.cs",
-              "RelativeToolTip": "Services\\IRecruiterService.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAwAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:16:14.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "StudentService_CreateStudentTests.cs",
-              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\StudentService_CreateStudentTests.cs",
-              "RelativeDocumentMoniker": "..\\TBRServerTests\\Services\\StudentService_CreateStudentTests.cs",
-              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\Services\\StudentService_CreateStudentTests.cs",
-              "RelativeToolTip": "..\\TBRServerTests\\Services\\StudentService_CreateStudentTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T22:30:17.483Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "TBRServerTests.csproj",
+              "Title": "TBRServerTests",
               "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\TBRServerTests.csproj",
               "RelativeDocumentMoniker": "..\\TBRServerTests\\TBRServerTests.csproj",
               "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\TBRServerTests\\TBRServerTests.csproj",
               "RelativeToolTip": "..\\TBRServerTests\\TBRServerTests.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-20T21:08:57.382Z"
+              "WhenOpened": "2024-09-02T05:28:50.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OfferConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\OfferConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\OfferConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\OfferConfiguration.cs",
+              "RelativeToolTip": "Data\\OfferConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:56:16.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateInterestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateInterestDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateInterestDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateInterestDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateInterestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T19:49:56.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BandService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\BandService.cs",
+              "RelativeDocumentMoniker": "Services\\BandService.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\BandService.cs",
+              "RelativeToolTip": "Services\\BandService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAwwBIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T20:02:15.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CreateUserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateUserDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateUserDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateUserDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateUserDTO.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAA7wAwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T22:22:53.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T22:38:28.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BandConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\BandConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\BandConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\BandConfiguration.cs",
+              "RelativeToolTip": "Data\\BandConfiguration.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAApwBYAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T20:04:05.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OffersController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\OffersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OffersController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\OffersController.cs",
+              "RelativeToolTip": "Controllers\\OffersController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAMwDwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:50:13.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "InterestConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\InterestConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\InterestConfiguration.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Data\\InterestConfiguration.cs",
+              "RelativeToolTip": "Data\\InterestConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T20:03:12.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InterestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\InterestDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\InterestDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\InterestDTO.cs",
+              "RelativeToolTip": "DTOs\\InterestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T19:54:52.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateOfferDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateOfferDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateOfferDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateOfferDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateOfferDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:59:54.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Interest.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Interest.cs",
+              "RelativeDocumentMoniker": "Models\\Interest.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Interest.cs",
+              "RelativeToolTip": "Models\\Interest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T19:52:14.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Recruiter.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Recruiter.cs",
+              "RelativeDocumentMoniker": "Models\\Recruiter.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Recruiter.cs",
+              "RelativeToolTip": "Models\\Recruiter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T21:44:00.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RecruiterService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\RecruiterService.cs",
+              "RelativeDocumentMoniker": "Services\\RecruiterService.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\RecruiterService.cs",
+              "RelativeToolTip": "Services\\RecruiterService.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAkwDQAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T21:13:17.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CreateStudentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateStudentDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateStudentDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateStudentDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateStudentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T21:21:37.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CreateRecruiterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateRecruiterDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateRecruiterDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\CreateRecruiterDTO.cs",
+              "RelativeToolTip": "DTOs\\CreateRecruiterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T21:18:41.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RecruitersController.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\RecruitersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecruitersController.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Controllers\\RecruitersController.cs",
+              "RelativeToolTip": "Controllers\\RecruitersController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwC8AAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T18:26:16.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UpdateOfferDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\UpdateOfferDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateOfferDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\UpdateOfferDTO.cs",
+              "RelativeToolTip": "DTOs\\UpdateOfferDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T18:01:36.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Offer.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Offer.cs",
+              "RelativeDocumentMoniker": "Models\\Offer.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Models\\Offer.cs",
+              "RelativeToolTip": "Models\\Offer.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:53:37.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "OfferDTO.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\OfferDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\OfferDTO.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\DTOs\\OfferDTO.cs",
+              "RelativeToolTip": "DTOs\\OfferDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:52:54.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "OfferService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\OfferService.cs",
+              "RelativeDocumentMoniker": "Services\\OfferService.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\OfferService.cs",
+              "RelativeToolTip": "Services\\OfferService.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAWwCwAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:50:21.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IOfferService.cs",
+              "DocumentMoniker": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IOfferService.cs",
+              "RelativeDocumentMoniker": "Services\\IOfferService.cs",
+              "ToolTip": "C:\\Users\\josep\\Desktop\\TBR-APP\\server\\Services\\IOfferService.cs",
+              "RelativeToolTip": "Services\\IOfferService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:50:20.004Z",
+              "EditorCaption": ""
             }
           ]
         }

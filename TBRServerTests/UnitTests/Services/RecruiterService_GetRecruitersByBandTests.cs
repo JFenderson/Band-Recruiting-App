@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TBRServerTests.Services
+namespace TBRServerTests.UnitTests.Services
 {
     public class RecruiterService_GetRecruitersByBandTests
     {

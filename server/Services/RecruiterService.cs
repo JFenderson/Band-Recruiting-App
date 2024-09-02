@@ -66,15 +66,6 @@ namespace server.Services
 
         public async Task<Recruiter> CreateRecruiterAsync(CreateRecruiterDTO createRecruiterDTO)
         {
-            //{
-            //    "userName": "Juke1",
-            //      "email": "user@subr.com",
-            //      "password": "Password@123",
-            //      "firstName": "Human",
-            //      "lastName": "Jukebox",
-            //      "bandId": 2,
-            //      "phone": "222-222-2222"
-            //    }
 
             // Check if the email already exists
             var existingUserByEmail = await _userManager.FindByEmailAsync(createRecruiterDTO.Email);
@@ -98,7 +89,7 @@ namespace server.Services
                 LastName = createRecruiterDTO.LastName,
                 BandId = createRecruiterDTO.BandId,
                 Phone = createRecruiterDTO.Phone,
-                ProfilePicture = createRecruiterDTO.Phone,
+                ProfilePicture = createRecruiterDTO.ProfilePicture,
                 CreatedAt = DateTime.UtcNow
             };
 
