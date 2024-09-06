@@ -7,7 +7,12 @@ interface ProfileIconProps {
   size?: number; // Optional size parameter for the icon
 }
 
-const ProfileIcon: React.FC<ProfileIconProps> = ({ firstName, lastName, profilePicture, size = 40 }) => {
+const ProfileIcon: React.FC<ProfileIconProps> = ({
+  firstName = "",
+  lastName = "",
+  profilePicture,
+  size = 40,
+}) => {
   const initials = `${firstName.charAt(0).toUpperCase()}${lastName.charAt(0).toUpperCase()}`;
 
   const style = {
@@ -21,16 +26,20 @@ const ProfileIcon: React.FC<ProfileIconProps> = ({ firstName, lastName, profileP
     justifyContent: 'center',
     fontSize: `${size / 2}px`,
     fontWeight: 'bold',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase' as const, // TypeScript requires specific values for textTransform
   };
 
   return (
     <div style={{ position: 'relative', width: `${size}px`, height: `${size}px` }}>
       {profilePicture ? (
-        <img src={profilePicture} alt="Profile" style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+        <img
+          src={profilePicture}
+          alt={`${firstName} ${lastName}'s profile`}
+          style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} // Ensure the image covers and fits the container
+        />
       ) : (
-        <div  style={style}>
-          {initials}
+        <div style={style}>
+          {initials || "?"} {/* Fallback to "?" if first or last name is missing */}
         </div>
       )}
     </div>
