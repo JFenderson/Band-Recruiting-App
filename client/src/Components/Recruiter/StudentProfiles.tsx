@@ -1,24 +1,17 @@
-//Student Profiles: Viewing and rating student videos.
 import React, { useState, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   getStudentProfile,
   addStudentRating,
 } from "../../services/studentService";
-import {  getOffersByStudentId } from "../../services/offerService";
+import { getOffersByStudentId } from "../../services/offerService";
 import Student from "../../models/Student";
 import Offer from "../../models/Offer";
 import { Video } from "../../models/Video";
-import api from "../../services/apiConfig";
 import Navbar from "../Common/Navbar";
 
-interface LocationState {
-  studentId: string;
-}
-
 const StudentProfile: React.FC = () => {
-  const location = useLocation<LocationState>();
-  const studentId = location.state?.studentId;
+  const { studentId } = useParams<{ studentId: string }>(); // Get studentId from URL params
   const [student, setStudent] = useState<Student | null>(null);
   const [offers, setOffers] = useState<Offer[]>([]);
   const [amount, setAmount] = useState<number>(0);
@@ -31,20 +24,19 @@ const StudentProfile: React.FC = () => {
 
   useEffect(() => {
     if (!studentId) {
+    console.log("Student ID:", studentId);
+
       setError("Student ID not found");
       return;
     }
-    console.log("student Id", studentId);
+    console.log("Student ID:", studentId);
 
     const fetchStudent = async () => {
       try {
-        const fetchedStudent = await api.get<Student>(`/student/${studentId}`);
-        // const fetchedStudent = await getStudentProfile(studentId!);
-        setStudent(fetchedStudent.data);
-        setVideos(fetchedStudent.data.videos || []);
-        setOffers(fetchedStudent.data.scholarshipOffers || [])
-        console.log("student Id", studentId);
-        const studentOffers = await getOffersByStudentId(studentId!);
+        const fetchedStudent = await getStudentProfile(studentId); // Fetch student profile from your API
+        setStudent(fetchedStudent);
+        setVideos(fetchedStudent.videos || []);
+        const studentOffers = await getOffersByStudentId(studentId); // Fetch offers for the student
         setOffers(studentOffers || []);
       } catch (error) {
         console.error("Failed to fetch student profile:", error);
@@ -56,7 +48,7 @@ const StudentProfile: React.FC = () => {
 
   const handleRatingSubmit = async () => {
     try {
-      await addStudentRating(studentId!, rating, comment);
+      await addStudentRating(studentId!, rating, comment); // Add rating for the student
       alert("Rating submitted successfully!");
       setRating(0);
       setComment("");
@@ -65,7 +57,6 @@ const StudentProfile: React.FC = () => {
       alert("Failed to submit rating.");
     }
   };
-
 
   if (error) {
     return <div>{error}</div>;
@@ -132,7 +123,7 @@ const StudentProfile: React.FC = () => {
                   onChange={(e) => setAmount(parseInt(e.target.value))}
                 />
               </label>
-              <button >Send Offer</button>
+              <button>Send Offer</button>
             </div>
 
             <h2>Offers</h2>
@@ -175,15 +166,12 @@ const StudentProfile: React.FC = () => {
                     {new Date(video.uploadDate).toLocaleDateString()}
                   </p>
 
-                  {/* Commenting and Rating Logic for Videos */}
                   <div>
                     <h4>Add Comment</h4>
-                    {/* Implement the commenting logic here */}
                     <textarea placeholder="Add your comment" />
                     <button>Submit Comment</button>
 
                     <h4>Rate Video</h4>
-                    {/* Implement the rating logic here */}
                     <input type="number" min="1" max="5" />
                     <button>Submit Rating</button>
                   </div>

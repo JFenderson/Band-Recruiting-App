@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, } from "react";
 import { getAllStudents } from "../../services/studentService"; // API service
 import { Student } from "../../models/Student"; // Student model
 import Navbar from "../Common/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Accordion,
   AccordionSummary,
@@ -16,6 +16,15 @@ const AllStudentsList: React.FC = () => {
   const [students, setStudents] = useState<Student[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [filteredStudents, setFilteredStudents] = useState<Students[]>([]);
+  const navigate = useNavigate();
+
+
+
+  const handleNavigation = (route: string) => {
+    navigate(route);
+    
+  };
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -32,6 +41,14 @@ const AllStudentsList: React.FC = () => {
     fetchStudents();
   }, []);
 
+  const handleFilterChange = (
+    criteria: keyof Student,
+    value: string | number
+  ) => {
+    const filtered = students.filter((student) => student[criteria] === value);
+    setFilteredStudents(filtered);
+  };
+
   if (loading) {
     return <p>Loading students...</p>;
   }
@@ -45,6 +62,28 @@ const AllStudentsList: React.FC = () => {
       <Navbar />
       <div>
         <h2>All Students</h2>
+        <div>
+          <label>Filter by Instrument:</label>
+          <select
+            onChange={(e) => handleFilterChange("instrument", e.target.value)}
+          >
+            <option value="">All</option>
+            <option value="Trumpet">Trumpet</option>
+            <option value="Saxophone">Saxophone</option>
+            <option value="Clarinet">Clarinet</option>
+          </select>
+
+          <label>Filter by Graduation Year:</label>
+          <select
+            onChange={(e) =>
+              handleFilterChange("graduationYear", parseInt(e.target.value))
+            }
+          >
+            <option value="">All</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+          </select>
+        </div>
         {students.length === 0 ? (
           <p>No students found.</p>
         ) : (
@@ -68,7 +107,7 @@ const AllStudentsList: React.FC = () => {
                       Graduation Year: {student.graduationYear}
                     </Typography>
                     <Typography>Rating:</Typography>
-                    <Button variant="contained" color="primary">
+                    <Button onClick={() => handleNavigation(`/students/${student.id}`)} variant="contained" color="primary">
                       See Profile
                     </Button>
                   </AccordionDetails>

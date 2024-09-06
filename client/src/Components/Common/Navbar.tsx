@@ -67,8 +67,8 @@ const Navbar: React.FC = () => {
     role === "Recruiter"
       ? [
           { name: "Dashboard", path: "/recruiter-profile" },
-          { name: "Students", path: "/recruiter/all-students" },
-          { name: "My Students", path: "/recruiter/students-offers" },
+          { name: "Students", path: "/students"},
+          { name: "My Students", path: "/recruiter/students" },
         ]
         : [
           { name: "Dashboard", path: "/student-profile" },

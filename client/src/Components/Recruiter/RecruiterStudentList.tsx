@@ -22,7 +22,7 @@ const RecruiterStudentList: React.FC<RecruiterStudentListProps> = ({ recruiterId
         setStudents(response);
         setLoading(false);
       } catch (err) {
-        setError("Failed to fetch students.");
+        setError(`"Failed to fetch students.${err}"`);
         setLoading(false);
       }
     };
@@ -48,7 +48,7 @@ const RecruiterStudentList: React.FC<RecruiterStudentListProps> = ({ recruiterId
       ) : (
         students.map((student) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={student.id}>
-            <StudentCard student={student} />
+            <StudentCard student={student} studentId={student.id} />
           </Grid>
         ))
       )}

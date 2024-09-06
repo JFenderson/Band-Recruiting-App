@@ -66,14 +66,14 @@ const App: React.FC = () => {
                 </Route>
                 <Route element={<ProtectedRoute allowedRoles={['Recruiter']} />}>
                     <Route path="/recruiter-profile" element={<RecruiterProfilePage />} />
-                    <Route path="/recruiter/student-profile/:id" element={<StudentProfile />} />
+                    <Route path="/students/:studentId" element={<StudentProfile />} />
                     <Route path="/profile-update" element={<ProfileManagement />} />
                     <Route path="/bands" element={<BandsList />} />
                     <Route path="/bands/recruiter/:id" element={<BandProfile />} />
                     <Route path="/students/:studentId/make-offer" element={<MakeOffer />} />
                     <Route path="/offer-management/:studentId" element={<OfferManagement />} />
-                    <Route path="/recruiter/students-offers" element={<RecruiterStudentList recruiterId={storedUserId!} />} />
-                    <Route path="/recruiter/all-students" element={<AllStudentsList />} />
+                    <Route path="recruiter/students" element={<RecruiterStudentList recruiterId={storedUserId!} />} />
+                    <Route path="/students" element={<AllStudentsList />} />
                 </Route>
             </Routes>
       </AuthProvider>

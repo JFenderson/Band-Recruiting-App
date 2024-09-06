@@ -109,35 +109,13 @@ const RecruiterProfilePage: React.FC = () => {
         <p>Email: {profile.email}</p>
         <p>Band: {band?.name} at {band?.schoolName}</p>
 
-        <h2>Students</h2>
-        <div>
-          <label>Filter by Instrument:</label>
-          <select
-            onChange={(e) => handleFilterChange("instrument", e.target.value)}
-          >
-            <option value="">All</option>
-            <option value="Trumpet">Trumpet</option>
-            <option value="Saxophone">Saxophone</option>
-            <option value="Clarinet">Clarinet</option>
-          </select>
-
-          <label>Filter by Graduation Year:</label>
-          <select
-            onChange={(e) =>
-              handleFilterChange("graduationYear", parseInt(e.target.value))
-            }
-          >
-            <option value="">All</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-          </select>
-        </div>
+     
 
         <ul>
           {filteredStudents.map((student) => (
             <li key={student.id}>
                 
-              <Link to={`/recruiter/student-profile/${student.id}`} state={{studentId: student.id}}> {student.lastName},{student.firstName}</Link>
+              <Link to={`/students/${student.id}`} state={{studentId: student.id}}> {student.lastName},{student.firstName}</Link>
               <Link to={`/offer-management/${student.id}`}> Offer</Link>
             </li>
           ))}
