@@ -18,7 +18,7 @@ namespace server.Services
             _userManager = userManager;
         }
 
-        public async Task<IEnumerable<Recruiter>> GetRecruitersByBandAsync(int bandId)
+        public async Task<IEnumerable<Recruiter>> GetRecruitersByBandAsync(string bandId)
         {
             return await _context.Users
                 .OfType<Recruiter>()
@@ -40,6 +40,14 @@ namespace server.Services
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Offer>> GetRecruiterOffersAsync(string recruiterId)
+        {
+            return await _context.Offers
+                .Where(c => c.RecruiterId == recruiterId)
+                .ToListAsync();
+        }
+
+
         public async Task<IEnumerable<Recruiter>> GetRecruitersAsync()
         {
             return await _context.Users
@@ -47,21 +55,20 @@ namespace server.Services
                 .ToListAsync();
         }
 
-        public async Task<Recruiter> GetRecruiterByIdAsync(string recruiterId)
+        public async Task<RecruiterDTO> GetRecruiterByIdAsync(string recruiterId)
         {
             var recruiter = await _context.Users
                 .OfType<Recruiter>()
                 .FirstOrDefaultAsync(r => r.Id == recruiterId);
 
-            if (recruiter == null) return null;
+            if (recruiter == null) {
+                throw new Exception("Recruiter not found.");
+            }
 
-            return new Recruiter
-            {
-                FirstName = recruiter.FirstName,
-                LastName = recruiter.LastName,
-                Email = recruiter.Email,
-                Id = recruiter.Id
-            };
+            var RecruiterDto = new RecruiterDTO(recruiter);
+
+            return RecruiterDto;
+            
         }
 
         public async Task<Recruiter> CreateRecruiterAsync(CreateRecruiterDTO createRecruiterDTO)

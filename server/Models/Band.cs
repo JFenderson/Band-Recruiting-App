@@ -5,7 +5,7 @@ namespace Models
 {
     public class Band
     {
-        public int BandId { get; set; } // This should be the primary key
+        public string BandId { get; set; } // This should be the primary key
         public string Name { get; set; }
         public string SchoolName { get; set; }
         public string Location { get; set; }

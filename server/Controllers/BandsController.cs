@@ -33,7 +33,7 @@ namespace server.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Band>> GetBand(int id)
+        public async Task<ActionResult<Band>> GetBand(string id)
         {
             var band = await _bandService.GetBandByIdAsync(id);
             if (band == null)
@@ -54,7 +54,7 @@ namespace server.Controllers
 
         [Authorize(Policy = "RequireRecruiterRole")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBand(int id, Band band)
+        public async Task<IActionResult> UpdateBand(string id, Band band)
         {
             if (id != band.BandId)
             {
@@ -72,7 +72,7 @@ namespace server.Controllers
 
         [Authorize(Policy = "RequireAdminRole")]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBand(int id)
+        public async Task<IActionResult> DeleteBand(string id)
         {
             var success = await _bandService.DeleteBandAsync(id);
             if (!success)

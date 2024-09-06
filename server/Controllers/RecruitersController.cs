@@ -43,14 +43,19 @@ namespace server.Controllers
 
         // GET: api/recruiter/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<RecruiterDTO>> GetRecruiterById(string id)
+        public async Task<ActionResult<Recruiter>> GetRecruiterById(string id)
         {
-            var recruiter = await _recruiterService.GetRecruiterByIdAsync(id);
-            if (recruiter == null)
+            try
             {
-                return NotFound();
+                var recruiter = await _recruiterService.GetRecruiterByIdAsync(id);
+                return Ok(recruiter);
             }
-            return Ok(new RecruiterDTO());
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+
+
         }
 
         // POST: api/recruiter
@@ -77,17 +82,22 @@ namespace server.Controllers
 
         // PUT: api/recruiter/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRecruiter(string id, UpdateRecruiterDTO updateRecruiterDTO)
+        public async Task<ActionResult<Recruiter>> UpdateRecruiter(string id, [FromBody] UpdateRecruiterDTO updateRecruiterDTO)
         {
-            var recruiter = await _recruiterService.GetRecruiterByIdAsync(id);
-            if (recruiter == null)
-                return NotFound();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            // Update recruiter properties from updateRecruiterDTO
-
-            await _recruiterService.UpdateAsync(recruiter);
-
-            return NoContent();
+            try
+            {
+                var updatedRecruiter = await _recruiterService.UpdateRecruiterAsync(id, updateRecruiterDTO);
+                return Ok(updatedRecruiter);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
 
         // DELETE: api/recruiter/{id}
@@ -187,23 +197,50 @@ namespace server.Controllers
         #region Offer
         // POST: api/recruiter/offer
         [HttpPost("offer")]
-        public async Task<ActionResult<Offer>> SendOffer([FromBody] OfferDTO offerDTO)
+        public async Task<IActionResult> CreateOffer([FromBody] OfferDTO offerDto)
         {
-            var offer = await _offerService.SendOfferAsync(offerDTO.StudentId, offerDTO.RecruiterId,offerDTO.OfferBandId, offerDTO.Amount);
-            return Ok(offer);
+            var createdOffer = await _offerService.CreateOfferAsync(offerDto);
+            return CreatedAtAction(nameof(GetOffer), new { offerId = createdOffer.OfferId, studentId = createdOffer.StudentId }, createdOffer);
         }
 
-        // PUT: api/recruiter/offer/{offerId}/status
-        [HttpPut("offer/{offerId}/status")]
-        public async Task<IActionResult> UpdateOfferStatus(int offerId, [FromBody] OfferStatusDTO statusDTO)
+        [HttpGet("{offerId}/student/{studentId}")]
+        public async Task<IActionResult> GetOffer(string offerId, string studentId)
         {
-            var success = await _offerService.UpdateOfferStatusAsync(offerId, statusDTO.Status);
-            if (!success)
+            var offer = await _offerService.GetOfferAsync(offerId, studentId);
+            if (offer == null)
             {
                 return NotFound();
             }
+            return Ok(offer);
+        }
 
+
+        [HttpGet("{id}/offers")]
+        public async Task<ActionResult<IEnumerable<OfferDTO>>> GetRecruiterOffers(string id)
+        {
+            var offers = await _offerService.GetOffersByRecruiterAsync(id);
+            return Ok(offers);
+        }
+
+        [HttpPut("{offerId}")]
+        public async Task<IActionResult> UpdateOffer(string offerId, [FromBody] OfferDTO offerDto)
+        {
+            var updatedOffer = await _offerService.UpdateOfferAsync(offerId, offerDto);
+            return Ok(updatedOffer);
+        }
+
+        [HttpDelete("{offerId}")]
+        public async Task<IActionResult> DeleteOffer(string offerId)
+        {
+            await _offerService.DeleteOfferAsync(offerId);
             return NoContent();
+        }
+
+        [HttpGet("student/{studentId}")]
+        public async Task<IActionResult> GetOffersByStudent(string studentId)
+        {
+            var offers = await _offerService.GetOffersByStudentAsync(studentId);
+            return Ok(offers);
         }
 
 

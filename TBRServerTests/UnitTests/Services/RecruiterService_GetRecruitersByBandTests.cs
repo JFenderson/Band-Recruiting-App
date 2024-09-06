@@ -33,9 +33,9 @@ namespace TBRServerTests.UnitTests.Services
         {
             var recruiters = new List<Recruiter>
             {
-                new Recruiter { UserName = "recruiter1", Email = "recruiter1@example.com", BandId = 1, FirstName = "John", LastName = "Doe" },
-                new Recruiter { UserName = "recruiter2", Email = "recruiter2@example.com", BandId = 1, FirstName = "Jane", LastName = "Smith" },
-                new Recruiter { UserName = "recruiter3", Email = "recruiter3@example.com", BandId = 2, FirstName = "Jim", LastName = "Beam" }
+                new Recruiter { UserName = "recruiter1", Email = "recruiter1@example.com", BandId = "1", FirstName = "John", LastName = "Doe" },
+                new Recruiter { UserName = "recruiter2", Email = "recruiter2@example.com", BandId = "1", FirstName = "Jane", LastName = "Smith" },
+                new Recruiter { UserName = "recruiter3", Email = "recruiter3@example.com", BandId = "2", FirstName = "Jim", LastName = "Beam" }
             };
 
             _context.Users.AddRange(recruiters);
@@ -46,19 +46,19 @@ namespace TBRServerTests.UnitTests.Services
         public async Task GetRecruitersByBandAsync_ValidBandId_ReturnsCorrectRecruiters()
         {
             // Act
-            var result = await _service.GetRecruitersByBandAsync(1);
+            var result = await _service.GetRecruitersByBandAsync("1");
 
             // Assert
             Assert.NotNull(result);
             Assert.Equal(2, result.Count());
-            Assert.All(result, r => Assert.Equal(1, r.BandId));
+            Assert.All(result, r => Assert.Equal("1", r.BandId));
         }
 
         [Fact]
         public async Task GetRecruitersByBandAsync_InvalidBandId_ReturnsEmptyList()
         {
             // Act
-            var result = await _service.GetRecruitersByBandAsync(99); // BandId that doesn't exist
+            var result = await _service.GetRecruitersByBandAsync("99"); // BandId that doesn't exist
 
             // Assert
             Assert.NotNull(result);

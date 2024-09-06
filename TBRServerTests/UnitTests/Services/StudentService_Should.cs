@@ -167,7 +167,7 @@ namespace TBRServerTests.UnitTests.Services
             var createInterestDTO = new CreateInterestDTO
             {
                 StudentId = "student1",
-                BandId = 1
+                BandId = "1"
             };
 
             // Act
@@ -176,7 +176,7 @@ namespace TBRServerTests.UnitTests.Services
             // Assert
             Assert.NotNull(interest);
             Assert.Equal("student1", interest.StudentId);
-            Assert.Equal(1, interest.BandId);
+            Assert.Equal("1", interest.BandId);
         }
     }
 }

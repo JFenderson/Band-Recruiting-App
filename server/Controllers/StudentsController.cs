@@ -38,7 +38,7 @@ namespace server.Controllers
 
         // GET: api/Student/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<StudentDTO>> GetStudentById(string id)
+        public async Task<ActionResult<Student>> GetStudentById(string id)
         {
             try
             {

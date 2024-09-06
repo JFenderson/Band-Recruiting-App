@@ -12,7 +12,7 @@ using server.Data;
 namespace server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240901033515_InitialCreate")]
+    [Migration("20240904035448_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -160,11 +160,8 @@ namespace server.Migrations
 
             modelBuilder.Entity("Models.Band", b =>
                 {
-                    b.Property<int>("BandId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BandId"));
+                    b.Property<string>("BandId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -237,8 +234,9 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InterestId"));
 
-                    b.Property<int>("BandId")
-                        .HasColumnType("int");
+                    b.Property<string>("BandId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("InterestDate")
                         .HasColumnType("datetime2");
@@ -258,20 +256,19 @@ namespace server.Migrations
 
             modelBuilder.Entity("Models.Offer", b =>
                 {
-                    b.Property<int>("OfferId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OfferId"));
+                    b.Property<string>("OfferId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("BandName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("BandId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("OfferBandId")
-                        .HasColumnType("int");
+                    b.Property<string>("BandName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("OfferDate")
                         .HasColumnType("datetime2");
@@ -279,9 +276,6 @@ namespace server.Migrations
                     b.Property<string>("RecruiterId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("RecruiterName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -291,12 +285,9 @@ namespace server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("StudentName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("OfferId");
 
-                    b.HasIndex("OfferBandId");
+                    b.HasIndex("BandId");
 
                     b.HasIndex("RecruiterId");
 
@@ -462,8 +453,9 @@ namespace server.Migrations
                 {
                     b.HasBaseType("server.Models.User");
 
-                    b.Property<int>("BandId")
-                        .HasColumnType("int");
+                    b.Property<string>("BandId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -680,7 +672,7 @@ namespace server.Migrations
                 {
                     b.HasOne("Models.Band", "Band")
                         .WithMany("Offers")
-                        .HasForeignKey("OfferBandId")
+                        .HasForeignKey("BandId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

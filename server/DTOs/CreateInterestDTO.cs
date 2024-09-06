@@ -5,6 +5,6 @@
         public int InterestId { get; set; }
 
         public string StudentId { get; set; }
-        public int BandId { get; set; }
+        public string BandId { get; set; }
     }
 }

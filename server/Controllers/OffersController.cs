@@ -41,34 +41,53 @@ namespace server.Controllers
             return Ok(new Offer());
         }
 
+        [HttpGet("student/{studentId}")]
+        public async Task<ActionResult<IEnumerable<OfferDTO>>> GetOffersByStudentId(string studentId)
+        {
+            var offers = await _offerService.GetOffersByStudentAsync(studentId);
+            return Ok(offers);
+        }
+
+        [HttpGet("band/{bandId}")]
+        public async Task<ActionResult<IEnumerable<OfferDTO>>> GetOffersByBandId(string bandId)
+        {
+            var offers = await _offerService.GetOffersByStudentAsync(bandId);
+            return Ok(offers);
+        }
+
         // Get all offers for a recruiter
         [HttpGet("recruiter/{recruiterId}/offers")]
         public async Task<ActionResult<IEnumerable<OfferDTO>>> GetOffersForRecruiter(string recruiterId)
         {
-            var offers = await _offerService.GetOffersForRecruiter(recruiterId);
+            var offers = await _offerService.GetOffersByRecruiterAsync(recruiterId);
             return Ok(offers);
         }
 
-        // Send an offer to a student
-        [HttpPost("recruiter/{recruiterId}/offers")]
-        public async Task<ActionResult<OfferDTO>> SendOffer(string recruiterId, [FromBody] CreateOfferDTO createOfferDTO)
+        [HttpGet("recruiter/{recruiterId}/students")]
+        public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudentsByRecruiterOffers(string recruiterId)
         {
-            var offer = await _offerService.SendOfferAsync(createOfferDTO.StudentId, recruiterId, createOfferDTO.BandId, createOfferDTO.Amount);
+            var students = await _offerService.GetStudentsByRecruiterAsync(recruiterId);
 
-            return CreatedAtAction(nameof(GetOffersForRecruiter), new { recruiterId = recruiterId });
+            if (students == null || !students.Any())
+                return NotFound();
+
+            return Ok(students);
+        }
+
+        // Send an offer to a student
+        [HttpPost("recruiter/{recruiterId}/student/{studentId}/offers")]
+        public async Task<IActionResult> CreateOffer([FromBody] OfferDTO offerDto)
+        {
+            var createdOffer = await _offerService.CreateOfferAsync(offerDto);
+            return CreatedAtAction(nameof(GetOffer), new { offerId = createdOffer.OfferId, studentId = createdOffer.StudentId }, createdOffer);
         }
 
         // Update the status of an offer
-        [HttpPut("offers/{offerId}/status")]
-        public async Task<IActionResult> UpdateOfferStatus(int offerId, [FromBody] UpdateOfferStatusDTO updateStatusDTO)
+        [HttpPut("{offerId}/status")]
+        public async Task<IActionResult> UpdateOffer(string offerId, [FromBody] OfferDTO offerDto)
         {
-            var success = await _offerService.UpdateOfferStatusAsync(offerId, updateStatusDTO.Status);
-            if (!success)
-            {
-                return NotFound(new { Message = "Offer not found." });
-            }
-
-            return NoContent();
+            var updatedOffer = await _offerService.UpdateOfferAsync(offerId, offerDto);
+            return Ok(updatedOffer);
         }
 
         [HttpDelete("{id}")]

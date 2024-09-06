@@ -5,10 +5,17 @@ namespace server.Services
 {
     public interface IOfferService : IService<Offer>
     {
-        Task<bool> UpdateOfferStatusAsync(int offerId, OfferStatus status);
-        Task<Offer> SendOfferAsync(string studentId, string recruiterId, int bandId, decimal amount);
-        Task<IEnumerable<Offer>> GetOffersByBandAsync(int bandId);
-        Task<IEnumerable<Offer>> GetOffersByStudentAsync(string studentId);
-        Task<IEnumerable<OfferDTO>> GetOffersForRecruiter(string recruiterId);
+        Task<OfferDTO> CreateOfferAsync(OfferDTO offerDto);
+        Task<IEnumerable<OfferDTO>> GetOffersByBandAsync(string bandId);
+        Task<IEnumerable<OfferDTO>> GetOffersByStudentAsync(string studentId);
+
+        Task<IEnumerable<OfferDTO>> GetOffersByRecruiterAsync(string recruiterId);
+
+        Task<OfferDTO> GetOfferAsync(string offerId, string studentId);
+        Task<OfferDTO> UpdateOfferAsync(string offerId, OfferDTO offerDto);
+        Task DeleteOfferAsync(string offerId);
+        Task<IEnumerable<StudentDTO>> GetStudentsByRecruiterAsync(string recruiterId);
+        Task<decimal?> GetStudentOverallRatingAsync(string studentId);
+        Task<int> GetStudentOfferCountAsync(string studentId);
     }
 }

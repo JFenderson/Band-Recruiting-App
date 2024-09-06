@@ -24,7 +24,7 @@ namespace server.Services
                 //.ToListAsync();
         }
 
-        public async Task<Band> GetBandByIdAsync(int id)
+        public async Task<Band> GetBandByIdAsync(string id)
         {
             return await _context.Bands
                 .Include(b => b.Recruiters)
@@ -46,7 +46,7 @@ namespace server.Services
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> DeleteBandAsync(int id)
+        public async Task<bool> DeleteBandAsync(string id)
         {
             var band = await _context.Bands.FindAsync(id);
             if (band == null) return false;
@@ -55,7 +55,7 @@ namespace server.Services
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<IEnumerable<Student>> GetInterestedStudentsAsync(int bandId)
+        public async Task<IEnumerable<Student>> GetInterestedStudentsAsync(string bandId)
         {
             return await _context.Interests
                 .Where(i => i.BandId == bandId)
@@ -63,7 +63,7 @@ namespace server.Services
                 .ToListAsync();
         }
 
-        public async Task<int> GetInterestedStudentCountAsync(int bandId)
+        public async Task<int> GetInterestedStudentCountAsync(string bandId)
         {
             return await _context.Interests
                 .CountAsync(i => i.BandId == bandId);

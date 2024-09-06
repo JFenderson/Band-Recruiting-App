@@ -108,6 +108,7 @@ namespace server.Controllers
                     LastName = model.LastName,
                     Phone = model.Phone,
                     Instrument = model.Instrument,
+                    HighSchool = model.HighSchool,
                     CreatedAt = DateTime.UtcNow,
                     RefreshToken = GenerateRefreshToken(), // Generate and assign a refresh token
                     RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7) // Example expiration time, adjust as needed

@@ -4,6 +4,6 @@ namespace server.DTOs
 {
     public class UpdateOfferStatusDTO
     {
-        public OfferStatus Status { get; set; }
+        public string Status { get; set; }
     }
 }

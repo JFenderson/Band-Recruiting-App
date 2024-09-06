@@ -235,6 +235,8 @@ namespace server.Services
                     InterestId = i.InterestId,
                     StudentId = i.StudentId,
                     BandId = i.BandId,
+                    BandName = i.Band.Name,
+                    SchoolName = i.Band.SchoolName,
                     InterestDate = i.InterestDate
                 })
                 .ToArrayAsync();

@@ -12,6 +12,7 @@ namespace server.DTOs
         public string LastName { get; set; }
         public string Instrument { get; set; }
         public string HighSchool { get; set; }
+        public string Phone { get; set; }
         public int GraduationYear { get; set; }
         public string ProfilePicture { get; set; }
 
@@ -30,6 +31,7 @@ namespace server.DTOs
             FirstName = student.FirstName;
             LastName = student.LastName;
             Email = student.Email;
+            Phone = student.Phone;
             GraduationYear = student.GraduationYear;
             Instrument = student.Instrument;
             HighSchool = student.HighSchool;

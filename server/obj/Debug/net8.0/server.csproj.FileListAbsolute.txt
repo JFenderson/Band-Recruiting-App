@@ -518,3 +518,6 @@ C:\Users\josep\Desktop\TBR-APP\server\obj\Debug\net8.0\refint\server.dll
 C:\Users\josep\Desktop\TBR-APP\server\obj\Debug\net8.0\server.pdb
 C:\Users\josep\Desktop\TBR-APP\server\obj\Debug\net8.0\server.genruntimeconfig.cache
 C:\Users\josep\Desktop\TBR-APP\server\obj\Debug\net8.0\ref\server.dll
+C:\Users\josep\Desktop\TBR-APP\server\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\josep\Desktop\TBR-APP\server\bin\Debug\net8.0\AWSSDK.DynamoDBv2.dll
+C:\Users\josep\Desktop\TBR-APP\server\bin\Debug\net8.0\Bogus.dll

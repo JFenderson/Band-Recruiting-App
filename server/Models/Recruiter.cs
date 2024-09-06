@@ -8,7 +8,7 @@ namespace Models
 
     public class Recruiter : User
     {
-        public int BandId { get; set; } // Foreign key referencing Band.BandId
+        public string BandId { get; set; } // Foreign key referencing Band.BandId
 
         public string FirstName { get; set; }
         public string LastName { get; set; }

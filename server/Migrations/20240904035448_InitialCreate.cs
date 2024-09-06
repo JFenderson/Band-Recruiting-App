@@ -29,8 +29,7 @@ namespace server.Migrations
                 name: "Bands",
                 columns: table => new
                 {
-                    BandId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BandId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     SchoolName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -71,7 +70,7 @@ namespace server.Migrations
                     UserType = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BandId = table.Column<int>(type: "int", nullable: true),
+                    BandId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Recruiter_FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Recruiter_LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Recruiter_Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -207,7 +206,7 @@ namespace server.Migrations
                     InterestId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    BandId = table.Column<int>(type: "int", nullable: false),
+                    BandId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     InterestDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -231,17 +230,14 @@ namespace server.Migrations
                 name: "Offers",
                 columns: table => new
                 {
-                    OfferId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OfferDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    OfferBandId = table.Column<int>(type: "int", nullable: false),
+                    OfferId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RecruiterId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    StudentName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RecruiterName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BandName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    BandId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    BandName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    OfferDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -259,8 +255,8 @@ namespace server.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Offers_Bands_OfferBandId",
-                        column: x => x.OfferBandId,
+                        name: "FK_Offers_Bands_BandId",
+                        column: x => x.BandId,
                         principalTable: "Bands",
                         principalColumn: "BandId",
                         onDelete: ReferentialAction.Restrict);
@@ -423,9 +419,9 @@ namespace server.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Offers_OfferBandId",
+                name: "IX_Offers_BandId",
                 table: "Offers",
-                column: "OfferBandId");
+                column: "BandId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Offers_RecruiterId",

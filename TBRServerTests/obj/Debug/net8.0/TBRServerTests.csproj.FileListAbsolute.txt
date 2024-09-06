@@ -639,3 +639,5 @@ C:\Users\josep\Desktop\TBR-APP\TBRServerTests\obj\Debug\net8.0\refint\TBRServerT
 C:\Users\josep\Desktop\TBR-APP\TBRServerTests\obj\Debug\net8.0\TBRServerTests.pdb
 C:\Users\josep\Desktop\TBR-APP\TBRServerTests\obj\Debug\net8.0\TBRServerTests.genruntimeconfig.cache
 C:\Users\josep\Desktop\TBR-APP\TBRServerTests\obj\Debug\net8.0\ref\TBRServerTests.dll
+C:\Users\josep\Desktop\TBR-APP\TBRServerTests\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\josep\Desktop\TBR-APP\TBRServerTests\bin\Debug\net8.0\AWSSDK.DynamoDBv2.dll

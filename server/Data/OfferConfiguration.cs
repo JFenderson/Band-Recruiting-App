@@ -26,7 +26,7 @@ namespace server.Data
 
             builder.HasOne(o => o.Band)
                    .WithMany(b => b.Offers)
-                   .HasForeignKey(o => o.OfferBandId)
+                   .HasForeignKey(o => o.BandId)
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.Property(o => o.Status)
