@@ -1,8 +1,9 @@
-import { Band } from './Band';
-import { Student } from './Student';
-import { Recruiter } from './Recruiter';
+import  Band  from './Band';
+import Student  from './Student';
+import  Recruiter  from './Recruiter';
 
-export interface Offer {
+export default interface Offer {
+    bandName: string;
     offerId: number;
     amount: number;
     status: 'Pending' | 'Accepted' | 'Declined'; // Enum-like string literal
@@ -11,6 +12,8 @@ export interface Offer {
     studentId: string; // Reference to the student receiving the offer
     recruiterId: string; // Reference to the recruiter making the offer
     band?: Band;
+    bandId: string;
     student?: Student;
     recruiter?: Recruiter;
+    studentName?: string;
 }

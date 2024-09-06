@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   BrowserRouter,
   Route,
@@ -21,6 +21,13 @@ import BandsList from "./components/Band/BandsList";
 import BandProfile from "./components/Band/BandProfile";
 import StudentProfilePage from "./components/Student/StudentDashboard";
 import ProfileManagement from "./components/Student/ProfileManagement";
+import RecruiterProfilePage from "./components/Recruiter/RecruiterDashboard";
+import StudentVideoDashboard from "./components/Video/Dashboard";
+import MakeOffer from "./components/Recruiter/MakeOffer";
+import StudentProfile from "./components/Recruiter/StudentProfiles";
+import OfferManagement from "./components/Recruiter/OfferManagement";
+import RecruiterStudentList from "./components/Recruiter/RecruiterStudentList";
+import AllStudentsList from "./components/Recruiter/AllStudentsList";
 
 // const PrivateRoutes = () => {
 //   const { authenticated } = useContext(AuthContext);
@@ -31,28 +38,42 @@ import ProfileManagement from "./components/Student/ProfileManagement";
 // };
 
 const App: React.FC = () => {
-    const { role } = useAuth();
+    const { user } = useAuth();
+    const storedUserId = localStorage.getItem('userId');
+
+    console.log("user in App", user)
+
+    
   return (
     <BrowserRouter>
       <AuthProvider>
       <Routes>
                 <Route index element={<Home />} />
-                <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route element={<ProtectedRoute allowedRoles={['Student', 'Recruiter']} />}>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                </Route>
                 
                 {/* Protected Dashboard Routes */}
                 <Route element={<ProtectedRoute allowedRoles={['Student']} />}>
-                    <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/profile-update" element={<ProfileManagement />} />
                     <Route path="/bands" element={<BandsList />} />
-                    <Route path="/bands/:id" element={<BandProfile />} />
+                    <Route path="/bands/student/:id" element={<BandProfile />} />
                     <Route path="/student-profile" element={<StudentProfilePage />} />
+                    <Route path="/dashboard/student/videos" element={<StudentVideoDashboard studentId = {storedUserId!} />} />
+                    
                 </Route>
                 <Route element={<ProtectedRoute allowedRoles={['Recruiter']} />}>
-                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/recruiter-profile" element={<RecruiterProfilePage />} />
+                    <Route path="/recruiter/student-profile/:id" element={<StudentProfile />} />
                     <Route path="/profile-update" element={<ProfileManagement />} />
                     <Route path="/bands" element={<BandsList />} />
-                    <Route path="/bands/:id" element={<BandProfile />} />
+                    <Route path="/bands/recruiter/:id" element={<BandProfile />} />
+                    <Route path="/students/:studentId/make-offer" element={<MakeOffer />} />
+                    <Route path="/offer-management/:studentId" element={<OfferManagement />} />
+                    <Route path="/recruiter/students-offers" element={<RecruiterStudentList recruiterId={storedUserId!} />} />
+                    <Route path="/recruiter/all-students" element={<AllStudentsList />} />
                 </Route>
             </Routes>
       </AuthProvider>

@@ -1,4 +1,4 @@
-import { Band } from '../models/Band';
+import  Band  from '../models/Band';
 import api from './apiConfig';
 
 

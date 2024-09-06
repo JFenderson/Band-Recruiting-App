@@ -1,0 +1,35 @@
+/* HomePage.css */
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.homepage h1 {
+    font-size: 36px;
+    color: #343a40;
+    margin-bottom: 24px;
+}
+
+.auth-links {
+    display: flex;
+    gap: 16px;
+}
+
+.auth-links a {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.auth-links a:hover {
+    background-color: #0056b3;
+}

@@ -1,5 +1,5 @@
 import { Video } from './Video';
-import { Recruiter } from './Recruiter';
+import Recruiter from './Recruiter';
 
 export default interface Rating {
     ratingId: number;

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 interface Band {
   bandId: number;
-  name: string;
+  bandName: string;
   schoolName: string;
 }
 
@@ -21,6 +21,7 @@ const BandInterests: React.FC<BandInterestsProps> = ({ userId }) => {
         const userId = localStorage.getItem('userId');
 
         const response = await api.get<Band[]>(`/Student/${userId}/interests`);
+        console.log("bandinterests", response.data)
         setBands(response.data);
       } catch (error) {
         console.error('Failed to fetch band interests', error);
@@ -36,7 +37,7 @@ const BandInterests: React.FC<BandInterestsProps> = ({ userId }) => {
       <ul>
         {bands.map((band) => (
           <li key={band.bandId}>
-            <Link to={`/bands/${band.bandId}`}>{band.name} - {band.schoolName}</Link>
+            <Link to={`/bands/student/${band.bandId}`}>{band.bandName} at {band.schoolName}</Link> <button>Remove Interest</button>
           </li>
         ))}
       </ul>

@@ -1,8 +1,8 @@
 import { Video } from './Video';
-import { Recruiter } from './Recruiter';
-import { Student } from './Student';
+import Recruiter  from './Recruiter';
+import  Student  from './Student';
 
-export interface Comment {
+export default interface Comment {
     commentId: number;
     content: string;
     commentDate: string;

@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import api from "../../services/apiConfig";
 import { useNavigate } from "react-router-dom";
-// import { updateStudent } from "../../services/studentService";
 
 
 const ProfileManagement: React.FC = () => {
@@ -29,19 +28,30 @@ const navigate = useNavigate();
       profilePicture: Yup.string().url("Invalid URL")
     }),
     onSubmit: async (values) => {
-        try {
-          const userId = localStorage.getItem('userId');
-          const payload = {
-            ...values,
-            graduationYear: parseInt(values.graduationYear, 10), // Convert string to number
-          };
-          await api.put(`Student/${userId}/profile`, payload);
-          alert('Profile updated successfully');
-          navigate('/dashboard')
-        } catch (error) {
-          console.error('Failed to update profile', error);
+      try {
+        console.log("Form values:", values);
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+          console.error("No user ID found in localStorage");
+          return;
         }
+    
+        const payload = {
+          ...values,
+          graduationYear: parseInt(values.graduationYear, 10),
+        };
+        console.log("Payload:", payload);
+    
+        const response = await api.put(`/Student/${userId}`, payload);
+        console.log("API response:", response);
+    
+        alert('Profile updated successfully');
+        navigate('/dashboard');
+      } catch (error) {
+        console.error('Failed to update profile', (error as Error).message);
+        alert('Failed to update profile');
       }
+    }
   });
 
   return (

@@ -1,8 +1,8 @@
-import { Recruiter } from './Recruiter';
-import { Offer } from './Offer';
-import { Interest } from './Interest';
+import Recruiter  from './Recruiter';
+import  Offer  from './Offer';
+import Interest  from './Interest';
 
-export interface Band {
+export default interface Band {
     bandId: number;
     name: string;
     schoolName: string;

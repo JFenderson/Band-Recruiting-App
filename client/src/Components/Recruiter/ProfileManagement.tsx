@@ -6,68 +6,57 @@ import { useNavigate } from "react-router-dom";
 
 
 const RecruiterProfileManagement: React.FC = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
-      graduationYear: "",
-      instrument: "",
-      highSchool: "",
-      profilePicture: ""
+      companyName: "",
+      profilePicture: "",
     },
     validationSchema: Yup.object({
-      firstName: Yup.string().required("First Name is required"),
-      lastName: Yup.string().required("Last Name is required"),
+      name: Yup.string().required("Name is required"),
       email: Yup.string().email("Invalid email address").required("Email is required"),
-      graduationYear: Yup.number().required("Graduation Year is required"),
-      instrument: Yup.string().required("Instrument is required"),
-      highSchool: Yup.string().required("High School is required"),
-      profilePicture: Yup.string().url("Invalid URL").required("Profile Picture URL is required")
+      companyName: Yup.string().required("Company Name is required"),
+      profilePicture: Yup.string().url("Invalid URL"),
     }),
     onSubmit: async (values) => {
       try {
-        const userId = localStorage.getItem("userId");
-        await api.put(`Student/${userId}/profile`, values);
+        const recruiterId = localStorage.getItem("userId");
+        const payload = { ...values };
+
+        if (!recruiterId) {
+          console.error("No recruiter ID found in localStorage");
+          return;
+        }
+
+        const response = await api.put(`/Recruiter/${recruiterId}`, payload);
+        console.log("API response:", response);
+
         alert("Profile updated successfully");
-        navigate('/dashboard')
+        navigate("/dashboard");
       } catch (error) {
         console.error("Failed to update profile", error);
+        alert("Failed to update profile");
       }
-    }
+    },
   });
 
   return (
     <form onSubmit={formik.handleSubmit}>
       <div>
-        <label htmlFor="firstName">First Name</label>
+        <label htmlFor="name">Name</label>
         <input
-          id="firstName"
-          name="firstName"
+          id="name"
+          name="name"
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.firstName}
+          value={formik.values.name}
         />
-        {formik.touched.firstName && formik.errors.firstName ? (
-          <div>{formik.errors.firstName}</div>
-        ) : null}
-      </div>
-
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          id="lastName"
-          name="lastName"
-          type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.lastName}
-        />
-        {formik.touched.lastName && formik.errors.lastName ? (
-          <div>{formik.errors.lastName}</div>
+        {formik.touched.name && formik.errors.name ? (
+          <div>{formik.errors.name}</div>
         ) : null}
       </div>
 
@@ -87,47 +76,17 @@ const navigate = useNavigate();
       </div>
 
       <div>
-        <label htmlFor="graduationYear">Graduation Year</label>
+        <label htmlFor="companyName">Company Name</label>
         <input
-          id="graduationYear"
-          name="graduationYear"
-          type="number"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.graduationYear}
-        />
-        {formik.touched.graduationYear && formik.errors.graduationYear ? (
-          <div>{formik.errors.graduationYear}</div>
-        ) : null}
-      </div>
-
-      <div>
-        <label htmlFor="instrument">Instrument</label>
-        <input
-          id="instrument"
-          name="instrument"
+          id="companyName"
+          name="companyName"
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.instrument}
+          value={formik.values.companyName}
         />
-        {formik.touched.instrument && formik.errors.instrument ? (
-          <div>{formik.errors.instrument}</div>
-        ) : null}
-      </div>
-
-      <div>
-        <label htmlFor="highSchool">High School</label>
-        <input
-          id="highSchool"
-          name="highSchool"
-          type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.highSchool}
-        />
-        {formik.touched.highSchool && formik.errors.highSchool ? (
-          <div>{formik.errors.highSchool}</div>
+        {formik.touched.companyName && formik.errors.companyName ? (
+          <div>{formik.errors.companyName}</div>
         ) : null}
       </div>
 

@@ -15,6 +15,8 @@ export interface RegisterCredentials {
   password: string;
   firstName: string;
   lastName: string;
+  phone: string;
+  userType: string;
   bandId?: number; // Optional if you're registering as a recruiter
 }
 
@@ -33,21 +35,30 @@ export interface AuthResponse {
 
 // Register function
 export const register = async (credentials: RegisterCredentials): Promise<void> => {
-  await api.post('/Admin/create-user', credentials);
+  try {
+    await api.post('/Account/register', credentials);
+  } catch (error) {
+    console.error('Registration failed', error);
+    throw error; // Rethrow error to handle it in the calling component
+  }
 };
 
 export const login = async (credentials: LoginCredentials): Promise<AuthResponse> => {
   try {
     const response = await api.post<AuthResponse>('/Account/login', credentials);
-    setAuthToken(response.data.token);
-    localStorage.setItem('refreshToken', response.data.refreshToken);
-    console.log('refreshToken', response.data.refreshToken);
+    const { token, refreshToken, role, userId } = response.data;
+
+    setAuthToken(token); // Set the token for subsequent requests
+    localStorage.setItem('token', token); // Store the token in localStorage
+    localStorage.setItem('refreshToken', refreshToken); // Store the refresh token
+    localStorage.setItem('role', role); // Store the user's role
+    localStorage.setItem('userId', userId); // Store the user's ID
+
     return response.data;
   } catch (error) {
     console.error('Failed to login', error);
     throw error;
   }
-
 };
 
 
@@ -58,7 +69,7 @@ export const refreshToken = async (): Promise<string | null> => {
       throw new Error('No refresh token available');
     }
 
-    const response = await api.post<AuthResponse>('/Account/refresh-token', { token: refreshToken });
+    const response = await api.post<AuthResponse>('/Account/refresh-token', { refreshToken });
     const { token, refreshToken: newRefreshToken } = response.data;
 
     setAuthToken(token);
@@ -76,4 +87,7 @@ export const logout = () => {
   setAuthToken(null);
   localStorage.removeItem('token');
   localStorage.removeItem('refreshToken');
+  localStorage.removeItem('role');
+  localStorage.removeItem('userId');
 };
+

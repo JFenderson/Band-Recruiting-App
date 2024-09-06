@@ -1,4 +1,4 @@
-import { Band } from '../models/Band';
+import  Band  from '../models/Band';
 import Student from '../models/Student';
 import api from './apiConfig';
 
@@ -7,6 +7,7 @@ export interface Interest {
     studentId: string; // Reference to the interested student
     bandId: number; // Reference to the band of interest
     isInterested: boolean;
+    bandName: string;
     interestDate: string;
     student?: Student;
     band?: Band;

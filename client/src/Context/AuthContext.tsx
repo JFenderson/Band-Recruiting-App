@@ -12,7 +12,8 @@ type IAuthContext = {
   authenticated: boolean;
   user: string | null;
   role: string | null;
-  setAuthenticated: (newState: boolean) => void;
+  userId: string | null;
+  profilePicture: string | null;
   login: (userName: string, password: string) => Promise<void>;
   register: (
     userName: string,
@@ -20,19 +21,24 @@ type IAuthContext = {
     password: string,
     firstName: string,
     lastName: string,
-    bandId?: number
+    phone: string,
+    bandId?: number,
+    userType?: string,
   ) => Promise<void>;
   logout: () => void;
+  loading: boolean; 
 };
 
 const initialValue = {
   authenticated: false,
   user: null,
   role: null,
-  setAuthenticated: () => {},
+  userId: null,
+  profilePicture: null,
   login: async () => {},
   register: async () => {},
   logout: () => {},
+  loading: false,
 };
 
 const AuthContext = createContext<IAuthContext>(initialValue);
@@ -46,11 +52,13 @@ export const useAuth = (): IAuthContext => {
 };
 
 const AuthProvider = ({ children }: Props) => {
-  const [authenticated, setAuthenticated] = useState<boolean>(initialValue.authenticated);
-  const [user, setUser] = useState<string | null>(initialValue.user);
-  const [role, setRole] = useState<string | null>(initialValue.role);
-  const [token, setTokenState] = useState<string | null>(null);
+  const [authenticated, setAuthenticated] = useState<boolean>(false);
+  const [user, setUser] = useState<string | null>(null);
+  const [role, setRole] = useState<string | null>(null);
+  const [tokenState, setTokenState] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [profilePicture, setProfilePicture] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -58,7 +66,7 @@ const AuthProvider = ({ children }: Props) => {
     const storedUser = localStorage.getItem('user');
     const storedRole = localStorage.getItem('role');
     const storedUserId = localStorage.getItem('userId');
-  
+    const storedProfilePicture = localStorage.getItem('profilePicture');
 
     if (storedToken && storedUser && storedRole && storedUserId) {
       setTokenState(storedToken);
@@ -67,64 +75,77 @@ const AuthProvider = ({ children }: Props) => {
       setUser(storedUser);
       setRole(storedRole);
       setAuthToken(storedToken);
+      setProfilePicture(storedProfilePicture);
     } else {
       setAuthenticated(false);
     }
+    setLoading(false);  // Set loading to false after checking localStorage
   }, []);
 
   const login = async (userName: string, password: string) => {
     try {
-        const { token, role, refreshToken, userId } = await loginService({ userName, password });
-        localStorage.setItem('token', token);
-        localStorage.setItem('role', role);
-        localStorage.setItem('user', userName);
-        localStorage.setItem('userId', userId); 
-        localStorage.setItem('refreshToken', refreshToken);
-        console.log('refreshToken', refreshToken)
-        setAuthToken(token); // Set the token in the Authorization header
-        setAuthenticated(true);
-        setRole(role);
-        setUser(userName);
-        setUserId(userId);
-        navigateToDashboard(role);
-    } catch (error) {
-        console.error('Failed to login', error);
-        throw error;
-    }
-};
+      const { token, role, refreshToken, userId } = await loginService({ userName, password });
+      localStorage.setItem('token', token);
+      localStorage.setItem('role', role);
+      localStorage.setItem('user', userName);
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('profilePicture', profilePicture); 
 
+      setAuthToken(token);
+      setAuthenticated(true);
+      setRole(role);
+      setUser(userName);
+      setUserId(userId);
+      setProfilePicture(profilePicture);
+      navigateToDashboard(role);
 
-  const register = async (
-    userName: string,
-    email: string,
-    password: string,
-    firstName: string,
-    lastName: string,
-    bandId?: number
-  ) => {
-    try {
-      await registerService({ userName, email, password, firstName, lastName, bandId });
-      await login(userName, password); // Automatically login after registration
     } catch (error) {
-      console.error('Failed to register', error);
+      console.error('Failed to login', error);
       throw error;
     }
   };
+
+
+const register = async (
+  userName: string,
+  email: string,
+  password: string,
+  firstName: string,
+  lastName: string,
+  phone: string,
+  bandId?: number,
+  userType?: string,
+) => {
+  try {
+    await registerService({
+      userName, email, password, firstName, lastName, phone, bandId,
+      userType: ''
+    });
+    await login(userName, password);
+  } catch (error) {
+    console.error('Failed to register', error);
+    throw error;
+  }
+};
 
   const navigateToDashboard = (role: string) => {
     if (role === null) {
       navigate('/login');
     } else {
-      navigate('/dashboard'); // Default for other roles
+      navigate('/dashboard');
     }
   };
 
   const logout = () => {
     logoutService();
-    setTokenState(null);
+    setAuthToken(null);
+    localStorage.clear();
     setAuthenticated(false);
     setUser(null);
     setRole(null);
+    setUserId(null);
+    setProfilePicture(null);
     navigate('/login');
   };
 
@@ -132,39 +153,42 @@ const AuthProvider = ({ children }: Props) => {
     try {
       const newToken = await refreshTokenService();
       if (newToken) {
-        setTokenState(newToken);
-        console.log("refreshed")
+        localStorage.setItem('token', newToken);
+        setAuthToken(newToken);
+        console.log("Token refreshed successfully");
       } else {
         logout();
       }
     } catch (error) {
       console.error('Failed to refresh token', error);
-      logout(); // If token refresh fails, logout the user
+      logout(); 
     }
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       refreshAuthToken();
-    }, 15 * 60 * 1000); // Refresh every 15 minutes or based on your token's expiry
+    }, 15 * 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{
-        authenticated,
-        user,
-        role,
-        setAuthenticated,
-        login,
-        register,
-        logout,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
+    value={{
+      authenticated,
+      user,
+      role,
+      userId,
+      profilePicture,
+      login,
+      register,
+      logout,
+      loading,  
+    }}
+  >
+    {children}
+  </AuthContext.Provider>
   );
 };
 
