@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import StudentDashboard from '../components/Student/StudentDashboard'
+import StudentDashboard from '../components/Student/StudentProfile'
 import RecruiterDashboard from '../components/Recruiter/RecruiterDashboard'
 import { useLocation } from 'react-router-dom';
 

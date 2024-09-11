@@ -1,90 +1,131 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import {
   createOffer,
-  deleteOffer,
   getOffersByStudentId,
   updateOffer,
 } from "../../services/offerService";
 import Offer from "../../models/Offer";
 import { useAuth } from "../../context/AuthContext";
-import Navbar from "../Common/Navbar";
 import { getStudentProfile } from "../../services/studentService";
 import Student from "../../models/Student";
+import { Button } from "../ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Input } from "../ui/input";
+import { useToast } from "../../hooks/use-toast";
+import { Guid } from 'js-guid';
+import api from "../../services/apiConfig";
+import { getBandById } from "../../services/bandService";
+import Band from "../../models/Band";
+import RecruiterProfile from "../../models/Recruiter";
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from "../ui/dialog";
 
-interface OfferManagementParams extends Record<string, string | undefined> {
+
+interface OfferManagementProps extends Record<string, string | undefined> {
   studentId: string;
   recruiterId?: string;
 }
 
-const OfferManagement: React.FC = () => {
-  const { studentId } = useParams<OfferManagementParams>(); // Retrieve studentId from the URL params
-  const navigate = useNavigate();
-  const { user } = useAuth();
+const OfferManagement: React.FC<OfferManagementProps> = ({ studentId, recruiterId }) => {
+  const { userId } = useAuth();
   const [student, setStudent] = useState<Student | null>(null);
   const [amount, setAmount] = useState<number>(0);
-  const [bandId, setBandId] = useState<string>(""); // The recruiter's band ID
-  const [bandName, setBandName] = useState<string>(""); // The name of the band
+  const [band, setBand] = useState<Band>(); 
   const [offers, setOffers] = useState<Offer[]>([]);
-  const userId = localStorage.getItem("userId");
+  const [loading, setLoading] = useState<boolean>(false); // Loading state
+  const { toast } = useToast();
+const [selectedOfferId, setSelectedOfferId] = useState<string | null>(null);
 
-  if (!userId) {
-    console.error("No user ID Found in localStorage");
-  }
-  const handleCreateOffer = async () => {
+  
+
+  const fetchProfile = async () => {
     try {
+      if (!recruiterId) {
+        console.error("No user ID found in localStorage");
+        return;
+      }
+      const response = await api.get<RecruiterProfile>(
+        `/Recruiter/${recruiterId}`
+      );
+      const bandResponse = await getBandById(response.data.bandId);
+      setBand(bandResponse);
+      console.log("recrtuier", recruiterId);
+    } catch (error) {
+      console.error("Failed to fetch recruiter profile:", error);
+    }
+  };
+
+  const handleCreateOffer = async () => {
+    if (!userId) {
+      toast({
+        title: "Error",
+        description: "No user ID found.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (amount <= 0) {
+      toast({
+        title: "Invalid Amount",
+        description: "Please enter a valid offer amount.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    try {
+      setLoading(true);
       const offerData: Partial<Offer> = {
         studentId: studentId!,
+        offerId: Guid.newGuid().toString(),
         amount,
-        bandId,
-        bandName,
+        bandId: band?.bandId,
+        bandName: band?.name,
         status: "Pending",
         offerDate: new Date().toISOString(),
+        recruiterId: userId ?? undefined,
       };
-      await createOffer(userId!, studentId!, offerData);
-      alert("Offer sent successfully!");
-      navigate(`/students/${studentId}`); // Redirect back to the student's profile page
+
+      console.log(offerData)
+      await createOffer(userId, studentId!, offerData);
+      toast({
+        title: "Success",
+        description: "Offer sent successfully!",
+        variant: "default"
+      });
+      handleGetOffer()
     } catch (error) {
-      console.error("Failed to send offer:", error);
-      alert("Failed to send offer.");
+      console.log(error)
+      toast({
+        title: "Error",
+        description: "Failed to send offer.",
+        variant: "destructive"
+      });
+    }finally {
+      setLoading(false); // Stop loading
     }
   };
 
   const handleGetOffer = async () => {
     try {
-        const fetchStudent = await getStudentProfile(studentId!);
+      const fetchStudent = await getStudentProfile(studentId!);
       const fetchedOffers = await getOffersByStudentId(studentId!);
+      console.log("Fetched offers:", fetchedOffers); 
       setStudent(fetchStudent);
-      
-      console.log("fetched Offers",fetchedOffers);
-      if (fetchedOffers.length > 0) {
-        console.log("offers by student:", {
-          student: studentId,
-          offers: fetchedOffers,
-        });
-        setOffers(fetchedOffers); // Set the first offer
-      } else {
-        console.log("offers by student:", {
-          student: studentId,
-          offers: fetchedOffers,
-        });
-
-        setOffers([]); // No offers found
-      }
+      setOffers(fetchedOffers);
     } catch (error) {
       console.error("Error getting offer:", error);
     }
   };
 
-  const handleUpdateOffer = async () => {
+  const handleUpdateOffer = async (offerId: string) => {
     try {
-      const updatedOffer = await updateOffer(studentId!, {
+      const updatedOffer = await updateOffer(offerId!, {
         status: "Accepted",
       });
-  
-      setOffers((prevOffers) => 
-        prevOffers.map((offer) => 
+
+      setOffers((prevOffers) =>
+        prevOffers.map((offer) =>
           offer.offerId === updatedOffer.offerId ? updatedOffer : offer
         )
       );
@@ -93,75 +134,110 @@ const OfferManagement: React.FC = () => {
     }
   };
 
-  const handleDeleteOffer = async () => {
+  const handleDeleteOffer = async (offerId: string) => {
+    if (!selectedOfferId) return; 
     try {
-      await deleteOffer(studentId!);
-      setOffers([]);
-      console.log("Offer deleted successfully");
+      console.log("Deleting offer with ID:", offerId);  // Log the offerId
+    await api.delete(`/Recruiter/${offerId}/offer`);
+    const fetchedOffers = await getOffersByStudentId(studentId!);
+    setOffers(fetchedOffers);
+    setSelectedOfferId(null);
     } catch (error) {
-      console.error("Error deleting offer:", error);
+      console.log(error)
+      toast({
+        title: "Error",
+        description: "Failed to delete offer.",
+        variant: "destructive"
+      });
     }
   };
 
   useEffect(() => {
+    fetchProfile();
     handleGetOffer();
   }, [studentId]);
 
   return (
     <div>
-      <Navbar />
-      <div>
-        <h1>Offers for {student?.firstName} {student?.lastName}</h1>
-        <button onClick={handleCreateOffer}>Create Offer</button>
-        <button onClick={handleGetOffer}>Get Offer</button>
-        <button onClick={handleUpdateOffer}>Update Offer</button>
-        <button onClick={handleDeleteOffer}>Delete Offer</button>
-        <div>
+      <div className="my-8">
+        <h1 className="text-2xl font-bold mb-4">
+          Offers for {student?.firstName} {student?.lastName}
+        </h1>
 
-            {offers.length > 0 ? (
-              <div>
-                {offers.map((offer) => (
-                    <div>
-                        <h2>Offer Details:</h2>
-                        <p>Band: {offer.bandName}</p>
-                        <p>Details: ${offer.amount}.00</p>
-                        <p>Status: {offer.status}</p>
-                        <p><strong>Offer Date:</strong> {new Date(offer.offerDate).toLocaleDateString()}</p>
-                    </div>
-                ))}
-              </div>  
-            ): (
-                <p>No Offers Yet</p>
+        {offers.length > 0 ? (
+          <div className="space-y-4">
+            {offers.map((offer) => (
+              <Card key={offer.offerId}>
+                <CardHeader>
+                  <CardTitle>{offer.bandName}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Status: {offer.status}</p>
+                  <p>Offer Date: {new Date(offer.offerDate).toLocaleDateString()}</p>
+                  <p>Amount: ${offer.amount}</p>
+
+                  {offer.recruiterId === userId && (
+                <div className="mt-4 space-x-2">
+                  <Button onClick={() => handleUpdateOffer(offer.offerId)}>
+                    Update Offer
+                  </Button>
+
+                  {/* Trigger the confirmation dialog for deleting an offer */}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="destructive" onClick={() => setSelectedOfferId(offer.offerId)}>
+                        Delete Offer
+                      </Button>
+                    </DialogTrigger>
+
+                    {/* Confirmation dialog for deleting the offer */}
+                    <DialogContent>
+                      <DialogTitle>Confirm Deletion</DialogTitle>
+                      <DialogDescription>
+                        Are you sure you want to delete this offer? This action cannot be undone.
+                      </DialogDescription>
+                      <div className="flex justify-end mt-4 space-x-2">
+                        <DialogClose asChild>
+                          <Button variant="secondary">Cancel</Button>
+                        </DialogClose>
+                        <Button variant="destructive" onClick={() => handleDeleteOffer(offer.offerId)}>
+                          Confirm
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <p>No Offers Yet</p>
+        )}
+      </div>
+
+      <div className="my-8">
+        <h2 className="text-xl font-semibold mb-4">Make an Offer</h2>
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Amount:
+            </label>
+            <Input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(parseInt(e.target.value))}
+            />
+          </div>
+          <Button onClick={handleCreateOffer} disabled={loading}>
+            {loading ? (
+              <div className="inline-block w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin"></div>
+            ) : (
+              "Send Offer"
             )}
+          </Button>
         </div>
-</div>
-      <h1>Make an Offer</h1>
-      <div>
-        <label>
-          Band Name:
-          <input
-            type="text"
-            value={bandName}
-            onChange={(e) => setBandName(e.target.value)}
-          />
-        </label>
-        <label>
-          Band ID:
-          <input
-            type="text"
-            value={bandId}
-            onChange={(e) => setBandId(e.target.value)}
-          />
-        </label>
-        <label>
-          Amount:
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(parseInt(e.target.value))}
-          />
-        </label>
-        <button onClick={handleCreateOffer}>Send Offer</button>
       </div>
     </div>
   );

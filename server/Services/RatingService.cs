@@ -66,5 +66,62 @@ namespace server.Services
 
             return true;
         }
+
+        public async Task<Rating> AddOrUpdateRatingAsync(string studentId, string recruiterId, int score)
+        {
+            // Check if this recruiter has already rated this student
+            var existingRating = await _context.Ratings
+                .FirstOrDefaultAsync(r => r.StudentId == studentId && r.RecruiterId == recruiterId);
+            var newRating = new Rating();
+
+            if (existingRating != null)
+            {
+                existingRating.Score = score;  // Update existing rating
+                _context.Ratings.Update(existingRating);
+
+
+            }
+            else
+            {
+
+
+                newRating.RatingId = Guid.NewGuid().ToString();
+                newRating.StudentId = studentId;
+                newRating.RecruiterId = recruiterId;
+                newRating.Score = score;
+                
+
+                _context.Ratings.Add(newRating);
+            }
+
+            await _context.SaveChangesAsync();
+
+            // Recalculate the student's average rating
+            await UpdateStudentAverageRatingAsync(studentId);
+
+            return existingRating ?? newRating;
+        }
+
+        private async Task UpdateStudentAverageRatingAsync(string studentId)
+        {
+
+            var ratings = await _context.Ratings
+                .Where(r => r.StudentId == studentId)
+                .ToListAsync();
+
+            if (ratings.Any())
+            {
+                int averageRating = (int)ratings.Average(r => r.Score);
+                //var student = await _context.Students.FindAsync(studentId);
+                var student = await _context.Users.OfType<Student>().FirstOrDefaultAsync(s => s.Id == studentId.ToString());
+
+                if (student != null)
+                {
+                    student.AverageRating = averageRating;
+                    _context.Users.Update(student);
+                    await _context.SaveChangesAsync();
+                }
+            }
+        }
     }
 }

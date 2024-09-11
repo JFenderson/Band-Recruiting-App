@@ -195,13 +195,7 @@ namespace server.Controllers
         #endregion
 
         #region Offer
-        // POST: api/recruiter/offer
-        [HttpPost("offer")]
-        public async Task<IActionResult> CreateOffer([FromBody] OfferDTO offerDto)
-        {
-            var createdOffer = await _offerService.CreateOfferAsync(offerDto);
-            return CreatedAtAction(nameof(GetOffer), new { offerId = createdOffer.OfferId, studentId = createdOffer.StudentId }, createdOffer);
-        }
+ 
 
         [HttpGet("{offerId}/student/{studentId}")]
         public async Task<IActionResult> GetOffer(string offerId, string studentId)
@@ -229,7 +223,7 @@ namespace server.Controllers
             return Ok(updatedOffer);
         }
 
-        [HttpDelete("{offerId}")]
+        [HttpDelete("{offerId}/offer")]
         public async Task<IActionResult> DeleteOffer(string offerId)
         {
             await _offerService.DeleteOfferAsync(offerId);

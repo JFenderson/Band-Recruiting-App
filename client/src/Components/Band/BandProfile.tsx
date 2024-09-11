@@ -1,7 +1,8 @@
 // src/components/Bands/BandProfile.tsx
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import api from '../../services/apiConfig';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import api from "../../services/apiConfig";
+import Navbar from "../Common/Navbar";
 
 interface Band {
   bandId: number;
@@ -18,10 +19,10 @@ const BandProfile: React.FC = () => {
   useEffect(() => {
     const fetchBand = async () => {
       try {
-        const response = await api.get<Band>(`/bands/${id}`);
+        const response = await api.get<Band>(`/Bands/${id}`);
         setBand(response.data);
       } catch (error) {
-        console.error('Failed to fetch band details', error);
+        console.error("Failed to fetch band details", error);
       }
     };
 
@@ -34,10 +35,13 @@ const BandProfile: React.FC = () => {
 
   return (
     <div>
-      <h1>{band.name}</h1>
-      <p>School: {band.schoolName}</p>
-      <p>Location: {band.location}</p>
-      <p>Number of Members: {band.numberOfMembers}</p>
+      <Navbar />
+      <div>
+        <h1>{band.name}</h1>
+        <p>School: {band.schoolName}</p>
+        <p>Location: {band.location}</p>
+        <p>Number of Members: {band.numberOfMembers}</p>
+      </div>
     </div>
   );
 };

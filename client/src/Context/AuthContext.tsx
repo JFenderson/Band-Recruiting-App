@@ -66,8 +66,8 @@ const AuthProvider = ({ children }: Props) => {
     const storedUser = localStorage.getItem('user');
     const storedRole = localStorage.getItem('role');
     const storedUserId = localStorage.getItem('userId');
-    const storedProfilePicture = localStorage.getItem('profilePicture');
-
+    const storedProfilePicture = localStorage.getItem('profilePicture') || ""; // Default to empty string if not found
+  
     if (storedToken && storedUser && storedRole && storedUserId) {
       setTokenState(storedToken);
       setUserId(storedUserId);
@@ -79,27 +79,29 @@ const AuthProvider = ({ children }: Props) => {
     } else {
       setAuthenticated(false);
     }
-    setLoading(false);  // Set loading to false after checking localStorage
+    setLoading(false);
   }, []);
 
   const login = async (userName: string, password: string) => {
     try {
       const { token, role, refreshToken, userId } = await loginService({ userName, password });
+      
+      // Ensure non-null values when setting in localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('role', role);
       localStorage.setItem('user', userName);
       localStorage.setItem('userId', userId);
       localStorage.setItem('refreshToken', refreshToken);
-      localStorage.setItem('profilePicture', profilePicture); 
-
+      localStorage.setItem('profilePicture', profilePicture ?? ""); // Default to empty string if null
+  
       setAuthToken(token);
       setAuthenticated(true);
       setRole(role);
       setUser(userName);
       setUserId(userId);
-      setProfilePicture(profilePicture);
+      setProfilePicture(profilePicture ?? ""); // Default to empty string if null
       navigateToDashboard(role);
-
+  
     } catch (error) {
       console.error('Failed to login', error);
       throw error;

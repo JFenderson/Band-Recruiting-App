@@ -82,3 +82,12 @@ export const sendOffer = async (recruiterId: string, studentId: string) => {
 export const addStudentRating = async (studentId: string, rating: number, comment: string): Promise<void> => {
   await api.post(`/Student/${studentId}/ratings`, { rating, comment });
 };
+
+export const rateStudent = async (studentId: string, score: number) => {
+  const recruiterId = localStorage.getItem("userId");
+  const response = await api.post(`/Rating/student/${studentId}/rate`, {
+    recruiterId,
+    score,
+  });
+  return response.data;
+};

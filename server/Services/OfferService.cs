@@ -30,7 +30,6 @@ namespace server.Services
 
             return new OfferDTO
             {
-                OfferId = offer.OfferId,
                 StudentId = offer.StudentId,
                 RecruiterId = offer.RecruiterId,
                 BandId = offer.BandId,
@@ -101,26 +100,35 @@ namespace server.Services
 
         public async Task<IEnumerable<StudentDTO>> GetStudentsByRecruiterAsync(string recruiterId)
         {
-            // Fetch all students to whom the recruiter has sent offers
-            var students = await _context.Offers
+            // Fetch all students to whom the recruiter has sent offers, avoiding duplicates
+            var studentsWithOffers = await _context.Offers
                 .Where(o => o.RecruiterId == recruiterId)  // Filter offers by recruiterId
-                .Select(o => o.Student)  // Select the related Student entity
-                .Distinct()  // Avoid duplicate students in case of multiple offers to the same student
+                .Select(o => o.Student)  // Select the related student entities
+                .Distinct()  // Avoid duplicate students
                 .ToListAsync();
 
-            // Map the list of students to StudentDTO
-            var studentDTOs = students.Select(s => new StudentDTO(s)).ToArray();
+            // After fetching the students from the database, switch to in-memory processing
+            var studentsWithDetails = studentsWithOffers
+                .Select(student => new
+                {
+                    Student = student,
+                    AverageRating = student.Ratings.Any() ? student.Ratings.Average(r => r.Score) : 0,  // Average rating calculation
+                    OfferCount = student.ScholarshipOffers.Count()  // Count of offers sent to this student
+                })
+                .ToList();
 
-            // Here, if you need to set additional properties like OverallRating and OfferCount,
-            // you can call other methods or calculate them here. Example:
-            foreach (var studentDTO in studentDTOs)
+            // Map the results to StudentDTO, passing the Student entity to the constructor
+            var studentDTOs = studentsWithDetails.Select(s => new StudentDTO(s.Student)  // Pass Student entity here
             {
-                studentDTO.OverallRating = await GetStudentOverallRatingAsync(studentDTO.Id);
-                studentDTO.OfferCount = await GetStudentOfferCountAsync(studentDTO.Id);
-            }
+                AverageRating = (decimal)s.AverageRating,  // Calculated average rating
+                OfferCount = s.OfferCount  // Count of offers
+            }).ToList();
 
             return studentDTOs;
         }
+
+
+
 
         public async Task<decimal?> GetStudentOverallRatingAsync(string studentId)
         {

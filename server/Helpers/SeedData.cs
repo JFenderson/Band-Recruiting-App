@@ -30,7 +30,7 @@ namespace server.Helpers
             }
 
             await CreateStudents(userManager, 10);
-            await CreateRecruiters(userManager, 5, context);
+            await CreateRecruiters(userManager, 10, context);
             await CreateOffers(context, 20);
 
             //// Create test students
@@ -121,6 +121,7 @@ namespace server.Helpers
         private static async Task CreateStudents(UserManager<User> userManager, int numStudents)
         {
             var faker = new Faker();
+            var rndNum = new Random();
 
             for (int i = 0; i < numStudents; i++)
             {
@@ -135,6 +136,7 @@ namespace server.Helpers
                     HighSchool = GenerateHighSchoolName(faker),
                     GraduationYear = faker.Date.Future().Year,
                     CreatedAt = DateTime.UtcNow,
+                    AverageRating = rndNum.Next(1,5),
                     RefreshToken = GenerateRefreshToken(),
                     RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7)
                 };

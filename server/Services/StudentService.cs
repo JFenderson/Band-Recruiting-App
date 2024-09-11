@@ -112,24 +112,31 @@ namespace server.Services
         public async Task<StudentDTO> GetStudentByIdAsync(string id)
         {
             var student = await _context.Users.OfType<Student>()
-                .Include(s => s.Videos)
-                .Include(s => s.ScholarshipOffers)
-                .FirstOrDefaultAsync(s => s.Id == id.ToString());
+                .Include(s => s.Videos)  // Fetch related videos
+                .Include(s => s.ScholarshipOffers)  // Fetch related scholarship offers
+                .Include(s => s.Ratings)  // Fetch related ratings
+                .FirstOrDefaultAsync(s => s.Id == id);  // Find student by ID
 
             if (student == null)
             {
                 throw new Exception("Student not found.");
             }
 
-            // Create StudentDTO using the constructor
-            var studentDto = new StudentDTO(student);
+            // Calculate the average rating
+            var averageRating = student.Ratings.Any()
+                ? student.Ratings.Average(r => r.Score)
+                : 0;
 
-            // Fetch additional information like overall rating and offer count
-            studentDto.OverallRating = await GetStudentOverallRatingAsync(student.Id);
-            studentDto.OfferCount = await GetStudentOfferCountAsync(student.Id);
+            // Create the StudentDTO object
+            var studentDto = new StudentDTO(student)
+            {
+                AverageRating = (decimal)averageRating,  // Assign average rating
+                OfferCount = await GetStudentOfferCountAsync(student.Id)  // Fetch offer count
+            };
 
             return studentDto;
         }
+
 
         public async Task<int> GetStudentOfferCountAsync(string studentId)
         {

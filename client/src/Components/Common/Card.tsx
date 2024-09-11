@@ -1,25 +1,39 @@
-import React from 'react';
+import * as React from 'react';
+import MCard from '@mui/material/Card'; // Rename the imported Material-UI Card to avoid conflict
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { Container, Paper } from '@mui/material';
 
-interface CardProps {
-    title: string;
-    description: string;
-    imageUrl: string;
-    link: string;
+interface OfferCardProps {
+    band: string;
+    amount: number;
+    status: string;
+    offerDate: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, imageUrl, link }) => {
+const OfferCard: React.FC<OfferCardProps> = ({ band, amount, status, offerDate }) => {
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-            <img className="w-full" src={imageUrl} alt={title} />
-            <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{title}</div>
-                <p className="text-gray-700 text-base">{description}</p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-                <a href={link} className="text-blue-500 hover:text-blue-700">Learn More</a>
-            </div>
-        </div>
+        <Container>
+
+        <MCard>
+            <CardContent>
+                <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
+                    Band: {band}
+                </Typography>
+                <Typography variant="h5" component="div">
+                    Amount: {amount}
+                </Typography>
+                <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>
+                    Status: {status}
+                </Typography>
+                <Typography variant="body2">
+                    Offer Date: {offerDate}
+                </Typography>
+            </CardContent>
+            <Paper elevation={3} />
+        </MCard>
+        </Container>
     );
 };
 
-export default Card;
+export default OfferCard;

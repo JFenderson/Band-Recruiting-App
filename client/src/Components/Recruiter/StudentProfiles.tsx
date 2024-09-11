@@ -3,19 +3,31 @@ import { useParams } from "react-router-dom";
 import {
   getStudentProfile,
   addStudentRating,
+  rateStudent
 } from "../../services/studentService";
 import { getOffersByStudentId } from "../../services/offerService";
 import Student from "../../models/Student";
 import Offer from "../../models/Offer";
 import { Video } from "../../models/Video";
 import Navbar from "../Common/Navbar";
+import StudentRating from "../Common/StudentRating";
+import {
+    Avatar,
+    Card,
+    CardContent,
+    Grid,
+    Typography,
+    Box,
+    Button,
+    Divider,
+    Rating
+  } from '@mui/material';
 
 const StudentProfile: React.FC = () => {
   const { studentId } = useParams<{ studentId: string }>(); // Get studentId from URL params
   const [student, setStudent] = useState<Student | null>(null);
   const [offers, setOffers] = useState<Offer[]>([]);
   const [amount, setAmount] = useState<number>(0);
-  const [bandId, setBandId] = useState<string>(""); // Assuming the recruiter selects the band
   const [bandName, setBandName] = useState<string>(""); // The name of the band
   const [rating, setRating] = useState<number>(0);
   const [comment, setComment] = useState<string>("");
@@ -48,13 +60,11 @@ const StudentProfile: React.FC = () => {
 
   const handleRatingSubmit = async () => {
     try {
-      await addStudentRating(studentId!, rating, comment); // Add rating for the student
+      await rateStudent(studentId!, rating);
       alert("Rating submitted successfully!");
-      setRating(0);
-      setComment("");
     } catch (error) {
-      console.error("Failed to submit rating:", error);
-      alert("Failed to submit rating.");
+        console.error("Failed to submit rating:", error);
+        alert("Failed to submit rating.");
     }
   };
 
@@ -64,128 +74,107 @@ const StudentProfile: React.FC = () => {
 
   if (!student) {
     return <div>Loading...</div>;
-  }
+}
 
   return (
-    <div>
-      <Navbar />
-      <div>
-        {student ? (
-          <div>
-            <h1>
-              {student.firstName} {student.lastName}
-            </h1>
-            <p>
-              <strong>Instrument:</strong> {student.instrument}
-            </p>
-            <p>
-              <strong>High School:</strong> {student.highSchool}
-            </p>
-            <p>
-              <strong>Graduation Year:</strong> {student.graduationYear}
-            </p>
-
-            <h2>Add a Rating</h2>
-            <div>
-              <label>
-                Rating:
-                <input
-                  type="number"
-                  value={rating}
-                  onChange={(e) => setRating(parseInt(e.target.value))}
-                  min="1"
-                  max="5"
-                />
-              </label>
-              <textarea
-                placeholder="Add a comment"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
+    // <div>
+        <Box sx={{ p: 4 }}>
+<Navbar />
+      <Grid container spacing={4}>
+        {/* Profile Details */}
+        <Grid item xs={12} md={4}>
+          <Card sx={{ p: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+              <Avatar
+                alt={student.firstName}
+                src={student.profilePicture}
+                sx={{ width: 120, height: 120 }}
               />
-              <button onClick={handleRatingSubmit}>Submit Rating</button>
-            </div>
+            </Box>
+            <Typography variant="h5" align="center" gutterBottom>
+              {student.firstName} {student.lastName}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="center">
+              {student.instrument}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="center">
+              {student.highSchool}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="center">
+              Graduation Year: {student.graduationYear}
+            </Typography>
+            <Divider sx={{ my: 2 }} />
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <StudentRating averageRating={student.averageRating} />
+            </Box>
+          </Card>
+        </Grid>
 
-            <h2>Send an Offer</h2>
-            <div>
-              <label>
-                Band Name:
-                <input
-                  type="text"
-                  value={bandName}
-                  onChange={(e) => setBandName(e.target.value)}
-                />
-              </label>
-              <label>
-                Amount:
-                <input
-                  type="number"
-                  value={amount}
-                  onChange={(e) => setAmount(parseInt(e.target.value))}
-                />
-              </label>
-              <button>Send Offer</button>
-            </div>
+        {/* Profile Content (Videos and Offers) */}
+        <Grid item xs={12} md={8}>
+          <Card>
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                Videos
+              </Typography>
+              {videos.length > 0 ? (
+                videos.map((video) => (
+                  <Box key={video.videoId} mb={2}>
+                    <video width="100%" controls>
+                      <source src={video.videoUrl} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <Typography variant="subtitle1">{video.title}</Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {video.description}
+                    </Typography>
+                  </Box>
+                ))
+              ) : (
+                <Typography>No videos uploaded yet.</Typography>
+              )}
 
-            <h2>Offers</h2>
-            {offers.length > 0 ? (
-              <ul>
-                {offers.map((offer) => (
-                  <li key={offer.offerId}>
-                    <p>
-                      <strong>Band:</strong> {offer.bandName}
-                    </p>
-                    <p>
-                      <strong>Amount:</strong> ${offer.amount}
-                    </p>
-                    <p>
-                      <strong>Status:</strong> {offer.status}
-                    </p>
-                    <p>
-                      <strong>Offer Date:</strong>{" "}
-                      {new Date(offer.offerDate).toLocaleDateString()}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No offers yet.</p>
-            )}
+              <Divider sx={{ my: 3 }} />
 
-            <h2>Videos</h2>
-            {videos.length > 0 ? (
-              videos.map((video) => (
-                <div key={video.videoId}>
-                  <h3>{video.title}</h3>
-                  <video width="320" height="240" controls>
-                    <source src={video.videoUrl} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <p>{video.description}</p>
-                  <p>
-                    <strong>Uploaded on:</strong>{" "}
-                    {new Date(video.uploadDate).toLocaleDateString()}
-                  </p>
+              <Typography variant="h6" gutterBottom>
+                Scholarship Offers
+              </Typography>
+              {offers.length > 0 ? (
+                offers.map((offer) => (
+                  <Box key={offer.offerId} mb={2}>
+                    <Typography variant="subtitle1">
+                      Band: {offer.bandName}
+                    </Typography>
+                    <Typography variant="body2">
+                      Amount: ${offer.amount}
+                    </Typography>
+                    <Typography variant="body2">
+                      Status: {offer.status}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      Offer Date: {new Date(offer.offerDate).toLocaleDateString()}
+                    </Typography>
+                  </Box>
+                ))
+              ) : (
+                <Typography>No offers yet.</Typography>
+              )}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
 
-                  <div>
-                    <h4>Add Comment</h4>
-                    <textarea placeholder="Add your comment" />
-                    <button>Submit Comment</button>
-
-                    <h4>Rate Video</h4>
-                    <input type="number" min="1" max="5" />
-                    <button>Submit Rating</button>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p>No videos uploaded yet.</p>
-            )}
-          </div>
-        ) : (
-          <p>Loading student profile...</p>
-        )}
-      </div>
-    </div>
+      {/* Action buttons */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+        <Button onClick={handleRatingSubmit} variant="contained" color="primary" sx={{ mx: 1 }}>
+          Rate Student
+        </Button>
+        <Button variant="outlined" color="primary" sx={{ mx: 1 }}>
+          Send Offer
+        </Button>
+      </Box>
+    </Box>
+      
   );
 };
 

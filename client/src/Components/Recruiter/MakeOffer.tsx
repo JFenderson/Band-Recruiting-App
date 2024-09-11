@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { } from '../../services/offerService';
-import { Offer } from '../../models/Offer';
 
 const MakeOffer: React.FC = () => {
   const { studentId } = useParams<{ studentId: string }>(); // Retrieve studentId from the URL params
@@ -13,14 +12,14 @@ const MakeOffer: React.FC = () => {
 
   const handleSendOffer = async () => {
     try {
-      const offerData: Partial<Offer> = {
-        studentId: studentId!,
-        amount,
-        bandId,
-        bandName,
-        status: 'Pending',
-        offerDate: new Date().toISOString(),
-      };
+    //   const offerData: Partial<Offer> = {
+    //     studentId: studentId!,
+    //     amount,
+    //     bandId,
+    //     bandName,
+    //     status: 'Pending',
+    //     offerDate: new Date().toISOString(),
+    //   };
 
     
       alert('Offer sent successfully!');

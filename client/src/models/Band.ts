@@ -3,7 +3,7 @@ import  Offer  from './Offer';
 import Interest  from './Interest';
 
 export default interface Band {
-    bandId: number;
+    bandId: string;
     name: string;
     schoolName: string;
     location: string;

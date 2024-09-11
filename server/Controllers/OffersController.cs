@@ -78,8 +78,17 @@ namespace server.Controllers
         [HttpPost("recruiter/{recruiterId}/student/{studentId}/offers")]
         public async Task<IActionResult> CreateOffer([FromBody] OfferDTO offerDto)
         {
-            var createdOffer = await _offerService.CreateOfferAsync(offerDto);
-            return CreatedAtAction(nameof(GetOffer), new { offerId = createdOffer.OfferId, studentId = createdOffer.StudentId }, createdOffer);
+            try
+            {
+                var createdOffer = await _offerService.CreateOfferAsync(offerDto);
+                return CreatedAtAction(nameof(GetOffer), new { id = offerDto.OfferId }, offerDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while creating the offer.");
+                throw;
+            }
+            
         }
 
         // Update the status of an offer

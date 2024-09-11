@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardMedia, Typography, Button, CardActions } from "@mui/material";
 import  Student from "../../models/Student";
+import StudentRating from "./StudentRating";
 
 interface StudentCardProps {
     student: Student,
@@ -11,11 +12,15 @@ interface StudentCardProps {
 const StudentCard: React.FC<StudentCardProps> = ({ studentId, student }) => {
 
     const navigate = useNavigate();
-
+console.log("StudetId in StudentCard", student)
     const handleViewProfile = () => {
       // Navigate to the student's profile page and pass the studentId
       navigate(`/students/${studentId}`);
     };
+
+    const handleSendOfferPage = () => {
+        navigate(`/offer-management/${studentId}`)
+    }
 
   return (
     <Card sx={{ maxWidth: 345, marginBottom: 2 }}>
@@ -40,13 +45,16 @@ const StudentCard: React.FC<StudentCardProps> = ({ studentId, student }) => {
         <Typography variant="body2" color="text.secondary">
           Graduation Year: {student.graduationYear}
         </Typography>
+        <Typography variant="body2" color="text.secondary">
+         Rating: <StudentRating averageRating={student.averageRating} />
+        </Typography>
       </CardContent>
       <CardActions>
         <Button variant="contained" onClick={handleViewProfile} size="small" color="primary">
           View Profile
         </Button>
-        <Button size="small" color="secondary">
-          Send Offer
+        <Button onClick={handleSendOfferPage} size="small" color="secondary">
+          View Offers
         </Button>
       </CardActions>
     </Card>

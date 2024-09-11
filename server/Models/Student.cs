@@ -15,11 +15,13 @@ namespace Models
         public string HighSchool { get; set; }
         public string? ProfilePicture { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public decimal? AverageRating { get; set; }
 
 
         // Navigation Properties
         public List<Video> Videos { get; set; }
         public List<Offer> ScholarshipOffers { get; set; }
         public List<Interest> Interests { get; set; }
+        public List<Rating> Ratings { get; set; }
     }
 }

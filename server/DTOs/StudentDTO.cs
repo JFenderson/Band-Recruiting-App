@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace server.DTOs
 {
@@ -16,7 +17,7 @@ namespace server.DTOs
         public int GraduationYear { get; set; }
         public string ProfilePicture { get; set; }
 
-        public decimal? OverallRating { get; set; }
+        public decimal? AverageRating { get; set; }
         public int OfferCount { get; set; }
         public ICollection<InterestDTO> Interests { get; set; }
         public StudentDTO(Student student)
@@ -38,7 +39,7 @@ namespace server.DTOs
             ProfilePicture = student.ProfilePicture;
 
             // These fields can be initialized later
-            OverallRating = null; // Set this later in the service method
+            AverageRating = student.AverageRating; // Set this later in the service method
             OfferCount = 0; // Set this later in the service method
         }
     }

@@ -3,11 +3,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import api from "../../services/apiConfig";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Common/Navbar";
 
 
 const RecruiterProfileManagement: React.FC = () => {
   const navigate = useNavigate();
-
+console.log("Current Route is Rcruiter Profile Management")
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -44,6 +45,9 @@ const RecruiterProfileManagement: React.FC = () => {
   });
 
   return (
+    <div>
+      <Navbar />
+
     <form onSubmit={formik.handleSubmit}>
       <div>
         <label htmlFor="name">Name</label>
@@ -107,6 +111,7 @@ const RecruiterProfileManagement: React.FC = () => {
 
       <button type="submit">Save Profile</button>
     </form>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState, } from "react";
 import { getAllStudents } from "../../services/studentService"; // API service
-import { Student } from "../../models/Student"; // Student model
+import Student from "../../models/Student"; // Student model
 import Navbar from "../Common/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -9,14 +10,17 @@ import {
   AccordionDetails,
   Typography,
   Button,
+  Box,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import StarIcon from '@mui/icons-material/Star';
+import StudentRating from "../Common/StudentRating";
 
 const AllStudentsList: React.FC = () => {
   const [students, setStudents] = useState<Student[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [filteredStudents, setFilteredStudents] = useState<Students[]>([]);
+  const [filteredStudents, setFilteredStudents] = useState<Student[]>([]);
   const navigate = useNavigate();
 
 
@@ -26,10 +30,15 @@ const AllStudentsList: React.FC = () => {
     
   };
 
+  const handleOfferNavigation = (route: string) => {
+    navigate(route);
+    
+  };
   useEffect(() => {
     const fetchStudents = async () => {
       try {
         const response = await getAllStudents();
+        console.log("all students", response)
         setStudents(response);
         setLoading(false);
       } catch (err) {
@@ -90,10 +99,6 @@ const AllStudentsList: React.FC = () => {
           <ul>
             {students.map((student) => (
               <li key={student.id}>
-                <Link
-                  to={`/recruiter/student-profile/${student.id}`}
-                  state={{ studentId: student.id }}
-                ></Link>
                 <Accordion>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>
@@ -101,14 +106,20 @@ const AllStudentsList: React.FC = () => {
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>Instrument: {student.insturment}</Typography>
+                    <Typography>Instrument: {student.instrument}</Typography>
                     <Typography>High School: {student.highSchool}</Typography>
                     <Typography>
                       Graduation Year: {student.graduationYear}
                     </Typography>
-                    <Typography>Rating:</Typography>
+                    <Box mt={2}>
+                      <Typography>Rating:</Typography>
+                      <StudentRating averageRating={student.averageRating} />
+                    </Box>
                     <Button onClick={() => handleNavigation(`/students/${student.id}`)} variant="contained" color="primary">
                       See Profile
+                    </Button>
+                    <Button onClick={() => handleOfferNavigation(`/offer-management/${student.id}`)} variant="contained" color="primary">
+                      View Offers
                     </Button>
                   </AccordionDetails>
                 </Accordion>

@@ -84,6 +84,7 @@ namespace server.Migrations
                     HighSchool = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    AverageRating = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     AdminId = table.Column<int>(type: "int", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -324,13 +325,12 @@ namespace server.Migrations
                 name: "Ratings",
                 columns: table => new
                 {
-                    RatingId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RatingId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Score = table.Column<int>(type: "int", nullable: false),
                     RatingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     VideoId = table.Column<int>(type: "int", nullable: false),
                     RecruiterId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    StudentId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    StudentId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -341,6 +341,12 @@ namespace server.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Ratings_AspNetUsers_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Ratings_Videos_VideoId",
                         column: x => x.VideoId,
@@ -437,6 +443,11 @@ namespace server.Migrations
                 name: "IX_Ratings_RecruiterId",
                 table: "Ratings",
                 column: "RecruiterId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ratings_StudentId",
+                table: "Ratings",
+                column: "StudentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ratings_VideoId",

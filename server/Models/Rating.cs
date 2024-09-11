@@ -2,7 +2,7 @@
 {
     public class Rating
     {
-        public int RatingId { get; set; }
+        public string RatingId { get; set; }
         public int Score { get; set; }  // Integer from 1 to 5 or 1 to 10
         public DateTime RatingDate { get; set; }
 

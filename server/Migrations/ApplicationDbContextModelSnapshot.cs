@@ -295,11 +295,8 @@ namespace server.Migrations
 
             modelBuilder.Entity("Models.Rating", b =>
                 {
-                    b.Property<int>("RatingId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"));
+                    b.Property<string>("RatingId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("RatingDate")
                         .HasColumnType("datetime2");
@@ -313,7 +310,7 @@ namespace server.Migrations
 
                     b.Property<string>("StudentId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("VideoId")
                         .HasColumnType("int");
@@ -321,6 +318,8 @@ namespace server.Migrations
                     b.HasKey("RatingId");
 
                     b.HasIndex("RecruiterId");
+
+                    b.HasIndex("StudentId");
 
                     b.HasIndex("VideoId");
 
@@ -500,6 +499,9 @@ namespace server.Migrations
             modelBuilder.Entity("Models.Student", b =>
                 {
                     b.HasBaseType("server.Models.User");
+
+                    b.Property<decimal?>("AverageRating")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -700,6 +702,12 @@ namespace server.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Models.Student", null)
+                        .WithMany("Ratings")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Models.Video", "Video")
                         .WithMany("Ratings")
                         .HasForeignKey("VideoId")
@@ -761,6 +769,8 @@ namespace server.Migrations
             modelBuilder.Entity("Models.Student", b =>
                 {
                     b.Navigation("Interests");
+
+                    b.Navigation("Ratings");
 
                     b.Navigation("ScholarshipOffers");
 

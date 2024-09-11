@@ -4,7 +4,7 @@ import  Recruiter  from './Recruiter';
 
 export default interface Offer {
     bandName: string;
-    offerId: number;
+    offerId: string;
     amount: number;
     status: 'Pending' | 'Accepted' | 'Declined'; // Enum-like string literal
     offerDate: string;

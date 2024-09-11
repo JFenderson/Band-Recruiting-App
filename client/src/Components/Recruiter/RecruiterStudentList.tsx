@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getStudentsByRecruiter } from "../../services/studentService"; // API service
 import  Student  from "../../models/Student"; // Student model
 import Navbar from '../Common/Navbar';
-import { Link } from "react-router-dom";
 import StudentCard from "../Common/StudentCard"; // The reusable StudentCard component
 import { Grid, Container } from "@mui/material";
 
