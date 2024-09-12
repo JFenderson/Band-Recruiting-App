@@ -23,28 +23,28 @@ namespace server.Services
             return await _context.Users
                 .OfType<Recruiter>()
                 .Where(r => r.BandId == bandId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<IEnumerable<Rating>> GetRecruiterRatingsAsync(string recruiterId)
         {
             return await _context.Ratings
                 .Where(r => r.RecruiterId == recruiterId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<IEnumerable<Comment>> GetRecruiterCommentsAsync(string recruiterId)
         {
             return await _context.Comments
                 .Where(c => c.RecruiterId == recruiterId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<IEnumerable<Offer>> GetRecruiterOffersAsync(string recruiterId)
         {
             return await _context.Offers
                 .Where(c => c.RecruiterId == recruiterId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
 
@@ -52,7 +52,7 @@ namespace server.Services
         {
             return await _context.Users
                 .OfType<Recruiter>()
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<RecruiterDTO> GetRecruiterByIdAsync(string recruiterId)

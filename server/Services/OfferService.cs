@@ -115,14 +115,14 @@ namespace server.Services
                     AverageRating = student.Ratings.Any() ? student.Ratings.Average(r => r.Score) : 0,  // Average rating calculation
                     OfferCount = student.ScholarshipOffers.Count()  // Count of offers sent to this student
                 })
-                .ToList();
+                .ToArray();
 
             // Map the results to StudentDTO, passing the Student entity to the constructor
             var studentDTOs = studentsWithDetails.Select(s => new StudentDTO(s.Student)  // Pass Student entity here
             {
                 AverageRating = (decimal)s.AverageRating,  // Calculated average rating
                 OfferCount = s.OfferCount  // Count of offers
-            }).ToList();
+            }).ToArray();
 
             return studentDTOs;
         }
@@ -135,7 +135,7 @@ namespace server.Services
             // Example logic to calculate the average rating for a student
             var ratings = await _context.Ratings
                 .Where(r => r.StudentId == studentId)
-                .ToListAsync();
+                .ToArrayAsync();
 
             if (ratings.Any())
             {

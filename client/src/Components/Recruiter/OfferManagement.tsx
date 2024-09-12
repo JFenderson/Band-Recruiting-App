@@ -9,7 +9,7 @@ import { useAuth } from "../../context/AuthContext";
 import { getStudentProfile } from "../../services/studentService";
 import Student from "../../models/Student";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { useToast } from "../../hooks/use-toast";
 import { Guid } from 'js-guid';
@@ -170,6 +170,7 @@ const [selectedOfferId, setSelectedOfferId] = useState<string | null>(null);
               <Card key={offer.offerId}>
                 <CardHeader>
                   <CardTitle>{offer.bandName}</CardTitle>
+                  <CardDescription>{offer.band?.schoolName}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p>Status: {offer.status}</p>

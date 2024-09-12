@@ -25,3 +25,4 @@ export const updateBand = async (bandId: number, bandData: Partial<Band>): Promi
 export const deleteBand = async (bandId: number): Promise<void> => {
     await api.delete(`/Bands/${bandId}`);
 };
+

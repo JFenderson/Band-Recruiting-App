@@ -11,11 +11,39 @@ import {
 } from "../ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { UserIcon, LogOutIcon, SettingsIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import api from "../../services/apiConfig";
 
 const Navbar: React.FC = () => {
-  const { role, logout, user, profilePicture } = useAuth();
+  const { userId, logout, user, role, profilePicture } = useAuth(); // Access userId from AuthContext
   const navigate = useNavigate();
+  const [bandId, setBandId] = useState<string | null>(null);
+  
 
+  // Fetch the band profile for recruiters
+  useEffect(() => {
+    const userId = localStorage.getItem("userId"); // Retrieve `userId` from localStorage
+
+    if (userId) {
+      // Fetch user profile data using userId
+      const fetchUserProfile = async () => {
+        if (role === "Recruiter" && userId) {
+          try {
+            const response = await api.get(`/Recruiter/${userId}`);
+            setBandId(response.data.bandId);
+            console.log("setBand at navbar", bandId)
+          } catch (error) {
+            console.error("Failed to fetch band profile:", error);
+          }
+        }
+      };
+
+      fetchUserProfile();
+    } else {
+      console.error("No user ID found in localStorage.");
+      navigate("/login"); // Redirect to login if no user ID found
+    }
+  }, [role, userId]);
 
   const pages =
     role === "Recruiter"
@@ -23,7 +51,7 @@ const Navbar: React.FC = () => {
           { name: "Dashboard", path: "/recruiter-profile" },
           { name: "Students", path: "/students" },
           { name: "My Students", path: "/recruiter/students" },
-          { name: "Band", path: "/band" },
+          { name: "Band", path: `/bands/recruiter/${userId}` },
           { name: "Messages", path: "/recruiter/students" },
         ]
       : [

@@ -20,3 +20,8 @@ export const addInterest = async (userId: string, bandId: string) => {
 export const getStudentInterests = async (userId: string) => {
     return await api.get<Interest[]>(`/Student/${userId}/interests`);
 };
+
+export const getBandInterests = async (bandId: string) => {
+    return await api.get<Student[]>(`/Bands/${bandId}/interestedStudents`);
+};
+

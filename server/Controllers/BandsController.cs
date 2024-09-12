@@ -35,13 +35,22 @@ namespace server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Band>> GetBand(string id)
         {
-            var band = await _bandService.GetBandByIdAsync(id);
-            if (band == null)
+            try
             {
-                return NotFound();
+                var band = await _bandService.GetBandByIdAsync(id);
+                if (band == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(band);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
             }
 
-            return Ok(band);
+
         }
 
         [Authorize(Policy = "RequireAdminRole")]
@@ -81,6 +90,27 @@ namespace server.Controllers
             }
 
             return NoContent();
+        }
+
+        [HttpGet("{id}/interestedStudents")]
+        public async Task<ActionResult<Band>> GetBandInterestedStudents(string id)
+        {
+            try
+            {
+                var interestedStudents = await _bandService.GetInterestedStudentsAsync(id);
+                if (interestedStudents == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(interestedStudents);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+
+
         }
     }
 }

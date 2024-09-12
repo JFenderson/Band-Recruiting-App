@@ -60,7 +60,7 @@ namespace server.Services
             return await _context.Interests
                 .Where(i => i.BandId == bandId)
                 .Select(i => i.Student)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<int> GetInterestedStudentCountAsync(string bandId)

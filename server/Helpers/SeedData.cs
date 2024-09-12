@@ -29,96 +29,14 @@ namespace server.Helpers
                 }
             }
 
-            await CreateStudents(userManager, 10);
+            await CreateStudents(userManager, 10, context);
             await CreateRecruiters(userManager, 10, context);
             await CreateOffers(context, 20);
 
-            //// Create test students
-            //var student1 = new Student
-            //{
-            //    UserName = "student1",
-            //    Email = "student1@example.com",
-            //    UserType = "Student",
-            //    RefreshToken = GenerateRefreshToken(),
-            //    RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7),
-            //    FirstName = "John",
-            //    LastName = "Doe",
-            //    Phone = "123-456-7890",
-            //    GraduationYear = 2023,
-            //    Instrument = "Piano",
-            //    HighSchool = "West High School",
-            //    ProfilePicture = null, // Set to a URL or path if you have a default profile picture
-            //    CreatedAt = DateTime.UtcNow
-            //};
-
-            //var student2 = new Student
-            //{
-            //    UserName = "student2",
-            //    Email = "student2@example.com",
-            //    UserType = "Student",
-            //    RefreshToken = GenerateRefreshToken(),
-            //    RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7),
-            //    FirstName = "Jane",
-            //    LastName = "Smith",
-            //    Phone = "098-765-4321",
-            //    GraduationYear = 2024,
-            //    Instrument = "Guitar",
-            //    HighSchool = "East High School",
-            //    ProfilePicture = null, // Set to a URL or path if you have a default profile picture
-            //    CreatedAt = DateTime.UtcNow
-            //};
-
-            //// Create test recruiters
-            //var recruiter1 = new Recruiter
-            //{
-            //    UserName = "recruiter1",
-            //    Email = "recruiter1@example.com",
-            //    UserType = "Recruiter",
-            //    RefreshToken = GenerateRefreshToken(),
-            //    RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7),
-            //    FirstName = "Alice",
-            //    LastName = "Johnson",
-            //    Phone = "555-555-5555",
-            //    BandId = "1A2225EE-A6E2-45A5-A031-F784333D4B0C", // Assuming BandId 1 exists
-            //    ProfilePicture = null, // Set to a URL or path if you have a default profile picture
-            //    CreatedAt = DateTime.UtcNow
-            //};
-
-            //var recruiter2 = new Recruiter
-            //{
-            //    UserName = "recruiter2",
-            //    Email = "recruiter2@example.com",
-            //    UserType = "Recruiter",
-            //    RefreshToken = GenerateRefreshToken(),
-            //    RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7),
-            //    FirstName = "Bob",
-            //    LastName = "Williams",
-            //    Phone = "444-444-4444",
-            //    BandId = "094309BC-21E5-4FB4-8F7A-D4E6DA7422EC", // Assuming BandId 2 exists
-            //    ProfilePicture = null, // Set to a URL or path if you have a default profile picture
-            //    CreatedAt = DateTime.UtcNow
-            //};
-
-            //// Create users and assign roles
-            //await CreateUserIfNotExists(userManager, student1, "Password@123", "Student");
-            //await CreateUserIfNotExists(userManager, student2, "Password@123", "Student");
-            //await CreateUserIfNotExists(userManager, recruiter1, "Password@123", "Recruiter");
-            //await CreateUserIfNotExists(userManager, recruiter2, "Password@123", "Recruiter");
-
-            //// Optionally, create an admin user
-            //var adminUser = new User
-            //{
-            //    UserName = "admin",
-            //    Email = "admin@example.com",
-            //    UserType = "Admin",
-            //    RefreshToken = GenerateRefreshToken(),
-            //    RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7)
-            //};
-
-            //await CreateUserIfNotExists(userManager, adminUser, "Admin@123", "Admin");
+          
         }
 
-        private static async Task CreateStudents(UserManager<User> userManager, int numStudents)
+        private static async Task CreateStudents(UserManager<User> userManager, int numStudents, ApplicationDbContext context)
         {
             var faker = new Faker();
             var rndNum = new Random();
@@ -146,6 +64,21 @@ namespace server.Helpers
                 {
                     await userManager.AddToRoleAsync(student, "Student");
                     Console.WriteLine($"Created student: {student.UserName}");
+
+                    var bandIds = await context.Bands.Select(b => b.BandId).ToListAsync();
+                    var interestedBands = faker.PickRandom(bandIds, faker.Random.Int(1, 3));
+
+                    foreach (var bandId in interestedBands)
+                    {
+                        context.Add(new Interest
+                        {
+                            StudentId = student.Id,
+                            BandId = bandId,
+                            InterestDate = DateTime.UtcNow,
+                            
+                        });
+                        Console.WriteLine($"Student {student.UserName} is interested in BandId: {bandId}");
+                    }
                 }
                 else
                 {

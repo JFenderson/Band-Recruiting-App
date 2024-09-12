@@ -359,8 +359,11 @@ const RecruiterProfilePage: React.FC = () => {
                           </DialogTrigger>
 
                           {/* Modal for Offers */}
-                          <DialogContent aria-describedby="dialog-description" className="max-w-lg max-h-[80vh] overflow-y-auto p-4 bg-white rounded-lg shadow-lg"
-                          style={{ maxHeight: "80vh" }}>
+                          <DialogContent
+                            aria-describedby="dialog-description"
+                            className="max-w-lg max-h-[80vh] overflow-y-auto p-4 bg-white rounded-lg shadow-lg"
+                            style={{ maxHeight: "80vh" }}
+                          >
                             <DialogHeader>
                               <DialogTitle>
                                 Manage Offers for {selectedStudent.firstName}{" "}
