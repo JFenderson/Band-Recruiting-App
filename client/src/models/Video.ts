@@ -1,9 +1,9 @@
-import { Student } from './Student';
-import { Comment } from './Comment';
-import { Rating } from './Rating';
+import Student from './Student';
+import Comment from './Comment';
+import Rating from './Rating';
 
 export interface Video {
-    videoId: number;
+    videoId: string;
     videoUrl: string;
     title: string;
     description: string;

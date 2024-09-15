@@ -58,6 +58,23 @@ namespace server.Controllers
 
         }
 
+        // GET: api/recruiter/band/{id}
+        [HttpGet("band/{id}")]
+        public async Task<ActionResult<Band>> GetRecruitersByBand(string id)
+        {
+            try
+            {
+                var recruiter = await _recruiterService.GetRecruitersByBandAsync(id);
+                return Ok(recruiter);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+
+
+        }
+
         // POST: api/recruiter
         [HttpPost]
         public async Task<ActionResult> CreateRecruiter([FromBody] CreateRecruiterDTO recruiterDto)
@@ -151,37 +168,19 @@ namespace server.Controllers
         #endregion
 
         #region Rating
-        // POST: api/recruiter/{recruiterId}/rate/{studentId}
-        [HttpPost("{recruiterId}/rate/{studentId}")]
-        public async Task<IActionResult> RateStudent(string recruiterId, string studentId, [FromBody] RatingDTO ratingDTO)
-        {
-            //var student = await _studentService.GetStudentByIdAsync(studentId);
-            //if (student == null)
-            //{
-            //    return NotFound("Student not found.");
-            //}
-
-            var result = await _ratingService.RateStudentAsync(recruiterId, studentId, ratingDTO);
-            if (!result)
-            {
-                return BadRequest("Rating failed.");
-            }
-
-            return Ok("Rating submitted successfully.");
-        }
 
         [HttpGet("{id}/ratings")]
         public async Task<ActionResult<IEnumerable<RatingDTO>>> GetRecruiterRatings(string id)
         {
             var ratings = await _recruiterService.GetRecruiterRatingsAsync(id);
-            return Ok(ratings.Select(r => new RatingDTO(r)));
+            return Ok(ratings);
         }
 
         // GET: api/recruiter/ratings/student/{studentId}
         [HttpGet("ratings/student/{studentId}")]
         public async Task<ActionResult<IEnumerable<Rating>>> GetRatings(string studentId)
         {
-            var ratings = await _ratingService.GetRatingsByStudentIdAsync(studentId);
+            var ratings = await _ratingService.GetRatingsByStudentId(studentId);
             return Ok(ratings);
         }
 

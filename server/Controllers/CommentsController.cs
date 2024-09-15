@@ -42,10 +42,20 @@ namespace server.Controllers
             return comment;
         }
 
+        [HttpGet("students/{studentId}/comments")]
+        public async Task<IActionResult> GetComments(string studentId)
+        {
+            // Fetch comments for the student
+            var comments = await _context.Comments
+                .Where(c => c.StudentId == studentId)
+                .ToListAsync();
+            return Ok(comments);
+        }
+
         // PUT: api/Comments/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutComment(int id, Comment comment)
+        public async Task<IActionResult> PutComment(string id, Comment comment)
         {
             if (id != comment.CommentId)
             {
@@ -84,6 +94,17 @@ namespace server.Controllers
             return CreatedAtAction("GetComment", new { id = comment.CommentId }, comment);
         }
 
+        [HttpPost("students/{studentId}/comments")]
+        public async Task<IActionResult> AddComment(string studentId, [FromBody] Comment comment)
+        {
+            // Logic to save the comment to the database
+            comment.StudentId = studentId;
+            comment.CommentDate = DateTime.UtcNow;
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+            return Ok(comment);
+        }
+
         // DELETE: api/Comments/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteComment(int id)
@@ -100,29 +121,10 @@ namespace server.Controllers
             return NoContent();
         }
 
-        //// GET: api/Comment/Student/5
-        //[HttpGet("Student/{studentId}")]
-        //public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsByStudent(int studentId)
-        //{
-        //    return await _context.Comments.Where(c => c.StudentId == studentId).ToListAsync();
-        //}
-
-        //// GET: api/Comment/Band/5
-        //[HttpGet("Band/{bandId}")]
-        //public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsByBand(int bandId)
-        //{
-        //    return await _context.Comments.Where(c => c.RecruiterBandId == bandId).ToListAsync();
-        //}
-
-        //// GET: api/Comment/Video/5
-        //[HttpGet("Video/{videoId}")]
-        //public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsByVideo(int videoId)
-        //{
-        //    return await _context.Comments.Where(c => c.VideoId == videoId).ToListAsync();
-        //}
 
 
-        private bool CommentExists(int id)
+
+        private bool CommentExists(string id)
         {
             return _context.Comments.Any(e => e.CommentId == id);
         }

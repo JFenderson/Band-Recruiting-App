@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import api from "../../services/apiConfig";
 import Navbar from "../Common/Navbar";
 import { useAuth } from "../../context/AuthContext";
@@ -8,17 +7,17 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
 import { MapPin, Users, Award, Star } from "lucide-react";
 import Band from '../../models/Band';
-import Interest from "../../models/Interest";
 import { getBandInterests } from "../../services/interestService";
 import Student from "../../models/Student";
+import Recruiter from "../../models/Recruiter";
+import { getRecruitersByBand } from "../../services/recruiterService";
 
 const BandProfile: React.FC = () => {
   const { userId, role } = useAuth();
-  const { id } = useParams<{ id: string }>();
   const [band, setBand] = useState<Band | null>(null); // Band object, not just ID
   const [bandId, setBandId] = useState<string | null>(null); // Separate bandId
   const [interestedStudents, setInterestedStudents] = useState<Student[] | null>(null);
-  const [filteredStudentId, setFilteredStudentId] = useState<string | null>(null);
+  const [recruitersList, setRecruitersList] = useState<Recruiter[] | null>(null);
   // Fetch the recruiter's bandId if the user is a recruiter
   useEffect(() => {
     const fetchBandIdForRecruiter = async () => {
@@ -43,8 +42,10 @@ const BandProfile: React.FC = () => {
           const response = await api.get<Band>(`/Bands/${bandId}`);
           // const fetchInterestedStudents = await api.get<Interest[]>(`/Bands/${bandId}/interestedStudents`);
           const fetchInterestedStudents = await getBandInterests(bandId);
+          const fetchRecruiters = await getRecruitersByBand(bandId)
           setBand(response.data); // Set the full band object
           setInterestedStudents(fetchInterestedStudents.data);
+          setRecruitersList(fetchRecruiters);
           console.log(fetchInterestedStudents.data)
         } catch (error) {
           console.error("Failed to fetch band details", error);
@@ -54,10 +55,6 @@ const BandProfile: React.FC = () => {
 
     fetchBandDetails();
   }, [bandId]);
-
-  const filteredInterestedStudents = filteredStudentId
-    ? interestedStudents?.filter((student) => student.studentId === filteredStudentId)
-    : interestedStudents;
 
   if (!interestedStudents) {
     return (
@@ -104,8 +101,8 @@ const BandProfile: React.FC = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {Array.isArray(band?.recruiters) && band.recruiters.length > 0 ? ( // Ensure recruiters is an array
-                  band.recruiters.map((recruiter, index) => (
+                {Array.isArray(recruitersList) && recruitersList.length > 0 ? ( // Ensure recruiters is an array
+                  recruitersList.map((recruiter, index) => (
                     <div key={recruiter.id || `recruiter-${index}`} className="flex items-center space-x-4">
                       <Avatar>
                         <AvatarImage src={recruiter.profilePicture} alt={recruiter.id} />

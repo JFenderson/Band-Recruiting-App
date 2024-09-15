@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TBRServerTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86ea54f144935c758996070327bf82a8e1e384b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dda4fe1cfe5509fbc44bfa50b79cb1bbe0833c39")]
 [assembly: System.Reflection.AssemblyProductAttribute("TBRServerTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TBRServerTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

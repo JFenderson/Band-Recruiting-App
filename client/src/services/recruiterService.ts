@@ -39,6 +39,12 @@ export const getOffersByRecruiterId = async (recruiterId: string): Promise<Offer
     return response.data;
   };
 
+  export const getRecruitersByBand = async (bandId: string): Promise<Recruiter[]> => {
+    const response = await api.get<Recruiter[]>(`/Recruiter/band/${bandId}`);
+    return response.data;
+  };
+
+
   export const deleteRecruiterOffer = async (offerId: string): Promise<void> => {
     await api.delete(`/Recruiter/${offerId}/offer`);
 };

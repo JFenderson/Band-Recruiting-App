@@ -57,10 +57,19 @@ namespace server.Services
 
         public async Task<IEnumerable<Student>> GetInterestedStudentsAsync(string bandId)
         {
-            return await _context.Interests
+            // Log the bandId being passed
+            Console.WriteLine($"Fetching students interested in BandId: {bandId}");
+
+            // Fetch the interested students
+            var interests = await _context.Interests
                 .Where(i => i.BandId == bandId)
                 .Select(i => i.Student)
                 .ToArrayAsync();
+
+            // Log the number of interests found
+            Console.WriteLine($"Found {interests.Length} interested students");
+
+            return interests;
         }
 
         public async Task<int> GetInterestedStudentCountAsync(string bandId)

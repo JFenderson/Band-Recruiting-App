@@ -47,7 +47,7 @@ namespace TBRServerTests.UnitTests.Services
                 LastName = "Doe",
                 Phone = "123-456-7890",
                 ProfilePicture = "path/to/profile.jpg",
-                BandId = 1,
+                BandId = "1",
                 Password = "Password@123"
             };
 
@@ -74,7 +74,7 @@ namespace TBRServerTests.UnitTests.Services
                 LastName = "Doe",
                 Phone = "123-456-7890",
                 ProfilePicture = "path/to/profile.jpg",
-                BandId = 1,
+                BandId = "1",
                 Password = "Password@123"
             };
 

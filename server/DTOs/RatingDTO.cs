@@ -2,7 +2,7 @@ using Models;
 
 namespace server.DTOs
 {
-    public class RatingDTO(Rating rating)
+    public class RatingDTO
     {
         public string RatingId { get; set; }
         public string VideoId { get; set; }

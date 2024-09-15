@@ -112,8 +112,12 @@ namespace server.Services
                 .Select(student => new
                 {
                     Student = student,
-                    AverageRating = student.Ratings.Any() ? student.Ratings.Average(r => r.Score) : 0,  // Average rating calculation
-                    OfferCount = student.ScholarshipOffers.Count()  // Count of offers sent to this student
+                    AverageRating = student.Ratings != null && student.Ratings.Any()
+                        ? student.Ratings.Average(r => r.Score)
+                        : 0,  // Safely calculate the average rating
+                    OfferCount = student.ScholarshipOffers != null
+                        ? student.ScholarshipOffers.Count()
+                        : 0  // Safely count offers
                 })
                 .ToArray();
 
@@ -126,6 +130,7 @@ namespace server.Services
 
             return studentDTOs;
         }
+
 
 
 
@@ -167,7 +172,8 @@ namespace server.Services
                     BandName = o.BandName,
                     Amount = o.Amount,
                     Status = o.Status,
-                    OfferDate = o.OfferDate
+                    OfferDate = o.OfferDate,
+                    Band = o.Band,
                 })
                 .ToArrayAsync();
 

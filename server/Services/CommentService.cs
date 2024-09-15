@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using server.Data;
 using server.DTOs;
@@ -14,7 +15,7 @@ namespace server.Services
             _context = context;
         }
 
-        public async Task<Comment> CommentOnVideoAsync(int videoId, string recruiterId, string content)
+        public async Task<Comment> CommentOnVideoAsync(string videoId, string recruiterId, string content)
         {
             var comment = new Comment
             {
@@ -30,7 +31,7 @@ namespace server.Services
             return comment;
         }
 
-        public async Task<IEnumerable<Comment>> GetCommentsByVideoIdAsync(int videoId)
+        public async Task<IEnumerable<Comment>> GetCommentsByVideoIdAsync(string videoId)
         {
             return await _context.Comments
                 .Where(c => c.VideoId == videoId)
@@ -41,7 +42,7 @@ namespace server.Services
         {
             return await _context.Comments
                 .Where(c => c.StudentId == studentId)
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
         public async Task<bool> CommentOnStudentAsync(string recruiterId, string studentId, CommentDTO commentDTO)
@@ -58,6 +59,29 @@ namespace server.Services
             await _context.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<CommentDTO> AddComment(string studentId, CommentDTO commentDto)
+        {
+            var comment = new Comment
+            {
+                StudentId = commentDto.StudentId,
+                Content = commentDto.Content,
+                CommentDate = DateTime.Now,
+
+            };
+         
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+            return commentDto ;
+        }
+
+        public async Task<IEnumerable<Comment>> GetComments(string studentId)
+        {
+            // Fetch comments for the student
+            return await _context.Comments
+                .Where(c => c.StudentId == studentId)
+                .ToArrayAsync();
         }
     }
 }

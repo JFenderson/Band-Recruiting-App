@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Models;
 using server.Data;
 using server.Models;
+using System.Diagnostics.Metrics;
 using System.Security.Cryptography;
 
 namespace server.Helpers
@@ -29,17 +30,32 @@ namespace server.Helpers
                 }
             }
 
-            await CreateStudents(userManager, 10, context);
-            await CreateRecruiters(userManager, 10, context);
+            await CreateStudents(userManager, 20, context);
+            await CreateRecruiters(userManager, 20, context);
             await CreateOffers(context, 20);
-
           
+
+
         }
 
         private static async Task CreateStudents(UserManager<User> userManager, int numStudents, ApplicationDbContext context)
         {
             var faker = new Faker();
             var rndNum = new Random();
+            var instruments = new string[]
+                  {
+                        "Trumpet",
+                        "Trombone",
+                        "Saxophone",
+                        "Tuba",
+                        "Clarinet",
+                        "Percussion",
+                        "Flute",
+                        "Euphonium",
+                        "Mellophone",
+                        "Piccolo",
+                        "Baritone"
+                  };
 
             for (int i = 0; i < numStudents; i++)
             {
@@ -50,11 +66,11 @@ namespace server.Helpers
                     FirstName = faker.Person.FirstName,
                     LastName = faker.Person.LastName,
                     PhoneNumber = faker.Phone.PhoneNumber(),
-                    Instrument = "Trombone",
+                    Instrument = faker.PickRandom(instruments),
                     HighSchool = GenerateHighSchoolName(faker),
                     GraduationYear = faker.Date.Future().Year,
                     CreatedAt = DateTime.UtcNow,
-                    AverageRating = rndNum.Next(1,5),
+                    AverageRating = rndNum.Next(1, 5),
                     RefreshToken = GenerateRefreshToken(),
                     RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7)
                 };
@@ -75,7 +91,7 @@ namespace server.Helpers
                             StudentId = student.Id,
                             BandId = bandId,
                             InterestDate = DateTime.UtcNow,
-                            
+
                         });
                         Console.WriteLine($"Student {student.UserName} is interested in BandId: {bandId}");
                     }

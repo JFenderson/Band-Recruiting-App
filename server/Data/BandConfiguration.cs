@@ -22,20 +22,7 @@ namespace server.Data
                    .WithOne(i => i.Band)
                    .HasForeignKey(i => i.InterestId)
                    .OnDelete(DeleteBehavior.Cascade);
-            //    builder.HasKey(b => b.BandId);
 
-            //    builder.Property(b => b.Name).IsRequired().HasMaxLength(100);
-            //    builder.Property(b => b.SchoolName).IsRequired().HasMaxLength(100);
-
-            //    builder.HasMany(b => b.Recruiters)
-            //           .WithOne(r => r.Band)
-            //           .HasForeignKey(r => r.RecruiterBandId)
-            //           .OnDelete(DeleteBehavior.Restrict);
-
-            //    builder.HasMany(b => b.InterestedStudents)
-            //           .WithOne(i => i.Band)
-            //           .HasForeignKey(i => i.BandId)
-            //           .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

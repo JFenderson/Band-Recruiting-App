@@ -5,37 +5,29 @@ using server.DTOs;
 
 namespace server.Services
 {
-    public class RatingService : Service<RatingDTO>, IRatingService
+    public class RatingService : IRatingService
     {
         private readonly ApplicationDbContext _context;
 
-        public RatingService(ApplicationDbContext context) : base(context)
+        public RatingService(ApplicationDbContext context)
         {
             _context = context;
         }
 
 
-        public async Task<Rating> AddRatingAsync(string studentId, string recruiterId, int score)
-        {
-            var rating = new Rating
-            {
-                StudentId = studentId,
-                RecruiterId = recruiterId,
-                Score = score,
-                RatingDate = DateTime.UtcNow
-            };
-
-            _context.Ratings.Add(rating);
-            await _context.SaveChangesAsync();
-
-            return rating;
-        }
-
-        public async Task<IEnumerable<Rating>> GetRatingsByStudentIdAsync(string studentId)
+        // Optionally, fetch ratings for both student and video
+        public async Task<IEnumerable<Rating>> GetRatingsByStudentId(string studentId)
         {
             return await _context.Ratings
-                .Where(r => r.StudentId == studentId)
-                .ToListAsync();
+                .Where(r => r.StudentId == studentId && r.VideoId == null)
+                .ToListAsync(); // Fetch only student ratings
+        }
+
+        public async Task<IEnumerable<Rating>> GetRatingsByVideoId(string videoId)
+        {
+            return await _context.Ratings
+                .Where(r => r.VideoId == videoId)
+                .ToListAsync(); // Fetch only video ratings
         }
 
         public async Task<double> GetAverageRatingForStudentAsync(string studentId)
@@ -52,19 +44,27 @@ namespace server.Services
             return 0.0;
         }
 
-        public async Task<bool> RateStudentAsync(string recruiterId, string studentId, RatingDTO ratingDTO)
+        public async Task<Rating> RateStudentAsync(string recruiterId, string studentId, CreateRatingDTO ratingDTO)
         {
             var rating = new Rating
             {
+                RatingId = Guid.NewGuid().ToString(),
                 RecruiterId = recruiterId,
                 StudentId = studentId,
                 Score = ratingDTO.Score,
+                Comment = ratingDTO.Comment,
+                RatingDate = ratingDTO.RatingDate,
             };
+
+            if (!string.IsNullOrEmpty(ratingDTO.VideoId)) // Only set VideoId if it's provided
+            {
+                rating.VideoId = ratingDTO.VideoId;
+            }
 
             _context.Ratings.Add(rating);
             await _context.SaveChangesAsync();
 
-            return true;
+            return rating;
         }
 
         public async Task<Rating> AddOrUpdateRatingAsync(string studentId, string recruiterId, int score)

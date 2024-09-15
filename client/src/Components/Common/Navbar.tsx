@@ -46,20 +46,27 @@ const Navbar: React.FC = () => {
   }, [role, userId]);
 
   const pages =
-    role === "Recruiter"
-      ? [
-          { name: "Dashboard", path: "/recruiter-profile" },
-          { name: "Students", path: "/students" },
-          { name: "My Students", path: "/recruiter/students" },
-          { name: "Band", path: `/bands/recruiter/${userId}` },
-          { name: "Messages", path: "/recruiter/students" },
-        ]
-      : [
-          { name: "Dashboard", path: "/student-profile" },
-          { name: "Bands", path: "/bands" },
-          { name: "Offers", path: "/offers" },
-          { name: "Videos", path: "/videos" },
-        ];
+    role === "Recruiter" ?
+      [
+        { name: "Dashboard", path: "/recruiter-profile" },
+        { name: "Students", path: "/students" },
+        { name: "My Students", path: "/recruiter/students" },
+        { name: "Band", path: `/bands/recruiter/${userId}` },
+        { name: "Messages", path: "/recruiter/students" },
+    // ... other recruiter pages ...
+  ] : role === "Student" ? [
+    { name: "Dashboard", path: "/student-profile" },
+    { name: "Bands", path: "/bands" },
+    { name: "Offers", path: "/offers" },
+    { name: "Videos", path: "/videos" },
+    // ... other student pages ...
+  ] : [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Features", path: "/features" },
+    { name: "Contact", path: "/contact" },
+    // ... other default pages ...
+  ];
 
         const handleLogout = () => {
           logout();

@@ -8,21 +8,21 @@ namespace server.Services
     {
         public VideoService(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Rating>> GetVideoRatingsAsync(int videoId)
+        public async Task<IEnumerable<Rating>> GetVideoRatingsAsync(string videoId)
         {
             return await _context.Ratings
                 .Where(r => r.VideoId == videoId)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Comment>> GetVideoCommentsAsync(int videoId)
+        public async Task<IEnumerable<Comment>> GetVideoCommentsAsync(string videoId)
         {
             return await _context.Comments
                 .Where(c => c.VideoId == videoId)
                 .ToListAsync();
         }
 
-        public async Task<double> GetAverageRatingAsync(int videoId)
+        public async Task<double> GetAverageRatingAsync(string videoId)
         {
             return await _context.Ratings
                 .Where(r => r.VideoId == videoId)
