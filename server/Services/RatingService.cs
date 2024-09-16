@@ -46,6 +46,12 @@ namespace server.Services
 
         public async Task<Rating> RateStudentAsync(string recruiterId, string studentId, CreateRatingDTO ratingDTO)
         {
+            var recruiterExists = await _context.Users.AnyAsync(u => u.Id == recruiterId);
+            if (!recruiterExists)
+            {
+                throw new Exception("Recruiter does not exist.");
+            }
+
             var rating = new Rating
             {
                 RatingId = Guid.NewGuid().ToString(),

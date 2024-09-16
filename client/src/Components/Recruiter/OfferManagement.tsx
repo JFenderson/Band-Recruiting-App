@@ -18,14 +18,14 @@ import { getBandById } from "../../services/bandService";
 import Band from "../../models/Band";
 import RecruiterProfile from "../../models/Recruiter";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from "../ui/dialog";
-
+import { useParams } from "react-router-dom";
 
 interface OfferManagementProps extends Record<string, string | undefined> {
-  studentId: string;
   recruiterId?: string;
 }
 
-const OfferManagement: React.FC<OfferManagementProps> = ({ studentId, recruiterId }) => {
+const OfferManagement: React.FC<OfferManagementProps> = ({ recruiterId }) => {
+  const { studentId } = useParams<{ studentId: string }>();
   const { userId } = useAuth();
   const [student, setStudent] = useState<Student | null>(null);
   const [amount, setAmount] = useState<number>(0);

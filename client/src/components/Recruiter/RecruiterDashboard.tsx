@@ -38,6 +38,12 @@ import {
 } from "../ui/dialog";
 import OfferManagement from "./OfferManagement";
 
+import Sidebar from "../Common/Sidebar";
+import MetricsSection from "./MetricsSection";
+import StudentsTable from "./StudentsTable";
+import OffersTable from "./OffersTable";
+import VideosTable from "./VideosTable";
+
 const RecruiterProfilePage: React.FC = () => {
   const { user } = useAuth();
   const [profile, setProfile] = useState<RecruiterProfile | null>(null);
@@ -51,6 +57,9 @@ const RecruiterProfilePage: React.FC = () => {
   const navigate = useNavigate();
   const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [videos, setVideos] = useState([]);
+
+
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -171,7 +180,12 @@ const RecruiterProfilePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
-
+      <MetricsSection
+          totalOffers={offers.length}
+          totalRatings={students.length}
+          totalComments={videos.length}
+          totalVideos={videos.length}
+        />
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
           <div className="flex flex-col md:flex-row gap-6">

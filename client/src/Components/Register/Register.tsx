@@ -1,9 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import api from "../../services/apiConfig";
 import { Link, useNavigate } from "react-router-dom";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Button } from "../ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"; // Dropdown for userType and band
 
 interface RegistrationValues {
   userName: string;
@@ -121,7 +125,6 @@ const RegistrationForm: React.FC = () => {
     }),
     onSubmit: async (values, { setSubmitting, setStatus }) => {
       try {
-        console.log("Form Submitted", values);
         if (values.userType === "Recruiter") {
           await api.post("/Account/register", {
             userName: values.userName,
@@ -149,7 +152,6 @@ const RegistrationForm: React.FC = () => {
         }
         navigate("/login");
       } catch (error: any) {
-        console.error("Registration failed:", error);
         if (error.response && error.response.data) {
           setStatus({ success: false, message: error.response.data });
         } else {
@@ -165,220 +167,278 @@ const RegistrationForm: React.FC = () => {
   });
 
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
-        <div>
-          <label htmlFor="userType">User Type</label>
-          <select
-            id="userType"
-            name="userType"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.userType}
-          >
-            <option value="Student">Student</option>
-            <option value="Recruiter">Recruiter</option>
-          </select>
-          {formik.touched.userType && formik.errors.userType ? (
-            <div>{formik.errors.userType}</div>
-          ) : null}
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <Card className="w-full max-w-lg mx-auto">
+        <CardHeader>
+          <CardTitle className="text-center text-2xl font-bold">
+            Create Your Account
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={formik.handleSubmit}>
+            {/* User Type Selection */}
+            <div className="mb-4">
+              <Label htmlFor="userType">I am a</Label>
+              <Select
+                onValueChange={(value) => formik.setFieldValue("userType", value)}
+                value={formik.values.userType}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select user type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Student">Student</SelectItem>
+                  <SelectItem value="Recruiter">Recruiter</SelectItem>
+                </SelectContent>
+              </Select>
+              {formik.touched.userType && formik.errors.userType && (
+                <div className="text-red-600 text-sm mt-2">
+                  {formik.errors.userType}
+                </div>
+              )}
+            </div>
 
-        {/* Conditionally render the band selection if the user is a Recruiter */}
-        {formik.values.userType === "Recruiter" && (
-          <div>
-            <label htmlFor="bandId">Select Band</label>
-            <select
-              id="bandId"
-              name="bandId"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.bandId || ""} // Set to empty string if undefined
-            >
-              <option value="">Select a band...</option>
-              {bands.map((band) => (
-                <option key={band.bandId} value={band.bandId}>
-                  {band.name} - {band.schoolName}
-                </option>
-              ))}
-            </select>
-            {formik.touched.bandId && formik.errors.bandId ? (
-              <div>{formik.errors.bandId}</div>
-            ) : null}
-          </div>
-        )}
+            {/* Conditional Band Selection for Recruiters */}
+            {formik.values.userType === "Recruiter" && (
+              <div className="mb-4">
+                <Label htmlFor="bandId">Select Band</Label>
+                <Select
+                  onValueChange={(value) =>
+                    formik.setFieldValue("bandId", Number(value))
+                  }
+                  value={formik.values.bandId?.toString() || ""}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select your band" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {bands.map((band) => (
+                      <SelectItem
+                        key={band.bandId}
+                        value={band.bandId.toString()}
+                      >
+                        {band.name} - {band.schoolName}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {formik.touched.bandId && formik.errors.bandId && (
+                  <div className="text-red-600 text-sm mt-2">
+                    {formik.errors.bandId}
+                  </div>
+                )}
+              </div>
+            )}
 
-        {/* Form fields for all users */}
-        <div>
-          <label htmlFor="userName">Username</label>
-          <input
-            id="userName"
-            name="userName"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.userName}
-          />
-          {formik.touched.userName && formik.errors.userName ? (
-            <div>{formik.errors.userName}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="firstName">First Name</label>
-          <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.firstName}
-          />
-          {formik.touched.firstName && formik.errors.firstName ? (
-            <div>{formik.errors.firstName}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            id="lastName"
-            name="lastName"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.lastName}
-          />
-          {formik.touched.lastName && formik.errors.lastName ? (
-            <div>{formik.errors.lastName}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="phone">Phone Number</label>
-          <input
-            id="phone"
-            name="phone"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.phone}
-            placeholder="+1234567890" // Example placeholder for international format
-          />
-          {formik.touched.phone && formik.errors.phone ? (
-            <div>{formik.errors.phone}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <div>{formik.errors.email}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <div>{formik.errors.password}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            id="confirmPassword"
-            name="confirmPassword"
-            type="password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.confirmPassword}
-          />
-          {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-            <div>{formik.errors.confirmPassword}</div>
-          ) : null}
-        </div>
-
-        {/* Conditionally render the Student-specific fields */}
-        {formik.values.userType === "Student" && (
-          <div>
-            <div>
-              <label htmlFor="instrument">Instrument</label>
-              <input
-                id="instrument"
-                name="instrument"
+            {/* Shared Form Fields */}
+            <div className="mb-4">
+              <Label htmlFor="userName">Username</Label>
+              <Input
+                id="userName"
+                name="userName"
                 type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.instrument}
+                value={formik.values.userName}
+                placeholder="Enter your username"
               />
-              {formik.touched.instrument && formik.errors.instrument ? (
-                <div>{formik.errors.instrument}</div>
-              ) : null}
+              {formik.touched.userName && formik.errors.userName && (
+                <div className="text-red-600 text-sm mt-2">
+                  {formik.errors.userName}
+                </div>
+              )}
             </div>
 
-            <div>
-              <label htmlFor="highSchool">High School</label>
-              <input
-                id="highSchool"
-                name="highSchool"
+            <div className="mb-4">
+              <Label htmlFor="firstName">First Name</Label>
+              <Input
+                id="firstName"
+                name="firstName"
                 type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.highSchool}
+                value={formik.values.firstName}
+                placeholder="Enter your first name"
               />
-              {formik.touched.highSchool && formik.errors.highSchool ? (
-                <div>{formik.errors.highSchool}</div>
-              ) : null}
+              {formik.touched.firstName && formik.errors.firstName && (
+                <div className="text-red-600 text-sm mt-2">
+                  {formik.errors.firstName}
+                </div>
+              )}
             </div>
 
-            <div>
-              <label htmlFor="graduationYear">Graduation Year</label>
-              <input
-                id="graduationYear"
-                name="graduationYear"
+            <div className="mb-4">
+              <Label htmlFor="lastName">Last Name</Label>
+              <Input
+                id="lastName"
+                name="lastName"
                 type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.graduationYear}
+                value={formik.values.lastName}
+                placeholder="Enter your last name"
               />
-              {formik.touched.graduationYear && formik.errors.graduationYear ? (
-                <div>{formik.errors.graduationYear}</div>
-              ) : null}
+              {formik.touched.lastName && formik.errors.lastName && (
+                <div className="text-red-600 text-sm mt-2">
+                  {formik.errors.lastName}
+                </div>
+              )}
             </div>
-          </div>
-        )}
 
-        <button type="submit" disabled={formik.isSubmitting}>
-          Register
-        </button>
-        <p>
-          Already have an account? <Link to="/login">Login here</Link>
-        </p>
+            <div className="mb-4">
+              <Label htmlFor="email">Email Address</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+                placeholder="Enter your email address"
+              />
+              {formik.touched.email && formik.errors.email && (
+                <div className="text-red-600 text-sm mt-2">
+                  {formik.errors.email}
+                </div>
+              )}
+            </div>
 
-        {formik.status && formik.status.success === true && (
-          <div>Registration successful!</div>
-        )}
-        {formik.status && formik.status.success === false && (
-          <div>Registration failed: {formik.status.message}</div>
-        )}
-      </form>
+            <div className="mb-4">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="text"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.phone}
+                placeholder="+1234567890"
+              />
+              {formik.touched.phone && formik.errors.phone && (
+                <div className="text-red-600 text-sm mt-2">
+                  {formik.errors.phone}
+                </div>
+              )}
+            </div>
+
+            <div className="mb-4">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
+                placeholder="Enter your password"
+              />
+              {formik.touched.password && formik.errors.password && (
+                <div className="text-red-600 text-sm mt-2">
+                  {formik.errors.password}
+                </div>
+              )}
+            </div>
+
+            <div className="mb-4">
+              <Label htmlFor="confirmPassword">Confirm Password</Label>
+              <Input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.confirmPassword}
+                placeholder="Confirm your password"
+              />
+              {formik.touched.confirmPassword &&
+                formik.errors.confirmPassword && (
+                  <div className="text-red-600 text-sm mt-2">
+                    {formik.errors.confirmPassword}
+                  </div>
+                )}
+            </div>
+
+            {/* Conditionally render Student-specific fields */}
+            {formik.values.userType === "Student" && (
+              <>
+                <div className="mb-4">
+                  <Label htmlFor="instrument">Instrument</Label>
+                  <Input
+                    id="instrument"
+                    name="instrument"
+                    type="text"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.instrument}
+                    placeholder="Enter your instrument"
+                  />
+                  {formik.touched.instrument && formik.errors.instrument && (
+                    <div className="text-red-600 text-sm mt-2">
+                      {formik.errors.instrument}
+                    </div>
+                  )}
+                </div>
+
+                <div className="mb-4">
+                  <Label htmlFor="highSchool">High School</Label>
+                  <Input
+                    id="highSchool"
+                    name="highSchool"
+                    type="text"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.highSchool}
+                    placeholder="Enter your high school"
+                  />
+                  {formik.touched.highSchool && formik.errors.highSchool && (
+                    <div className="text-red-600 text-sm mt-2">
+                      {formik.errors.highSchool}
+                    </div>
+                  )}
+                </div>
+
+                <div className="mb-4">
+                  <Label htmlFor="graduationYear">Graduation Year</Label>
+                  <Input
+                    id="graduationYear"
+                    name="graduationYear"
+                    type="number"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.graduationYear.toString()}
+                    placeholder="Enter your graduation year"
+                  />
+                  {formik.touched.graduationYear &&
+                    formik.errors.graduationYear && (
+                      <div className="text-red-600 text-sm mt-2">
+                        {formik.errors.graduationYear}
+                      </div>
+                    )}
+                </div>
+              </>
+            )}
+
+            <Button type="submit" className="w-full" disabled={formik.isSubmitting}>
+              {formik.isSubmitting ? "Registering..." : "Register"}
+            </Button>
+
+            {/* Error/Success Messages */}
+            {formik.status && formik.status.success === false && (
+              <div className="text-red-600 text-center mt-4">
+                Registration failed: {formik.status.message}
+              </div>
+            )}
+
+            {/* Redirect to Login */}
+            <p className="mt-4 text-center text-sm text-gray-600">
+              Already have an account?{" "}
+              <Link to="/login" className="text-blue-600 hover:underline">
+                Login here
+              </Link>
+            </p>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 };

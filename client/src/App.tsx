@@ -23,6 +23,7 @@ import RecruiterStudentList from "./components/Recruiter/RecruiterStudentList";
 import AllStudentsList from "./components/Recruiter/AllStudentsList";
 import ProfilePage from "./components/Profile";
 import { Toaster } from "./components/ui/toaster";
+import OfferManagement from "./components/Recruiter/OfferManagement";
 
 // const PrivateRoutes = () => {
 //   const { authenticated } = useContext(AuthContext);
@@ -69,7 +70,7 @@ const App: React.FC = () => {
                     <Route path="/bands/recruiter/:id" element={<BandProfile />} />
                     <Route path="/students" element={<AllStudentsList />} />
                     <Route path="/students/:studentId" element={<StudentProfile />} />
-                    <Route path="/students/:studentId/make-offer" element={<MakeOffer />} />
+                    <Route path="/students/offer/:studentId" element={<OfferManagement studentId={storedUserId!} />} />
                 </Route>
             </Routes>
       </AuthProvider>

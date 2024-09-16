@@ -12,7 +12,7 @@ namespace server.Services
         Task<IEnumerable<OfferDTO>> GetOffersByRecruiterAsync(string recruiterId);
 
         Task<OfferDTO> GetOfferAsync(string offerId, string studentId);
-        Task<OfferDTO> UpdateOfferAsync(string offerId, OfferDTO offerDto);
+        Task<Offer> UpdateOfferAsync(string offerId, decimal offerAmount);
         Task DeleteOfferAsync(string offerId);
         Task<IEnumerable<StudentDTO>> GetStudentsByRecruiterAsync(string recruiterId);
         Task<decimal?> GetStudentOverallRatingAsync(string studentId);

@@ -118,7 +118,7 @@ const AllStudentsList: React.FC = () => {
                     <Button onClick={() => handleNavigation(`/students/${student.id}`)} variant="contained" color="primary">
                       See Profile
                     </Button>
-                    <Button onClick={() => handleOfferNavigation(`/offer-management/${student.id}`)} variant="contained" color="primary">
+                    <Button onClick={() => handleOfferNavigation(`/students/offer/${student.id}`)} variant="contained" color="primary">
                       View Offers
                     </Button>
                   </AccordionDetails>

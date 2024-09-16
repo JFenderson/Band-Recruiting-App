@@ -173,7 +173,6 @@ namespace server.Services
                     Amount = o.Amount,
                     Status = o.Status,
                     OfferDate = o.OfferDate,
-                    Band = o.Band,
                 })
                 .ToArrayAsync();
 
@@ -182,7 +181,7 @@ namespace server.Services
 
  
         // Update the status of an offer (e.g., Accepted, Rejected)
-        public async Task<OfferDTO> UpdateOfferAsync(string offerId, OfferDTO offerDto)
+        public async Task<Offer> UpdateOfferAsync(string offerId, decimal offerDto)
         {
             var offer = await _context.Offers.FindAsync(offerId);
             if (offer == null)
@@ -190,14 +189,12 @@ namespace server.Services
                 throw new Exception("Offer not found");
             }
 
-            offer.Status = offerDto.Status;
-            offer.Amount = offerDto.Amount;
-            offer.BandName = offerDto.BandName;
+            offer.Amount = offerDto;
 
             _context.Offers.Update(offer);
             await _context.SaveChangesAsync();
 
-            return offerDto;
+            return offer;
         }
 
         public async Task DeleteOfferAsync(string offerId)

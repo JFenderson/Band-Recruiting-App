@@ -61,9 +61,9 @@ export const createOffer = async (recruiterId: string, studentId: string, offerD
     }
 };
 
-export const updateOffer = async (offerId: string, offerData: Partial<Offer>): Promise<Offer> => {
+export const updateOffer = async (offerId: string, amount: number): Promise<Offer> => {
     try {
-        const response = await api.put<Offer>(`/Offer/${offerId}/status`, offerData);
+        const response = await api.put<Offer>(`/Offer/${offerId}/offers`, amount);
         return response.data;
     } catch (error) {
         console.error('Error updating offer:', error);

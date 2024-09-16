@@ -215,12 +215,6 @@ namespace server.Controllers
             return Ok(offers);
         }
 
-        [HttpPut("{offerId}")]
-        public async Task<IActionResult> UpdateOffer(string offerId, [FromBody] OfferDTO offerDto)
-        {
-            var updatedOffer = await _offerService.UpdateOfferAsync(offerId, offerDto);
-            return Ok(updatedOffer);
-        }
 
         [HttpDelete("{offerId}/offer")]
         public async Task<IActionResult> DeleteOffer(string offerId)

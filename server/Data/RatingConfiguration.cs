@@ -22,6 +22,11 @@ namespace server.Data
                    .WithMany(r => r.Ratings)
                    .HasForeignKey(r => r.RecruiterId)
                    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(r => r.Student)
+                .WithMany(s => s.Ratings)
+                .HasForeignKey(r => r.StudentId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

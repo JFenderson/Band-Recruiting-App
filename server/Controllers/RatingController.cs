@@ -25,18 +25,18 @@ namespace server.Controllers
         //}
 
         [HttpPost("student/{studentId}/rate")]
-        public async Task<IActionResult> RateStudent(string studentId, [FromBody] CreateRatingDTO ratingDTO)
+        public async Task<IActionResult> RateStudent(string studentId,string recruiterId, [FromBody] CreateRatingDTO ratingDTO)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var recruiterId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (recruiterId == null)
-            {
-                return Unauthorized("Recruiter not found");
-            }
+            //var recruiterId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            //if (recruiterId == null)
+            //{
+            //    return Unauthorized("Recruiter not found");
+            //}
 
             try
             {

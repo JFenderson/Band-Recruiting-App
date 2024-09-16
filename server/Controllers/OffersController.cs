@@ -92,21 +92,20 @@ namespace server.Controllers
         }
 
         // Update the status of an offer
-        [HttpPut("{offerId}/status")]
-        public async Task<IActionResult> UpdateOffer(string offerId, [FromBody] OfferDTO offerDto)
+        [HttpPut("{offerId}/offers")]
+        public async Task<IActionResult> UpdateOffer(string offerId, decimal offerAmount)
         {
-            var updatedOffer = await _offerService.UpdateOfferAsync(offerId, offerDto);
+            var updatedOffer = await _offerService.UpdateOfferAsync(offerId, offerAmount);
             return Ok(updatedOffer);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOffer(int id)
+        [HttpDelete("{offerId}")]
+        public async Task<IActionResult> DeleteOffer(string offerId)
         {
-            var offer = await _offerService.GetByIdAsync(id);
-            if (offer == null)
+            if (offerId == null)
                 return NotFound();
 
-            await _offerService.DeleteAsync(offer);
+            await _offerService.DeleteOfferAsync(offerId);
 
             return NoContent();
         }

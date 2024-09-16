@@ -7,7 +7,7 @@ export default interface Comment {
     content: string;
     commentDate: string;
     studentId: string; // Reference to the student whose video is commented on
-    videoId: string; // Reference to the video being commented on
+    videoId?: string; // Reference to the video being commented on
     recruiterId: string; // Reference to the recruiter making the comment
     video?: Video;
     recruiter?: Recruiter;

@@ -14,7 +14,6 @@ namespace server.DTOs
         public decimal Amount { get; set; }
         public string Status { get; set; }
         public DateTime OfferDate { get; set; }
-        public Band Band { get; set; }
 
     }
 
