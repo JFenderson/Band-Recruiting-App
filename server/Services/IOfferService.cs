@@ -17,5 +17,7 @@ namespace server.Services
         Task<IEnumerable<StudentDTO>> GetStudentsByRecruiterAsync(string recruiterId);
         Task<decimal?> GetStudentOverallRatingAsync(string studentId);
         Task<int> GetStudentOfferCountAsync(string studentId);
+        Task<Offer> AcceptOfferAsync(string studentId, string offerId);
+        Task<Offer> DeclineOfferAsync(string studentId, string offerId);
     }
 }

@@ -48,6 +48,12 @@ namespace server.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [HttpGet("student/{studentId}/averageRating")]
+        public async Task<IActionResult> GetAverageRatingForStudentAsync(string studentId)
+        {
+            var avgRating = await _ratingService.GetAverageRatingForStudentAsync(studentId);
+            return Ok(avgRating);
+        }
 
         [HttpGet("student/{studentId}/ratings")]
         public async Task<IActionResult> GetStudentRatings(string studentId)

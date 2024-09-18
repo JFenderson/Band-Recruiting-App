@@ -109,5 +109,19 @@ namespace server.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("{offerId}/student/{studentId}/accept")]
+        public async Task<IActionResult> AcceptOffer(string studentId, string offerId)
+        {
+            await _offerService.AcceptOfferAsync(studentId, offerId);
+            return Ok();
+        }
+
+        [HttpPost("{offerId}/student/{studentId}/decline")]
+        public async Task<IActionResult> DeclineOffer(string studentId, string offerId)
+        {
+            await _offerService.DeclineOfferAsync(studentId, offerId);
+            return Ok();
+        }
     }
 }

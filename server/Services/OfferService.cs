@@ -208,5 +208,49 @@ namespace server.Services
             _context.Offers.Remove(offer);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<Offer> AcceptOfferAsync(string studentId, string offerId)
+        {
+            var offer = await _context.Offers
+                .FirstOrDefaultAsync(o => o.OfferId == offerId && o.StudentId == studentId);
+
+            if (offer == null)
+            {
+                throw new Exception("Offer not found");
+            }
+
+            // Ensure the offer is still pending before accepting
+            if (offer.Status != "Pending")
+            {
+                throw new Exception("Offer cannot be accepted as it is not pending");
+            }
+
+            offer.Status = "Accepted";
+            await _context.SaveChangesAsync();
+            return offer;
+        }
+
+        // Method to decline an offer
+        public async Task<Offer> DeclineOfferAsync(string studentId, string offerId)
+        {
+            var offer = await _context.Offers
+                .FirstOrDefaultAsync(o => o.OfferId == offerId && o.StudentId == studentId);
+
+            if (offer == null)
+            {
+                throw new Exception("Offer not found");
+            }
+
+            // Ensure the offer is still pending before declining
+            if (offer.Status != "Pending")
+            {
+                throw new Exception("Offer cannot be declined as it is not pending");
+            }
+
+            offer.Status = "Declined";
+            await _context.SaveChangesAsync();
+            return offer;
+        }
+
     }
 }
