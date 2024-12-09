@@ -79,3 +79,22 @@ export const deleteOffer = async (id: string): Promise<void> => {
         throw error;
     }
 };
+
+export const acceptOffer = async (studentId: string, offerId: string): Promise<Offer> => {
+try {
+    const res = await api.post<Offer>(`/Offer/${offerId}/student/${studentId}/accept`);
+    return res.data;
+} catch (error) {
+    console.error('Error accepting offer:', error);
+        throw error;
+}
+}
+export const declineOffer = async (studentId: string, offerId: string): Promise<Offer> => {
+    try {
+        const res = await api.post<Offer>(`/Offer/${offerId}/student/${studentId}/decline`);
+        return res.data;
+    } catch (error) {
+        console.error('Error accepting offer:', error);
+            throw error;
+    }
+    }

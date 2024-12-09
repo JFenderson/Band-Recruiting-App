@@ -79,7 +79,10 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-gray-800">RecruiterHub</span>
+            {role === "Recruiter" ?
+              <span className="text-2xl font-bold text-gray-800">RecruiterHub</span>:
+              <span className="text-2xl font-bold text-gray-800">StudentHub</span>
+            }
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               {pages.map((page) => (

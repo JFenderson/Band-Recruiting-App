@@ -45,3 +45,13 @@ export const getStudentRatings = async (studentId: string) => {
     throw error;
   }
 };
+
+export const getStudentAverageRating = async (studentId: string) => {
+  try {
+    const response = await api.get(`/Rating/student/${studentId}/averageRating`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching average ratings:', error);
+    throw error;
+  }
+};
